@@ -27,6 +27,9 @@ func (s *SagarinSimulator) ClonePartial(newsrc rand.Source) *SagarinSimulator {
 	mu := s.model.Mu
 	sigma := s.model.Sigma
 	ratings := s.ratings
+	if newsrc == nil {
+		newsrc = rand.NewSource(s.model.Src.Uint64())
+	}
 	return NewSagarinSimulator(newsrc, mu, sigma, ratings)
 }
 
