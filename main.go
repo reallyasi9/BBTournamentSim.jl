@@ -74,6 +74,7 @@ func main() {
 
 	d := h.density(nsims)
 	best := d.getBest()
+	fmt.Println(best)
 
 	pg := combin.NewPermutationGenerator(13, 13)
 	permutations := make(chan []int, 100)
@@ -115,7 +116,7 @@ func main() {
 
 	fmt.Printf("Best solution: %v\n", topSoln)
 	for game := 0; game < 13; game++ {
-		fmt.Printf("Game %d: (%d) %s [%d] -- %f\n", game+1, best[game].winner+1, seeds[best[game].winner], topSoln.points[game], float64(topSoln.points[game])*best[game].prob)
+		fmt.Printf("Game %d: (%d) %s [%d] @ %f = %f\n", game+1, best[game].winner+1, seeds[best[game].winner], topSoln.points[game], best[game].prob, float64(topSoln.points[game])*best[game].prob)
 	}
 }
 
@@ -189,34 +190,5 @@ type solution struct {
 
 func goodPoints(perm []int) bool {
 	// each generation must have at least 5 points assigned
-	var gentotal int
-	for i := 0; i < 2; i++ {
-		gentotal += perm[i] + 1
-	}
-	if gentotal < 5 {
-		return false
-	}
-	gentotal = 0
-	for i := 2; i < 6; i++ {
-		gentotal += perm[i] + 1
-	}
-	if gentotal < 5 {
-		return false
-	}
-	for i := 6; i < 10; i++ {
-		gentotal += perm[i] + 1
-	}
-	if gentotal < 5 {
-		return false
-	}
-	for i := 10; i < 12; i++ {
-		gentotal += perm[i] + 1
-	}
-	if gentotal < 5 {
-		return false
-	}
-	if perm[12]+1 < 5 {
-		return false
-	}
-	return true
+	return (perm[0]+perm[1]+2 >= 5) && (perm[10]+perm[11]+2 >= 5) && (perm[12]+1 >= 5)
 }
