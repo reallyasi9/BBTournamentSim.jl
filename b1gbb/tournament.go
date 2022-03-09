@@ -4,6 +4,7 @@ var links = [...]int{7, 11, 12, 15, 16, 19, 20, 21, 22, 23, 24, 25, -1}
 
 type Tournament struct {
 	matchups [26]int
+	winner   int
 }
 
 func CreateTournament() Tournament {
@@ -12,6 +13,7 @@ func CreateTournament() Tournament {
 
 	return Tournament{
 		matchups: ms,
+		winner:   -1,
 	}
 }
 
@@ -27,8 +29,18 @@ func (t *Tournament) Teams(game int) (team1, team2 int) {
 }
 
 func (t *Tournament) SetTeam(slot int, team int) {
-	if slot < 0 || slot > len(t.matchups) {
+	if slot < 0 {
+		t.winner = team
 		return
 	}
 	t.matchups[slot] = team
+}
+
+func (t *Tournament) GetWinner(game int) (team int) {
+	if game == 12 {
+		team = t.winner
+		return
+	}
+	team = t.matchups[links[game]]
+	return
 }
