@@ -45,3 +45,26 @@ func (s *SagarinSimulator) Simulate(team1, team2 int) (winner int, probability f
 	winner = team2
 	return
 }
+
+func Simulate(t *Tournament, m *SagarinSimulator) {
+	for game := 0; game < 13; game++ {
+		t1, t2 := t.Teams(game)
+		w, _ := m.Simulate(t1, t2)
+		slot := WinnerTo(game)
+		t.SetTeam(slot, w)
+	}
+}
+
+func SimulatePartial(t *Tournament, m *SagarinSimulator, winners map[int]int) {
+	for game := 0; game < 13; game++ {
+		if winner, ok := winners[game]; ok {
+			slot := WinnerTo(game)
+			t.SetTeam(slot, winner)
+			continue
+		}
+		t1, t2 := t.Teams(game)
+		w, _ := m.Simulate(t1, t2)
+		slot := WinnerTo(game)
+		t.SetTeam(slot, w)
+	}
+}
