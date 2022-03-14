@@ -13,12 +13,11 @@ import (
 )
 
 func init() {
-
 }
 
 func main() {
-	if len(os.Args) != 5 {
-		fmt.Printf("Usage: %s <ratings.yaml> <seeds.yaml> <mu> <sigma>\n", os.Args[0])
+	if len(os.Args) != 4 {
+		fmt.Printf("Usage: %s <teams.yaml> <mu> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
@@ -28,43 +27,36 @@ func main() {
 	}
 	defer ratingsFile.Close()
 
-	ratings, err := b1gbb.ReadRatings(ratingsFile)
+	teams, err := b1gbb.ReadTeams(ratingsFile)
 	if err != nil {
 		panic(err)
 	}
 
-	seedsFile, err := os.Open(os.Args[2])
-	if err != nil {
-		panic(err)
-	}
-	defer seedsFile.Close()
-
-	seeds, err := b1gbb.ReadSeeds(seedsFile)
+	mu, err := strconv.ParseFloat(os.Args[2], 64)
 	if err != nil {
 		panic(err)
 	}
 
-	mu, err := strconv.ParseFloat(os.Args[3], 64)
+	sigma, err := strconv.ParseFloat(os.Args[3], 64)
 	if err != nil {
 		panic(err)
 	}
 
-	sigma, err := strconv.ParseFloat(os.Args[4], 64)
-	if err != nil {
-		panic(err)
+	names := make([]string, len(teams))
+	ratings := make([]float64, len(teams))
+	seeds := make([]int, len(teams))
+	for i, t := range teams {
+		names[i] = t.Name
+		ratings[i] = t.Rating
+		seeds[i] = t.Seed
 	}
-
-	fmt.Println(ratings)
-	fmt.Println(seeds)
-	fmt.Println(mu)
-	fmt.Println(sigma)
 
 	tournament := b1gbb.CreateTournament()
 	src := rand.NewSource(uint64(time.Now().UnixNano()))
 	model := b1gbb.NewSagarinSimulator(src, mu, sigma, ratings)
 
 	nsims := 1000000
-	h := b1gbb.NewHistogram(seeds)
+	h := b1gbb.NewHistogram(names) // TODO: fixme
 	for i := 0; i < nsims; i++ {
 		b1gbb.Simulate(&tournament, model)
 		h.Accumulate(&tournament)
@@ -102,7 +94,7 @@ func main() {
 
 	fmt.Printf("Best solution: %v\n", topSoln)
 	for game := 0; game < len(best); game++ {
-		fmt.Printf("Game %d: (%d) %s [%d] @ %f = %f\n", game+1, best[game].Winner+1, seeds[best[game].Winner], topSoln.points[game], best[game].Prob, float64(topSoln.points[game])*best[game].Prob)
+		fmt.Printf("Game %d: (%d) %s [%d] @ %f = %f\n", game+1, best[game].Winner+1, names[best[game].Winner], topSoln.points[game], best[game].Prob, float64(topSoln.points[game])*best[game].Prob)
 	}
 }
 

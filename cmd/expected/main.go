@@ -18,7 +18,7 @@ func init() {
 
 func main() {
 	if len(os.Args) != 7 {
-		fmt.Printf("Usage: %s <ratings.yaml> <seeds.yaml> <picks.yaml> <completed.yaml> <mu> <sigma>\n", os.Args[0])
+		fmt.Printf("Usage: %s <teams.yaml> <picks.yaml> <completed.yaml> <mu> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
@@ -28,23 +28,12 @@ func main() {
 	}
 	defer ratingsFile.Close()
 
-	ratings, err := b1gbb.ReadRatings(ratingsFile)
+	teams, err := b1gbb.ReadTeams(ratingsFile)
 	if err != nil {
 		panic(err)
 	}
 
-	seedsFile, err := os.Open(os.Args[2])
-	if err != nil {
-		panic(err)
-	}
-	defer seedsFile.Close()
-
-	seeds, err := b1gbb.ReadSeeds(seedsFile)
-	if err != nil {
-		panic(err)
-	}
-
-	picksFile, err := os.Open(os.Args[3])
+	picksFile, err := os.Open(os.Args[2])
 	if err != nil {
 		panic(err)
 	}
@@ -54,7 +43,7 @@ func main() {
 		panic(err)
 	}
 
-	completedFile, err := os.Open(os.Args[4])
+	completedFile, err := os.Open(os.Args[3])
 	if err != nil {
 		panic(err)
 	}
@@ -64,7 +53,7 @@ func main() {
 		panic(err)
 	}
 
-	mu, err := strconv.ParseFloat(os.Args[5], 64)
+	mu, err := strconv.ParseFloat(os.Args[4], 64)
 	if err != nil {
 		panic(err)
 	}
@@ -74,12 +63,12 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(ratings)
-	fmt.Println(seeds)
-	fmt.Println(picks)
-	fmt.Println(completed)
-	fmt.Println(mu)
-	fmt.Println(sigma)
+	ratings := make([]float64, len(teams))
+	seeds := make([]int, len(teams))
+	for i, t := range teams {
+		ratings[i] = t.Rating
+		seeds[i] = t.Seed
+	}
 
 	tournament := b1gbb.CreateTournament()
 	src := rand.NewSource(uint64(time.Now().UnixNano()))
