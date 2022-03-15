@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"sort"
@@ -13,13 +14,17 @@ import (
 	"github.com/reallyasi9/b1g-bbtournament-sim/internal/b1gbb"
 )
 
-func init() {
+var bias float64
+var seed uint64
 
+func init() {
+	flag.Float64Var(&bias, "bias", 0, "Bias of model in favor of top team (default: 0)")
+	flag.Uint64Var(&seed, "seed", 0, "RNG seed for simulations (default: use system clock)")
 }
 
 func main() {
-	if len(os.Args) != 6 {
-		fmt.Printf("Usage: %s <tournament.yaml> <teams.yaml> <picks.yaml> <mu> <sigma>\n", os.Args[0])
+	if len(os.Args) != 5 {
+		fmt.Printf("Usage: %s <tournament.yaml> <teams.yaml> <picks.yaml> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
@@ -54,12 +59,7 @@ func main() {
 		panic(err)
 	}
 
-	mu, err := strconv.ParseFloat(os.Args[4], 64)
-	if err != nil {
-		panic(err)
-	}
-
-	sigma, err := strconv.ParseFloat(os.Args[5], 64)
+	sigma, err := strconv.ParseFloat(os.Args[4], 64)
 	if err != nil {
 		panic(err)
 	}
@@ -75,8 +75,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	src := rand.NewSource(uint64(time.Now().UnixNano()))
-	model := b1gbb.NewSagarinSimulator(src, mu, sigma, ratings)
+	if seed == 0 {
+		seed = uint64(time.Now().UnixNano())
+	}
+	src := rand.NewSource(seed)
+	model := b1gbb.NewSagarinSimulator(src, bias, sigma, ratings)
 
 	nsims := 10000000
 	pa := b1gbb.NewPickerAccumulator(picks)

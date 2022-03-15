@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"strconv"
@@ -12,12 +13,17 @@ import (
 	"gonum.org/v1/gonum/stat/combin"
 )
 
+var bias float64
+var seed uint64
+
 func init() {
+	flag.Float64Var(&bias, "bias", 0, "Bias of model in favor of top team (default: 0)")
+	flag.Uint64Var(&seed, "seed", 0, "RNG seed for simulations (default: use system clock)")
 }
 
 func main() {
-	if len(os.Args) != 5 {
-		fmt.Printf("Usage: %s <tournament.yaml> <ratings.yaml> <mu> <sigma>\n", os.Args[0])
+	if len(os.Args) != 4 {
+		fmt.Printf("Usage: %s <tournament.yaml> <ratings.yaml> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
@@ -43,11 +49,6 @@ func main() {
 		panic(err)
 	}
 
-	mu, err := strconv.ParseFloat(os.Args[3], 64)
-	if err != nil {
-		panic(err)
-	}
-
 	sigma, err := strconv.ParseFloat(os.Args[4], 64)
 	if err != nil {
 		panic(err)
@@ -66,8 +67,11 @@ func main() {
 		ratings[i] = team.Rating
 		seeds[i] = team.Seed
 	}
-	src := rand.NewSource(uint64(time.Now().UnixNano()))
-	model := b1gbb.NewSagarinSimulator(src, mu, sigma, ratings)
+	if seed == 0 {
+		seed = uint64(time.Now().UnixNano())
+	}
+	src := rand.NewSource(seed)
+	model := b1gbb.NewSagarinSimulator(src, bias, sigma, ratings)
 
 	nsims := 10000000
 	h := b1gbb.NewHistogram(names)
