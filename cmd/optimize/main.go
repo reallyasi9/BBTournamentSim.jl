@@ -49,7 +49,7 @@ func main() {
 		panic(err)
 	}
 
-	sigma, err := strconv.ParseFloat(os.Args[4], 64)
+	sigma, err := strconv.ParseFloat(os.Args[3], 64)
 	if err != nil {
 		panic(err)
 	}
@@ -99,7 +99,7 @@ func main() {
 		defer prog2.Finish()
 		for perm := range perms {
 			prog2.Increment()
-			if !goodPoints(perm) {
+			if !tournament.ValidPoints(perm) {
 				continue
 			}
 			expectedPoints <- makeSolution(perm, best)
@@ -138,9 +138,4 @@ func makeSolution(permutation []int, wp []b1gbb.WinnerProb) solution {
 		points:        points,
 		expectedValue: exp,
 	}
-}
-
-func goodPoints(perm []int) bool {
-	// each generation must have at least 5 points assigned
-	return (perm[0]+perm[1]+2 >= 5) && (perm[10]+perm[11]+2 >= 5) && (perm[12]+1 >= 5)
 }

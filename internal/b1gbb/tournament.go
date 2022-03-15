@@ -1,6 +1,8 @@
 package b1gbb
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Tournament struct {
 	nTeams      int
@@ -37,7 +39,9 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 		return nil, fmt.Errorf("expected %d point values, got %d", ngames, len(s.Points.Values))
 	}
 	copy(points, s.Points.Values)
-	rules := s.Points.Rules
+
+	rules := make([]PointsRule, len(s.Points.Rules))
+	copy(rules, s.Points.Rules)
 
 	t := Tournament{
 		nTeams:      s.NTeams,
@@ -99,4 +103,20 @@ func (t *Tournament) SetWinner(game int, team int) {
 func (t *Tournament) GetWinner(game int) (team int, ok bool) {
 	team, ok = t.winners[game]
 	return
+}
+
+func (t *Tournament) ValidPoints(perm []int) bool {
+	if len(perm) != len(t.points) {
+		return false
+	}
+	for _, r := range t.rules {
+		sum := 0
+		for _, g := range r.Games {
+			sum += t.points[perm[g]]
+		}
+		if sum < r.Minimum {
+			return false
+		}
+	}
+	return true
 }
