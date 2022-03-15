@@ -46,11 +46,22 @@ func ReadPicks(r io.Reader) (map[string]Picks, error) {
 	return out, err
 }
 
+type PointsRule struct {
+	Games   []int
+	Minimum int
+}
+
+type Points struct {
+	Values []int
+	Rules  []PointsRule
+}
+
 type TournamentStructure struct {
 	NTeams      int `yaml:"nTeams"`
 	Matchups    [][2]int
 	Progression [][2]int
 	Winners     map[int]int
+	Points      Points
 }
 
 func ReadTournamentStructure(r io.Reader) (TournamentStructure, error) {

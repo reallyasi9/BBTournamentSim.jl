@@ -8,6 +8,8 @@ type Tournament struct {
 	matchups    []int
 	progression []int
 	winners     map[int]int
+	points      []int
+	rules       []PointsRule
 }
 
 func NewTournament(s TournamentStructure) (*Tournament, error) {
@@ -23,11 +25,19 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 	// turn progressions into an index into the flat matchups list
 	progression := make([]int, ngames-1)
 	if len(s.Progression) != ngames-1 {
-		return nil, fmt.Errorf("expected (%d) progressions, got %d", ngames-1, len(s.Progression))
+		return nil, fmt.Errorf("expected %d progressions, got %d", ngames-1, len(s.Progression))
 	}
 	for i, p := range s.Progression {
 		progression[i] = p[0]*2 + p[1]
 	}
+
+	// turn points structs into values and rules
+	points := make([]int, ngames)
+	if len(s.Points.Values) != ngames {
+		return nil, fmt.Errorf("expected %d point values, got %d", ngames, len(s.Points.Values))
+	}
+	copy(points, s.Points.Values)
+	rules := s.Points.Rules
 
 	t := Tournament{
 		nTeams:      s.NTeams,
@@ -35,6 +45,8 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 		matchups:    matchups,
 		progression: progression,
 		winners:     make(map[int]int),
+		points:      points,
+		rules:       rules,
 	}
 
 	// fill winners
@@ -45,11 +57,9 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 	return &t, nil
 }
 
-func (t *Tournament) Clone() *Tournament {
+func (t *Tournament) ClonePartial() *Tournament {
 	matchups := make([]int, len(t.matchups))
 	copy(matchups, t.matchups)
-	progression := make([]int, len(t.progression))
-	copy(progression, t.progression)
 	winners := make(map[int]int)
 	for key, val := range t.winners {
 		winners[key] = val
@@ -58,8 +68,10 @@ func (t *Tournament) Clone() *Tournament {
 		nTeams:      t.nTeams,
 		nGames:      t.nGames,
 		matchups:    matchups,
-		progression: progression,
+		progression: t.progression,
 		winners:     winners,
+		points:      t.points,
+		rules:       t.rules,
 	}
 }
 
