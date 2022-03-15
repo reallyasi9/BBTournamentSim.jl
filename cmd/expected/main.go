@@ -9,6 +9,7 @@ import (
 
 	"golang.org/x/exp/rand"
 
+	"github.com/cheggaaa/pb"
 	"github.com/reallyasi9/b1g-bbtournament-sim/internal/b1gbb"
 )
 
@@ -17,12 +18,22 @@ func init() {
 }
 
 func main() {
-	if len(os.Args) != 7 {
-		fmt.Printf("Usage: %s <teams.yaml> <picks.yaml> <completed.yaml> <mu> <sigma>\n", os.Args[0])
+	if len(os.Args) != 6 {
+		fmt.Printf("Usage: %s <tournament.yaml> <teams.yaml> <picks.yaml> <mu> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
-	ratingsFile, err := os.Open(os.Args[1])
+	tournamentFile, err := os.Open(os.Args[1])
+	if err != nil {
+		panic(err)
+	}
+	defer tournamentFile.Close()
+	tournamentStructure, err := b1gbb.ReadTournamentStructure(tournamentFile)
+	if err != nil {
+		panic(err)
+	}
+
+	ratingsFile, err := os.Open(os.Args[2])
 	if err != nil {
 		panic(err)
 	}
@@ -33,7 +44,7 @@ func main() {
 		panic(err)
 	}
 
-	picksFile, err := os.Open(os.Args[2])
+	picksFile, err := os.Open(os.Args[3])
 	if err != nil {
 		panic(err)
 	}
@@ -43,22 +54,12 @@ func main() {
 		panic(err)
 	}
 
-	completedFile, err := os.Open(os.Args[3])
-	if err != nil {
-		panic(err)
-	}
-	defer completedFile.Close()
-	completed, err := b1gbb.ReadCompleted(completedFile)
-	if err != nil {
-		panic(err)
-	}
-
 	mu, err := strconv.ParseFloat(os.Args[4], 64)
 	if err != nil {
 		panic(err)
 	}
 
-	sigma, err := strconv.ParseFloat(os.Args[6], 64)
+	sigma, err := strconv.ParseFloat(os.Args[5], 64)
 	if err != nil {
 		panic(err)
 	}
@@ -70,16 +71,23 @@ func main() {
 		seeds[i] = t.Seed
 	}
 
-	tournament := b1gbb.CreateTournament()
+	tournament, err := b1gbb.NewTournament(tournamentStructure)
+	if err != nil {
+		panic(err)
+	}
 	src := rand.NewSource(uint64(time.Now().UnixNano()))
 	model := b1gbb.NewSagarinSimulator(src, mu, sigma, ratings)
 
-	nsims := 1000000
+	nsims := 10000000
 	pa := b1gbb.NewPickerAccumulator(picks)
+	prog1 := pb.StartNew(nsims)
+	prog1.Prefix("Simulating")
 	for i := 0; i < nsims; i++ {
-		b1gbb.SimulatePartial(&tournament, model, completed)
-		pa.Accumulate(&tournament)
+		b1gbb.SimulatePartial(tournament, model)
+		pa.Accumulate(tournament)
+		prog1.Increment()
 	}
+	prog1.Finish()
 
 	outcomes := pa.ExpectedValues()
 	sort.Sort(sort.Reverse(ByWins(outcomes)))

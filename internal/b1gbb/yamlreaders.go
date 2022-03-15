@@ -46,9 +46,16 @@ func ReadPicks(r io.Reader) (map[string]Picks, error) {
 	return out, err
 }
 
-func ReadCompleted(r io.Reader) (map[int]int, error) {
+type TournamentStructure struct {
+	NTeams      int `yaml:"nTeams"`
+	Matchups    [][2]int
+	Progression [][2]int
+	Winners     map[int]int
+}
+
+func ReadTournamentStructure(r io.Reader) (TournamentStructure, error) {
 	d := yaml.NewDecoder(r)
-	var out map[int]int
+	var out TournamentStructure
 	err := d.Decode(&out)
 	return out, err
 }

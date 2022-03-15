@@ -27,7 +27,10 @@ func NewHistogram(teams []string) *Histogram {
 
 func (h *Histogram) Accumulate(t *Tournament) {
 	for game := 0; game < h.ngames; game++ {
-		winner := t.GetWinner(game)
+		winner, ok := t.GetWinner(game)
+		if !ok {
+			continue // TODO: error out?
+		}
 		h.wins[game][winner]++
 	}
 	h.nsims++
@@ -113,8 +116,8 @@ func NewPickerAccumulator(picks map[string]Picks) *PickerAccumulator {
 
 func (p *PickerAccumulator) Accumulate(t *Tournament) {
 	totals := make([]int, p.npickers)
-	for game := 0; game < 13; game++ { // TODO: FIX THIS!
-		winner := t.GetWinner(game)
+	for game := 0; game < t.nGames; game++ {
+		winner, _ := t.GetWinner(game) // guaranteed to work
 		for picker, pick := range p.picks {
 			if pick.Winners[game] == winner {
 				p.correct[picker]++

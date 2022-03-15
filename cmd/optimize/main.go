@@ -16,28 +16,44 @@ func init() {
 }
 
 func main() {
-	if len(os.Args) != 4 {
-		fmt.Printf("Usage: %s <teams.yaml> <mu> <sigma>\n", os.Args[0])
+	if len(os.Args) != 5 {
+		fmt.Printf("Usage: %s <tournament.yaml> <ratings.yaml> <mu> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
-	ratingsFile, err := os.Open(os.Args[1])
+	tournamentFile, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err)
 	}
-	defer ratingsFile.Close()
+	defer tournamentFile.Close()
 
-	teams, err := b1gbb.ReadTeams(ratingsFile)
-	if err != nil {
-		panic(err)
-	}
-
-	mu, err := strconv.ParseFloat(os.Args[2], 64)
+	tournamentStructure, err := b1gbb.ReadTournamentStructure(tournamentFile)
 	if err != nil {
 		panic(err)
 	}
 
-	sigma, err := strconv.ParseFloat(os.Args[3], 64)
+	teamsFile, err := os.Open(os.Args[2])
+	if err != nil {
+		panic(err)
+	}
+	defer tournamentFile.Close()
+
+	teams, err := b1gbb.ReadTeams(teamsFile)
+	if err != nil {
+		panic(err)
+	}
+
+	mu, err := strconv.ParseFloat(os.Args[3], 64)
+	if err != nil {
+		panic(err)
+	}
+
+	sigma, err := strconv.ParseFloat(os.Args[4], 64)
+	if err != nil {
+		panic(err)
+	}
+
+	tournament, err := b1gbb.NewTournament(tournamentStructure)
 	if err != nil {
 		panic(err)
 	}
@@ -45,36 +61,40 @@ func main() {
 	names := make([]string, len(teams))
 	ratings := make([]float64, len(teams))
 	seeds := make([]int, len(teams))
-	for i, t := range teams {
-		names[i] = t.Name
-		ratings[i] = t.Rating
-		seeds[i] = t.Seed
+	for i, team := range teams {
+		names[i] = team.Name
+		ratings[i] = team.Rating
+		seeds[i] = team.Seed
 	}
-
-	tournament := b1gbb.CreateTournament()
 	src := rand.NewSource(uint64(time.Now().UnixNano()))
 	model := b1gbb.NewSagarinSimulator(src, mu, sigma, ratings)
 
-	nsims := 1000000
-	h := b1gbb.NewHistogram(names) // TODO: fixme
+	nsims := 10000000
+	h := b1gbb.NewHistogram(names)
+
+	prog1 := pb.StartNew(nsims)
+	prog1.Prefix("Simulating")
 	for i := 0; i < nsims; i++ {
-		b1gbb.Simulate(&tournament, model)
-		h.Accumulate(&tournament)
+		b1gbb.Simulate(tournament, model)
+		h.Accumulate(tournament)
+		prog1.Increment()
 	}
+	prog1.Finish()
 
 	d := h.Density()
 	best := d.GetBest()
 	fmt.Println(best)
 
 	permutations, _ := b1gbb.HeapPermutations(13)
-	progbar := pb.StartNew(combin.NumPermutations(13, 13))
+	prog2 := pb.StartNew(combin.NumPermutations(13, 13))
+	prog2.Prefix("Optimizing")
 
 	expectedPoints := make(chan solution, 100)
 	go func(perms chan []int) {
 		defer close(expectedPoints)
-		defer progbar.Finish()
+		defer prog2.Finish()
 		for perm := range perms {
-			progbar.Increment()
+			prog2.Increment()
 			if !goodPoints(perm) {
 				continue
 			}
