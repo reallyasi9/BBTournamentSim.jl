@@ -91,24 +91,35 @@ func main() {
 
 	d := h.Density()
 	best := d.GetBest()
-	fmt.Println(best)
-
-	permutations, _ := b1gbb.HeapPermutations(13)
-	prog2 := pb.StartNew(combin.NumPermutations(13, 13))
-	prog2.Prefix("Optimizing")
 
 	expectedPoints := make(chan solution, 100)
-	go func(perms chan []int) {
-		defer close(expectedPoints)
-		defer prog2.Finish()
-		for perm := range perms {
-			prog2.Increment()
-			if !tournament.ValidPoints(perm) {
-				continue
+
+	if len(tournamentStructure.Points.Rules) > 0 {
+		// Allows permutations of points
+		permutations, _ := b1gbb.HeapPermutations(13)
+		prog2 := pb.StartNew(combin.NumPermutations(13, 13))
+		prog2.Prefix("Optimizing")
+
+		go func(perms chan []int) {
+			defer close(expectedPoints)
+			defer prog2.Finish()
+			for perm := range perms {
+				prog2.Increment()
+				if !tournament.ValidPoints(perm) {
+					continue
+				}
+				expectedPoints <- makeSolution(tournamentStructure.Points.Values, perm, best)
 			}
-			expectedPoints <- makeSolution(perm, best)
+		}(permutations)
+	} else {
+		// No permutation of points: just use the first permutation
+		perm := make([]int, len(tournamentStructure.Points.Values))
+		for i := range perm {
+			perm[i] = i
 		}
-	}(permutations)
+		expectedPoints <- makeSolution(tournamentStructure.Points.Values, perm, best)
+		close(expectedPoints)
+	}
 
 	// best finder
 	var topSoln solution
@@ -131,12 +142,12 @@ type solution struct {
 	expectedValue float64
 }
 
-func makeSolution(permutation []int, wp []b1gbb.WinnerProb) solution {
+func makeSolution(values []int, permutation []int, wp []b1gbb.WinnerProb) solution {
 	points := make([]int, len(permutation))
 	var exp float64
 	for i, val := range permutation {
-		points[i] = val + 1
-		exp += wp[i].Prob * float64(val+1)
+		points[i] = values[val]
+		exp += wp[i].Prob * float64(points[i])
 	}
 	return solution{
 		points:        points,
