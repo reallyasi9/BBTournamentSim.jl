@@ -1,0 +1,272 @@
+- name: Gonzaga
+  seed: 1
+  rating: 95.20
+
+- name: Arizona
+  seed: 33
+  rating: 92.16
+
+- name: Kansas
+  seed: 49
+  rating: 91.34
+
+- name: Baylor
+  seed: 17
+  rating: 91.13
+
+- name: Houston
+  seed: 37
+  rating: 91.09
+
+- name: Kentucky
+  seed: 18
+  rating: 90.42
+
+- name: Tennessee
+  seed: 35
+  rating: 90.37
+
+- name: Purdue
+  seed: 19
+  rating: 89.88
+
+- name: Villanova
+  seed: 34
+  rating: 89.78
+
+- name: UCLA
+  seed: 20
+  rating: 89.70
+
+- name: Duke
+  seed: 2
+  rating: 89.53
+
+- name: Auburn
+  seed: 50
+  rating: 89.35
+
+- name: Iowa
+  seed: 53
+  rating: 89.34
+
+- name: Texas Tech
+  seed: 3
+  rating: 89.14
+
+- name: Illinois
+  seed: 36
+  rating: 88.25
+
+- name: Connecticut
+  seed: 5
+  rating: 87.10
+
+- name: Arkansas
+  seed: 4
+  rating: 86.94
+
+- name: Texas
+  seed: 22
+  rating: 86.54
+
+- name: LSU
+  seed: 54
+  rating: 86.49
+
+- name: Wisconsin
+  seed: 51
+  rating: 85.34
+
+- name: Saint Mary's-Cal.
+  seed: 21
+  rating: 85.34
+
+- name: Ohio State
+  seed: 39
+  rating: 85.31
+
+- name: Alabama
+  seed: 6
+  rating: 85.24
+
+- name: Michigan
+  seed: 43
+  rating: 85.20
+
+- name: North Carolina
+  seed: 24
+  rating: 85.07
+
+- name: Memphis
+  seed: 9
+  rating: 85.01
+
+- name: Michigan State
+  seed: 7
+  rating: 84.95
+
+- name: Virginia Tech
+  seed: 27
+  rating: 84.94
+
+- name: Indiana
+  seed: 28
+  rating: 84.59
+
+- name: Southern California
+  seed: 55
+  rating: 84.55
+
+- name: San Diego State
+  seed: 56
+  rating: 84.24
+
+- name: Seton Hall
+  seed: 40
+  rating: 84.09
+
+- name: San Francisco
+  seed: 26
+  rating: 84.02
+
+- name: Providence
+  seed: 52
+  rating: 83.89
+
+- name: Loyola-Chicago
+  seed: 42
+  rating: 83.82
+
+- name: Colorado State
+  seed: 38
+  rating: 83.71
+
+- name: Boise State
+  seed: 8
+  rating: 83.15
+
+- name: TCU
+  seed: 41
+  rating: 82.64
+
+- name: Creighton
+  seed: 57
+  rating: 82.59
+
+- name: Marquette
+  seed: 25
+  rating: 82.31
+
+- name: UAB
+  seed: 44
+  rating: 81.96
+
+- name: Notre Dame
+  seed: 11
+  rating: 81.90
+
+- name: Davidson
+  seed: 10
+  rating: 81.78
+
+#- name: Rutgers
+#  seed: 11
+#  rating: 81.62
+
+- name: Iowa State
+  seed: 59
+  rating: 81.46
+
+- name: Miami-Florida
+  seed: 58
+  rating: 81.00
+
+- name: Murray State
+  seed: 23
+  rating: 80.81
+
+- name: South Dakota State
+  seed: 61
+  rating: 80.13
+
+- name: Richmond
+  seed: 60
+  rating: 80.11
+
+#- name: Wyoming
+#  seed: 28
+#  rating: 79.25
+
+- name: Vermont
+  seed: 13
+  rating: 79.17
+
+- name: Chattanooga
+  seed: 45
+  rating: 79.05
+
+- name: New Mexico State
+  seed: 12
+  rating: 78.90
+
+- name: Akron
+  seed: 29
+  rating: 74.32
+
+- name: Colgate
+  seed: 62
+  rating: 74.18
+
+- name: Yale
+  seed: 30
+  rating: 74.10
+
+- name: Saint Peter's
+  seed: 31
+  rating: 73.67
+
+- name: Montana State
+  seed: 14
+  rating: 73.61
+
+- name: Georgia State
+  seed: 16
+  rating: 73.60
+
+- name: Delaware
+  seed: 47
+  rating: 73.13
+
+- name: Jacksonville State
+  seed: 63
+  rating: 72.83
+
+- name: CS Fullerton
+  seed: 15
+  rating: 72.18
+
+- name: Longwood
+  seed: 46
+  rating: 71.93
+
+- name: Wright State
+  seed: 48
+  rating: 71.24
+
+- name: Norfolk State
+  seed: 32
+  rating: 70.23
+
+#- name: Bryant
+#  seed: 48
+#  rating: 69.87
+
+- name: Texas Southern
+  seed: 64
+  rating: 69.46
+
+#- name: Texas A&M-CorpusChristi
+#  seed: 64
+#  rating: 66.03
+
