@@ -50,17 +50,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
-	sigma, err := strconv.ParseFloat(os.Args[3], 64)
-	if err != nil {
-		panic(err)
-	}
-
-	tournament, err := b1gbb.NewTournament(tournamentStructure)
-	if err != nil {
-		panic(err)
-	}
-
 	names := make([]string, len(teams))
 	ratings := make([]float64, len(teams))
 	seeds := make([]int, len(teams))
@@ -69,6 +58,17 @@ func main() {
 		ratings[i] = team.Rating
 		seeds[i] = team.Seed
 	}
+
+	sigma, err := strconv.ParseFloat(os.Args[3], 64)
+	if err != nil {
+		panic(err)
+	}
+
+	tournament, err := b1gbb.NewTournament(tournamentStructure, names)
+	if err != nil {
+		panic(err)
+	}
+
 	if seed == 0 {
 		seed = uint64(time.Now().UnixNano())
 	}

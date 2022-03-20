@@ -1,6 +1,9 @@
 package b1gbb
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 type Histogram struct {
 	ngames int
@@ -86,6 +89,7 @@ type PickerAccumulator struct {
 	wins     []int
 	correct  []int
 	points   []int
+	teamWins []map[int]int
 	nsims    int
 }
 
@@ -110,6 +114,7 @@ func NewPickerAccumulator(picks map[string]Picks) *PickerAccumulator {
 		wins:     make([]int, npickers),
 		correct:  make([]int, npickers),
 		points:   make([]int, npickers),
+		teamWins: make([]map[int]int, npickers),
 		nsims:    0,
 	}
 }
@@ -138,6 +143,15 @@ func (p *PickerAccumulator) Accumulate(t *Tournament) {
 	}
 	for _, picker := range firsts {
 		p.wins[picker]++
+		// picker wins, so accumulate excite-o-matic!
+		if len(p.teamWins[picker]) == 0 {
+			p.teamWins[picker] = make(map[int]int)
+		}
+		for _, game := range t.FirstGames(nil) {
+			// whoever wins this game is good for the picker, regardless of who the picker picked
+			winner, _ := t.GetWinner(game) // guaraneteed to work
+			p.teamWins[picker][winner]++
+		}
 	}
 	p.nsims++
 }
@@ -164,4 +178,65 @@ func (p *PickerAccumulator) ExpectedValues() []ExpectedValues {
 
 func (ev ExpectedValues) String() string {
 	return fmt.Sprintf("{%s: <correct> = %f, <points> = %f, <championships> = %f}", ev.Picker, ev.Correct, ev.Points, ev.Wins)
+}
+
+type ExcitementValues struct {
+	Picker           string
+	ExcitementScores map[int]float64
+}
+
+func (p *PickerAccumulator) ExcitementValues() []ExcitementValues {
+	ev := make([]ExcitementValues, 0, p.npickers)
+	for picker := 0; picker < p.npickers; picker++ {
+		es := make(map[int]float64)
+		wins := float64(p.wins[picker])
+		if wins == 0 {
+			continue
+		}
+		for t, w := range p.teamWins[picker] {
+			es[t] = float64(w) / wins
+		}
+		ev = append(ev, ExcitementValues{
+			Picker:           p.pickers[picker],
+			ExcitementScores: es,
+		})
+	}
+	return ev
+}
+
+func (ev *ExcitementValues) MostExciting(n int) ([]int, []float64) {
+	nteams := len(ev.ExcitementScores)
+	te := teamExcitement{
+		teams:      make([]int, nteams),
+		excitement: make([]float64, nteams),
+	}
+	i := 0
+	for team, ex := range ev.ExcitementScores {
+		te.teams[i] = team
+		te.excitement[i] = ex
+		i++
+	}
+	if i < n {
+		n = i
+	}
+	sort.Sort(sort.Reverse(byExcitement(te)))
+	return te.teams[:n], te.excitement[:n]
+}
+
+type teamExcitement struct {
+	teams      []int
+	excitement []float64
+}
+
+type byExcitement teamExcitement
+
+func (a byExcitement) Len() int {
+	return len(a.teams)
+}
+func (a byExcitement) Less(i, j int) bool {
+	return a.excitement[i] < a.excitement[j]
+}
+func (a byExcitement) Swap(i, j int) {
+	a.teams[i], a.teams[j] = a.teams[j], a.teams[i]
+	a.excitement[i], a.excitement[j] = a.excitement[j], a.excitement[i]
 }

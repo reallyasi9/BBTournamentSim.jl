@@ -25,12 +25,14 @@ func init() {
 }
 
 func main() {
-	if len(os.Args) != 5 {
+	flag.Parse()
+
+	if flag.NArg() != 4 {
 		fmt.Printf("Usage: %s <tournament.yaml> <teams.yaml> <picks.yaml> <sigma>\n", os.Args[0])
 		os.Exit(2)
 	}
 
-	tournamentFile, err := os.Open(os.Args[1])
+	tournamentFile, err := os.Open(flag.Arg(0))
 	if err != nil {
 		panic(err)
 	}
@@ -40,7 +42,7 @@ func main() {
 		panic(err)
 	}
 
-	ratingsFile, err := os.Open(os.Args[2])
+	ratingsFile, err := os.Open(flag.Arg(1))
 	if err != nil {
 		panic(err)
 	}
@@ -51,7 +53,7 @@ func main() {
 		panic(err)
 	}
 
-	picksFile, err := os.Open(os.Args[3])
+	picksFile, err := os.Open(flag.Arg(2))
 	if err != nil {
 		panic(err)
 	}
@@ -61,19 +63,21 @@ func main() {
 		panic(err)
 	}
 
-	sigma, err := strconv.ParseFloat(os.Args[4], 64)
+	sigma, err := strconv.ParseFloat(flag.Arg(3), 64)
 	if err != nil {
 		panic(err)
 	}
 
+	names := make([]string, len(teams))
 	ratings := make([]float64, len(teams))
 	seeds := make([]int, len(teams))
 	for i, t := range teams {
+		names[i] = t.Name
 		ratings[i] = t.Rating
 		seeds[i] = t.Seed
 	}
 
-	tournament, err := b1gbb.NewTournament(tournamentStructure)
+	tournament, err := b1gbb.NewTournament(tournamentStructure, names)
 	if err != nil {
 		panic(err)
 	}
@@ -115,6 +119,21 @@ func main() {
 	for i, o := range outcomes {
 		fmt.Printf("%d. %s (%0.2f)\n", i+1, o.Picker, o.Correct)
 	}
+
+	excitement := pa.ExcitementValues()
+	sort.Sort(ByPicker(excitement))
+	fmt.Println("\nMost exciting games per picker:")
+	nready := len(tournament.FirstGames(nil)) * 2
+	for _, e := range excitement {
+		bestT, bestF := e.MostExciting(nready)
+		fmt.Printf("%s:\n", e.Picker)
+		for i := 0; i < len(bestT); i++ {
+			if bestF[i] < .5 {
+				continue
+			}
+			fmt.Printf("\t%s (%0.2f%%)\n", teams[bestT[i]].Name, bestF[i]*100)
+		}
+	}
 }
 
 type ByPoints []b1gbb.ExpectedValues
@@ -150,5 +169,17 @@ func (b ByCorrect) Less(i, j int) bool {
 	return b[i].Correct < b[j].Correct
 }
 func (b ByCorrect) Swap(i, j int) {
+	b[i], b[j] = b[j], b[i]
+}
+
+type ByPicker []b1gbb.ExcitementValues
+
+func (b ByPicker) Len() int {
+	return len(b)
+}
+func (b ByPicker) Less(i, j int) bool {
+	return b[i].Picker < b[j].Picker
+}
+func (b ByPicker) Swap(i, j int) {
 	b[i], b[j] = b[j], b[i]
 }

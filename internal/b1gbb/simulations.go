@@ -56,6 +56,9 @@ func Simulate(t *Tournament, m *SagarinSimulator) {
 
 func SimulatePartial(t *Tournament, m *SagarinSimulator) {
 	for game := 0; game < t.nGames; game++ {
+		if t.completedAtStart[game] {
+			continue
+		}
 		t1, t2 := t.Teams(game)
 		w, _ := m.Simulate(t1, t2)
 		t.SetWinner(game, w)
