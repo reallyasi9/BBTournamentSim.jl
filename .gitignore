@@ -2,3 +2,5 @@
 
 cmd/expected/expected*
 cmd/optimize/optimize*
+
+*.json

@@ -21,7 +21,7 @@ var nsims int
 func init() {
 	flag.Float64Var(&bias, "bias", 0, "Bias of model in favor of top team (default: 0)")
 	flag.Uint64Var(&seed, "seed", 0, "RNG seed for simulations (default: use system clock)")
-	flag.IntVar(&nsims, "sims", 0, "Number of tournament simulations to run (default: 100,000 per game)")
+	flag.IntVar(&nsims, "sims", 0, "Number of tournament simulations to run (default: 100,000 per remaining game)")
 }
 
 func main() {
@@ -84,7 +84,7 @@ func main() {
 	model := b1gbb.NewSagarinSimulator(src, bias, sigma, ratings)
 
 	if nsims <= 0 {
-		nsims = len(tournamentStructure.Matchups) * 100000
+		nsims = tournament.RemainingMatchups() * 100000
 	}
 	pa := b1gbb.NewPickerAccumulator(picks)
 	prog1 := pb.StartNew(nsims)

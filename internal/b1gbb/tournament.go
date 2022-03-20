@@ -8,6 +8,7 @@ type Tournament struct {
 	nTeams      int
 	nGames      int
 	matchups    []int
+	ready       []bool
 	progression []int
 	winners     map[int]int
 	points      []int
@@ -19,9 +20,13 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 	// assumes all missing matchups are undefined team vs undefined team
 	ngames := s.NTeams - 1
 	matchups := make([]int, ngames*2)
+	ready := make([]bool, ngames)
 	for i, m := range s.Matchups {
 		matchups[i*2] = m[0] - 1
 		matchups[i*2+1] = m[1] - 1
+		if m[0] > 0 && m[1] > 0 { // both valid team IDs
+			ready[i] = true
+		}
 	}
 
 	// turn progressions into an index into the flat matchups list
@@ -47,6 +52,7 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 		nTeams:      s.NTeams,
 		nGames:      s.NTeams - 1,
 		matchups:    matchups,
+		ready:       ready,
 		progression: progression,
 		winners:     make(map[int]int),
 		points:      points,
@@ -56,6 +62,7 @@ func NewTournament(s TournamentStructure) (*Tournament, error) {
 	// fill winners
 	for game, winner := range s.Winners {
 		t.SetWinner(game, winner)
+		t.ready[game] = false // already played
 	}
 
 	return &t, nil
@@ -72,6 +79,7 @@ func (t *Tournament) ClonePartial() *Tournament {
 		nTeams:      t.nTeams,
 		nGames:      t.nGames,
 		matchups:    matchups,
+		ready:       t.ready,
 		progression: t.progression,
 		winners:     winners,
 		points:      t.points,
@@ -119,4 +127,12 @@ func (t *Tournament) ValidPoints(perm []int) bool {
 		}
 	}
 	return true
+}
+
+func (t *Tournament) RemainingMatchups() int {
+	return len(t.matchups) - len(t.winners)
+}
+
+func (t *Tournament) IsReady(game int) bool {
+	return t.ready[game]
 }
