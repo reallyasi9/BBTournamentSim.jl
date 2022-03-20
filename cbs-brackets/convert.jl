@@ -24,6 +24,10 @@ for fn in ARGS
         @warn "data not found in pickfile" fn
         continue
     end
+    if length(pickfile.data.entry.picks) != 63
+        @warn "pickfile does not contain a complete set of picks" fn npicks=length(pickfile.data.entry.picks)
+        continue
+    end
     name = pickfile.data.entry.name
     picks = zeros(63)
     for p in pickfile.data.entry.picks
