@@ -2,6 +2,7 @@ package b1gbb
 
 import (
 	"fmt"
+	"math"
 	"sort"
 )
 
@@ -90,7 +91,11 @@ type PickerAccumulator struct {
 	correct  []int
 	points   []int
 	teamWins []map[int]int
-	nsims    int
+
+	// firstGameWins is a team number to win count map for teams playing in first
+	// games. This allows us to normalize teamWins.
+	firstGameWins map[int]int
+	nsims         int
 }
 
 func NewPickerAccumulator(picks map[string]Picks) *PickerAccumulator {
@@ -108,14 +113,15 @@ func NewPickerAccumulator(picks map[string]Picks) *PickerAccumulator {
 		i++
 	}
 	return &PickerAccumulator{
-		npickers: npickers,
-		pickers:  pickers,
-		picks:    p,
-		wins:     make([]int, npickers),
-		correct:  make([]int, npickers),
-		points:   make([]int, npickers),
-		teamWins: make([]map[int]int, npickers),
-		nsims:    0,
+		npickers:      npickers,
+		pickers:       pickers,
+		picks:         p,
+		wins:          make([]int, npickers),
+		correct:       make([]int, npickers),
+		points:        make([]int, npickers),
+		teamWins:      make([]map[int]int, npickers),
+		firstGameWins: make(map[int]int),
+		nsims:         0,
 	}
 }
 
@@ -151,6 +157,7 @@ func (p *PickerAccumulator) Accumulate(t *Tournament) {
 			// whoever wins this game is good for the picker, regardless of who the picker picked
 			winner, _ := t.GetWinner(game) // guaraneteed to work
 			p.teamWins[picker][winner]++
+			p.firstGameWins[winner]++
 		}
 	}
 	p.nsims++
@@ -194,7 +201,15 @@ func (p *PickerAccumulator) ExcitementValues() []ExcitementValues {
 			continue
 		}
 		for t, w := range p.teamWins[picker] {
-			es[t] = float64(w) / wins
+			if w == p.wins[picker] {
+				es[t] = math.Inf(1)
+				continue
+			}
+			if w == 0 {
+				es[t] = math.Inf(-1)
+				continue
+			}
+			es[t] = (float64(w) / wins) / (float64(p.firstGameWins[t]) / float64(p.nsims))
 		}
 		ev = append(ev, ExcitementValues{
 			Picker:           p.pickers[picker],

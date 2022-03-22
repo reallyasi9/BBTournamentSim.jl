@@ -128,10 +128,10 @@ func main() {
 		bestT, bestF := e.MostExciting(nready)
 		fmt.Printf("%s:\n", e.Picker)
 		for i := 0; i < len(bestT); i++ {
-			if bestF[i] < .5 {
-				continue
-			}
-			fmt.Printf("\t%s (%0.2f%%)\n", teams[bestT[i]].Name, bestF[i]*100)
+			// if bestF[i] < 1 {
+			// 	continue
+			// }
+			fmt.Printf("\t%s (%0.2f)\n", teams[bestT[i]].Name, bestF[i])
 		}
 	}
 }
