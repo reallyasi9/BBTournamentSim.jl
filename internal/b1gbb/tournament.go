@@ -132,8 +132,12 @@ func (t *Tournament) SetWinner(game int, team int) {
 	}
 }
 
-func (t *Tournament) GetWinner(game int) (team int, ok bool) {
-	team, ok = t.winners[game]
+func (t *Tournament) GetWinnerLoser(game int) (winner int, loser int, ok bool) {
+	winner, ok = t.winners[game]
+	w, loser := t.Teams(game)
+	if w != winner {
+		winner, loser = loser, winner
+	}
 	return
 }
 
