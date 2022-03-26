@@ -1,17 +1,17 @@
 - name: "Gonzaga"
-  rating: 95.24
+  rating: 94.59
   seed: 1
 - name: "Arizona"
   rating: 92.01
   seed: 33
 - name: "Kansas"
-  rating: 91.53
+  rating: 91.45
   seed: 49
 - name: "Baylor"
   rating: 90.99
   seed: 17
 - name: "Houston"
-  rating: 91.57
+  rating: 92.01
   seed: 37
 - name: "Kentucky"
   rating: 89.64
@@ -23,13 +23,13 @@
   rating: 90.13
   seed: 19
 - name: "Villanova"
-  rating: 89.96
+  rating: 90.11
   seed: 34
 - name: "UCLA"
   rating: 89.92
   seed: 20
 - name: "Duke"
-  rating: 90.02
+  rating: 90.39
   seed: 2
 - name: "Auburn"
   rating: 88.53
@@ -47,7 +47,7 @@
   rating: 86.72
   seed: 5
 - name: "Arkansas"
-  rating: 86.81
+  rating: 87.24
   seed: 4
 - name: "Texas"
   rating: 86.74
@@ -71,7 +71,7 @@
   rating: 86.25
   seed: 43
 - name: "North Carolina"
-  rating: 86.18
+  rating: 86.58
   seed: 24
 - name: "Memphis"
   rating: 85.43
@@ -131,7 +131,7 @@
   rating: 82.25
   seed: 59
 - name: "Miami-Florida"
-  rating: 82.07
+  rating: 82.51
   seed: 58
 - name: "Murray State"
   rating: 80.62
@@ -161,7 +161,7 @@
   rating: 73.91
   seed: 30
 - name: "Saint Peter's"
-  rating: 74.7
+  rating: 75.23
   seed: 31
 - name: "Montana State"
   rating: 73.18
