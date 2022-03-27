@@ -6,6 +6,7 @@ import (
 	"os"
 	"sort"
 	"strconv"
+	"sync"
 	"time"
 
 	"golang.org/x/exp/rand"
@@ -93,14 +94,30 @@ func main() {
 	pa := b1gbb.NewPickerAccumulator(picks)
 	prog1 := pb.StartNew(nsims)
 	prog1.Prefix("Simulating")
-	for i := 0; i < nsims; i++ {
-		t := tournament.Clone()
-		itr := t.ReadyGameIterator()
-		for itr.Next() {
-			game := itr.Game()
-			rankings, _ := model.Simulate(game)
-			t.Propagate(game.Id(), 0, rankings[0])
+
+	tchan := make(chan b1gbb.Tournament, 100)
+	go func() {
+		defer close(tchan)
+		var wg sync.WaitGroup
+		for i := 0; i < nsims; i++ {
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				t := tournament.Clone()
+				itr := t.ReadyGameIterator()
+				for itr.Next() {
+					game := itr.Game()
+					rankings, _ := model.Simulate(game)
+					t.Propagate(game.Id(), 0, rankings[0])
+				}
+				tchan <- t
+			}()
 		}
+		wg.Wait()
+	}()
+
+	// listen for tournaments
+	for t := range tchan {
 		pa.Accumulate(t)
 		prog1.Increment()
 	}
