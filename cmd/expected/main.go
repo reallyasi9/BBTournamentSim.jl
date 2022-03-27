@@ -21,7 +21,7 @@ var nsims int
 func init() {
 	flag.Float64Var(&bias, "bias", 0, "Bias of model in favor of top team (default: 0)")
 	flag.Uint64Var(&seed, "seed", 0, "RNG seed for simulations (default: use system clock)")
-	flag.IntVar(&nsims, "sims", 0, "Number of tournament simulations to run (default: 100,000 per remaining game)")
+	flag.IntVar(&nsims, "sims", 0, "Number of tournament simulations to run (default: 1,000,000)")
 }
 
 func main() {
@@ -77,7 +77,7 @@ func main() {
 		seeds[i] = t.Seed
 	}
 
-	tournament, err := b1gbb.NewTournament(tournamentStructure, names)
+	tournament, err := b1gbb.NewTournament(tournamentStructure)
 	if err != nil {
 		panic(err)
 	}
@@ -85,17 +85,23 @@ func main() {
 		seed = uint64(time.Now().UnixNano())
 	}
 	src := rand.NewSource(seed)
-	model := b1gbb.NewSagarinSimulator(src, bias, sigma, ratings)
+	model := b1gbb.NewGameSimulator(src, bias, sigma, ratings)
 
 	if nsims <= 0 {
-		nsims = tournament.RemainingMatchups() * 100000
+		nsims = 1000000
 	}
 	pa := b1gbb.NewPickerAccumulator(picks)
 	prog1 := pb.StartNew(nsims)
 	prog1.Prefix("Simulating")
 	for i := 0; i < nsims; i++ {
-		b1gbb.SimulatePartial(tournament, model)
-		pa.Accumulate(tournament)
+		t := tournament.Clone()
+		itr := t.ReadyGameIterator()
+		for itr.Next() {
+			game := itr.Game()
+			rankings, _ := model.Simulate(game)
+			t.Propagate(game.Id(), 0, rankings[0])
+		}
+		pa.Accumulate(t)
 		prog1.Increment()
 	}
 	prog1.Finish()
@@ -123,9 +129,9 @@ func main() {
 	excitement := pa.ExcitementValues()
 	sort.Sort(ByPicker(excitement))
 	fmt.Println("\nMost exciting games per picker:")
-	nready := len(tournament.FirstGames(nil)) * 2
+	// nready := len(tournament.FirstGames(nil)) * 2
 	for _, e := range excitement {
-		bestT, bestF := e.MostExciting(nready)
+		bestT, bestF := e.MostExciting(-1)
 		fmt.Printf("%s:\n", e.Picker)
 		for i := 0; i < len(bestT); i++ {
 			// if bestF[i] < 1 {

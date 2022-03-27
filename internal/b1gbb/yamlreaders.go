@@ -35,8 +35,8 @@ func ReadTeams(r io.Reader) (teamStatsBySeed, error) {
 }
 
 type Picks struct {
-	Winners []int
-	Points  []int
+	Winners map[int]int
+	Points  map[int]int
 }
 
 func ReadPicks(r io.Reader) (map[string]Picks, error) {
@@ -54,6 +54,19 @@ type PointsRule struct {
 type Points struct {
 	Values []int
 	Rules  []PointsRule
+}
+
+func (p Points) ValidPoints(perm []int) bool {
+	for _, rule := range p.Rules {
+		sum := 0
+		for _, game := range rule.Games {
+			sum += p.Values[perm[game-1]]
+		}
+		if sum < rule.Minimum {
+			return false
+		}
+	}
+	return true
 }
 
 type TournamentStructure struct {
