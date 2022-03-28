@@ -4,176 +4,283 @@ import (
 	"fmt"
 )
 
-type Tournament struct {
-	nTeams           int
-	nGames           int
-	teamNames        []string
-	firstGames       []int
-	completedAtStart []bool
-	matchups         []int
-	progression      []int
-	winners          map[int]int
-	points           []int
-	rules            []PointsRule
+// Progresser is an interface to tournament structures. They define the number of
+// how a team that finishes a game in a certain rank progresses through a tournament.
+type Tournament interface {
+	ReadyGameIterator() GameIterator
+	GameIterator() GameIterator
+	PlayInGameIterator() GameIterator
+	Propagate(game int, rank int, team int)
+	Game(id int) (Game, bool)
+	Clone() Tournament
 }
 
-func NewTournament(s TournamentStructure, teamsBySeed []string) (*Tournament, error) {
-	// turn matchups into a flat list for faster processing
-	// assumes all missing matchups are undefined team vs undefined team
-	ngames := s.NTeams - 1
-	matchups := make([]int, ngames*2)
-	for i, m := range s.Matchups {
-		// Seeds are 1-based, convert to 0-based
-		tn1 := "(undefined)"
-		if m[0] >= 0 {
-			tn1 = teamsBySeed[m[0]-1]
-		}
-		tn2 := "(undefined)"
-		if m[1] >= 0 {
-			tn2 = teamsBySeed[m[1]-1]
-		}
-		fmt.Printf("Game %d: %s vs %s\n", i+1, tn1, tn2)
-		matchups[i*2] = m[0] - 1
-		matchups[i*2+1] = m[1] - 1
+// A Game defines an interface for querying teams in a matchup and the winner of
+// the matchup.
+type Game interface {
+	Id() int
+	NTeams() int
+	Team(slot int) (int, bool)
+	Rank(rank int) (int, bool)
+	Ready() bool
+	Completed() bool
+	Clone() Game
+}
+
+// GameIterator is an interface to tournament structures. They define a means to
+// iterate through Matchups.
+type GameIterator interface {
+	Next() bool
+	Game() Game
+}
+
+type headToHeadMatchup struct {
+	id        int
+	teams     [2]int
+	winnerIdx int
+}
+
+func (h headToHeadMatchup) Id() int {
+	return h.id
+}
+
+func (h headToHeadMatchup) NTeams() int {
+	return 2
+}
+
+func (h headToHeadMatchup) Team(slot int) (int, bool) {
+	if slot < 0 || slot > 1 {
+		return -1, false
+	}
+	return h.teams[slot], true
+}
+
+func (h headToHeadMatchup) Rank(rank int) (int, bool) {
+	if rank < 0 || rank > 1 || h.winnerIdx < 0 {
+		return -1, false
+	}
+	return h.teams[(h.winnerIdx+rank)%2], true
+}
+
+func (h headToHeadMatchup) Ready() bool {
+	return h.teams[0] >= 0 && h.teams[1] >= 0
+}
+
+func (h headToHeadMatchup) Completed() bool {
+	return h.winnerIdx >= 0
+}
+
+func (h headToHeadMatchup) Clone() Game {
+	c := headToHeadMatchup{
+		id:        h.id,
+		teams:     h.teams,
+		winnerIdx: h.winnerIdx,
+	}
+	return c
+}
+
+type singleEliminationGameIterator struct {
+	matchups []headToHeadMatchup
+	idx      int
+}
+
+func (i *singleEliminationGameIterator) Next() bool {
+	i.idx++
+	if i.idx >= len(i.matchups) {
+		return false
+	}
+	return true
+}
+
+func (i *singleEliminationGameIterator) Game() Game {
+	return i.matchups[i.idx]
+}
+
+type singleEliminationReadyGameIterator struct {
+	matchups []headToHeadMatchup
+	idx      int
+}
+
+func (i *singleEliminationReadyGameIterator) Next() bool {
+	i.idx++
+	for ; i.idx < len(i.matchups) && !i.matchups[i.idx].Ready(); i.idx++ {
+	}
+	if i.idx >= len(i.matchups) {
+		return false
+	}
+	return true
+}
+
+func (i *singleEliminationReadyGameIterator) Game() Game {
+	return i.matchups[i.idx]
+}
+
+type singleEliminationPlayInGameIterator struct {
+	matchups    []headToHeadMatchup
+	playInGames []int
+	idx         int
+}
+
+func (i *singleEliminationPlayInGameIterator) Next() bool {
+	i.idx++
+	if i.idx >= len(i.playInGames) {
+		return false
+	}
+	return true
+}
+
+func (i *singleEliminationPlayInGameIterator) Game() Game {
+	return i.matchups[i.playInGames[i.idx]]
+}
+
+type singleEliminationTournament struct {
+	matchups        []headToHeadMatchup
+	gameProgression []int
+	slotProgression []int
+	playInGames     []int // indices into matchups
+}
+
+func (t *singleEliminationTournament) Propagate(game int, rank int, team int) {
+	if game < 0 || game > len(t.gameProgression) {
+		panic(fmt.Errorf("game number %d out of bounds [0,%d]", game, len(t.gameProgression)))
+	}
+	if rank < 0 || rank > 1 {
+		panic(fmt.Errorf("rank %d out of bounds [0,1]", rank))
 	}
 
-	// turn progressions into an index into the flat matchups list
-	progression := make([]int, ngames-1)
+	m := t.matchups[game]
+	var winnerIdx int
+	if team == m.teams[0] {
+		winnerIdx = 0
+	} else if team == m.teams[1] {
+		winnerIdx = 1
+	} else {
+		panic(fmt.Errorf("team %d not playing in game %d between %v", team, game, m.teams))
+	}
+	m.winnerIdx = (winnerIdx + rank) % 2
+	t.matchups[game] = m
+	team = m.teams[m.winnerIdx]
+
+	// The final game does not progress
+	if game == len(t.gameProgression) {
+		return
+	}
+	nextgame := t.gameProgression[game]
+	nextslot := t.slotProgression[game]
+	t.matchups[nextgame].teams[nextslot] = team
+
+	return
+}
+
+func (t singleEliminationTournament) Game(id int) (Game, bool) {
+	if id < 0 || id > len(t.matchups) {
+		return nil, false
+	}
+	return t.matchups[id], true
+}
+
+func (t singleEliminationTournament) GameIterator() GameIterator {
+	i := singleEliminationGameIterator{
+		matchups: t.matchups,
+		idx:      -1,
+	}
+	return &i
+}
+
+func (t singleEliminationTournament) ReadyGameIterator() GameIterator {
+	i := singleEliminationReadyGameIterator{
+		matchups: t.matchups,
+		idx:      -1,
+	}
+	return &i
+}
+
+func (t singleEliminationTournament) PlayInGameIterator() GameIterator {
+	i := singleEliminationPlayInGameIterator{
+		matchups:    t.matchups,
+		playInGames: t.playInGames,
+		idx:         -1,
+	}
+	return &i
+}
+
+func (t singleEliminationTournament) Clone() Tournament {
+	// clones partial--only the things that change in a simulation are copied
+	matchups := make([]headToHeadMatchup, len(t.matchups))
+	copy(matchups, t.matchups)
+	c := singleEliminationTournament{
+		matchups:        matchups,
+		gameProgression: t.gameProgression,
+		slotProgression: t.slotProgression,
+		playInGames:     t.playInGames,
+	}
+	return &c
+}
+
+func NewTournament(s TournamentStructure) (Tournament, error) {
+	// turn matchups into a list for faster processing
+	// assumes all missing matchups are undefined team vs undefined team
+	ngames := s.NTeams - 1
+	matchups := make([]headToHeadMatchup, ngames)
+	for i, m := range s.Matchups {
+		// Seeds are 1-based, convert to 0-based
+		matchups[i] = headToHeadMatchup{
+			id:        i,
+			teams:     [2]int{m[0] - 1, m[1] - 1},
+			winnerIdx: -1,
+		}
+	}
+	for i := len(s.Matchups); i < ngames; i++ {
+		matchups[i] = headToHeadMatchup{
+			id:        i,
+			teams:     [2]int{-1, -1},
+			winnerIdx: -1,
+		}
+	}
+
+	// turn progressions into an index into the matchups list
+	gameProgression := make([]int, ngames-1)
+	slotProgression := make([]int, ngames-1)
 	if len(s.Progression) != ngames-1 {
 		return nil, fmt.Errorf("expected %d progressions, got %d", ngames-1, len(s.Progression))
 	}
 	for i, p := range s.Progression {
 		// game numbers are 1-based, convert to 0-based
-		fmt.Printf("The winner of game %d progresses to game %d, slot %d\n", i+1, p[0], p[1])
-		progression[i] = (p[0]-1)*2 + p[1]
+		// fmt.Printf("The winner of game %d progresses to game %d, slot %d\n", i+1, p[0], p[1])
+		gameProgression[i] = p[0] - 1
+		slotProgression[i] = p[1]
 	}
 
-	// turn points structs into values and rules
-	points := make([]int, ngames)
-	if len(s.Points.Values) != ngames {
-		return nil, fmt.Errorf("expected %d point values, got %d", ngames, len(s.Points.Values))
-	}
-	copy(points, s.Points.Values)
-
-	rules := make([]PointsRule, len(s.Points.Rules))
-	copy(rules, s.Points.Rules)
-
-	t := Tournament{
-		nTeams:           s.NTeams,
-		nGames:           s.NTeams - 1,
-		teamNames:        teamsBySeed,
-		completedAtStart: make([]bool, s.NTeams-1),
-		matchups:         matchups,
-		progression:      progression,
-		winners:          make(map[int]int),
-		points:           points,
-		rules:            rules,
+	t := &singleEliminationTournament{
+		matchups:        matchups,
+		gameProgression: gameProgression,
+		slotProgression: slotProgression,
 	}
 
-	// fill winners
-	for game, winner := range s.Winners {
+	// fill winners IN PLAY-IN ORDER!
+	itr := t.ReadyGameIterator()
+	for itr.Next() {
+		game := itr.Game()
 		// games and seeds are both 1-based, convert to 0-based
-		fmt.Printf("Setting %s as the winner of game %d\n", teamsBySeed[winner-1], game)
-		t.SetWinner(game-1, winner-1)
-		t.completedAtStart[game-1] = true
-	}
-
-	// set first games
-	firstGames := make([]int, 0, t.nGames)
-	for game := 0; game < t.nGames; game++ {
-		if t.IsReady(game) {
-			t1, t2 := t.Teams(game)
-			fmt.Printf("Game %d is ready to play: %s vs %s\n", game+1, t.teamNames[t1], t.teamNames[t2])
-			firstGames = append(firstGames, game)
+		if winner, ok := s.Winners[game.Id()+1]; ok {
+			t.Propagate(game.Id(), 0, winner-1)
 		}
 	}
-	t.firstGames = firstGames
 
-	return &t, nil
-}
-
-func (t *Tournament) ClonePartial() *Tournament {
-	matchups := make([]int, len(t.matchups))
-	copy(matchups, t.matchups)
-	winners := make(map[int]int)
-	for key, val := range t.winners {
-		winners[key] = val
-	}
-	return &Tournament{
-		nTeams:      t.nTeams,
-		nGames:      t.nGames,
-		firstGames:  t.firstGames,
-		matchups:    matchups,
-		progression: t.progression,
-		winners:     winners,
-		points:      t.points,
-		rules:       t.rules,
-	}
-}
-
-func (t *Tournament) WinnerTo(game int) (int, bool) {
-	if game >= t.nGames-1 || game < 0 {
-		return -1, false
-	}
-	return t.progression[game], true
-}
-
-func (t *Tournament) Teams(game int) (team1, team2 int) {
-	matchup0 := game * 2
-	team1 = t.matchups[matchup0]
-	team2 = t.matchups[matchup0+1]
-	return
-}
-
-func (t *Tournament) SetWinner(game int, team int) {
-	t.winners[game] = team
-	if slot, ok := t.WinnerTo(game); ok {
-		t.matchups[slot] = team
-	}
-}
-
-func (t *Tournament) GetWinnerLoser(game int) (winner int, loser int, ok bool) {
-	winner, ok = t.winners[game]
-	w, loser := t.Teams(game)
-	if w != winner {
-		winner, loser = loser, winner
-	}
-	return
-}
-
-func (t *Tournament) ValidPoints(perm []int) bool {
-	if len(perm) != len(t.points) {
-		return false
-	}
-	for _, r := range t.rules {
-		sum := 0
-		for _, g := range r.Games {
-			sum += t.points[perm[g]]
+	// after propagating winners, find the play-in games
+	playInGames := make([]int, 0, ngames)
+	itr = t.GameIterator()
+	for itr.Next() {
+		game := itr.Game()
+		if game.Completed() {
+			continue
 		}
-		if sum < r.Minimum {
-			return false
+		if game.Ready() {
+			playInGames = append(playInGames, game.Id())
 		}
 	}
-	return true
-}
 
-func (t *Tournament) RemainingMatchups() int {
-	return len(t.matchups) - len(t.winners)
-}
+	t.playInGames = playInGames
 
-func (t *Tournament) IsReady(game int) bool {
-	// valid teams in the matchup and no winner determined yet
-	_, isWon := t.winners[game]
-	if isWon {
-		return false
-	}
-	return t.matchups[game*2] >= 0 && t.matchups[game*2+1] >= 0
-}
-
-func (t *Tournament) FirstGames(out []int) []int {
-	if out == nil {
-		out = make([]int, len(t.firstGames))
-	}
-	copy(out, t.firstGames)
-	return out
+	return t, nil
 }

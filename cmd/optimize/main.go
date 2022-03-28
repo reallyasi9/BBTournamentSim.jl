@@ -64,7 +64,7 @@ func main() {
 		panic(err)
 	}
 
-	tournament, err := b1gbb.NewTournament(tournamentStructure, names)
+	tournament, err := b1gbb.NewTournament(tournamentStructure)
 	if err != nil {
 		panic(err)
 	}
@@ -73,18 +73,24 @@ func main() {
 		seed = uint64(time.Now().UnixNano())
 	}
 	src := rand.NewSource(seed)
-	model := b1gbb.NewSagarinSimulator(src, bias, sigma, ratings)
+	model := b1gbb.NewGameSimulator(src, bias, sigma, ratings)
 
 	if nsims <= 0 {
 		nsims = len(tournamentStructure.Matchups) * 100000
 	}
-	h := b1gbb.NewHistogram(names)
+	h := b1gbb.NewHistogram()
 
 	prog1 := pb.StartNew(nsims)
 	prog1.Prefix("Simulating")
 	for i := 0; i < nsims; i++ {
-		b1gbb.Simulate(tournament, model)
-		h.Accumulate(tournament)
+		t := tournament.Clone()
+		itr := t.ReadyGameIterator()
+		for itr.Next() {
+			game := itr.Game()
+			rankings, _ := model.Simulate(game)
+			t.Propagate(game.Id(), 0, rankings[0])
+		}
+		h.Accumulate(t)
 		prog1.Increment()
 	}
 	prog1.Finish()
@@ -105,7 +111,7 @@ func main() {
 			defer prog2.Finish()
 			for perm := range perms {
 				prog2.Increment()
-				if !tournament.ValidPoints(perm) {
+				if !tournamentStructure.Points.ValidPoints(perm) {
 					continue
 				}
 				expectedPoints <- makeSolution(tournamentStructure.Points.Values, perm, best)
@@ -142,7 +148,7 @@ type solution struct {
 	expectedValue float64
 }
 
-func makeSolution(values []int, permutation []int, wp []b1gbb.WinnerProb) solution {
+func makeSolution(values []int, permutation []int, wp map[int]b1gbb.WinnerProb) solution {
 	points := make([]int, len(permutation))
 	var exp float64
 	for i, val := range permutation {
