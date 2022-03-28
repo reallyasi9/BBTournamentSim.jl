@@ -19,10 +19,13 @@ var bias float64
 var seed uint64
 var nsims int
 
+const nworkers = 32
+
 func init() {
 	flag.Float64Var(&bias, "bias", 0, "Bias of model in favor of top team (default: 0)")
 	flag.Uint64Var(&seed, "seed", 0, "RNG seed for simulations (default: use system clock)")
 	flag.IntVar(&nsims, "sims", 0, "Number of tournament simulations to run (default: 1,000,000)")
+	// flag.IntVar(&nworkers, "workers", 32, "Number of accumulator worker goroutines (default: 32)")
 }
 
 func main() {
@@ -86,12 +89,11 @@ func main() {
 		seed = uint64(time.Now().UnixNano())
 	}
 	src := rand.NewSource(seed)
-	model := b1gbb.NewGameSimulator(src, bias, sigma, ratings)
 
 	if nsims <= 0 {
 		nsims = 1000000
 	}
-	pa := b1gbb.NewPickerAccumulator(picks)
+
 	prog1 := pb.StartNew(nsims)
 	prog1.Prefix("Simulating")
 
@@ -101,6 +103,8 @@ func main() {
 		var wg sync.WaitGroup
 		for i := 0; i < nsims; i++ {
 			wg.Add(1)
+			src2 := rand.NewSource(src.Uint64())
+			model := b1gbb.NewGameSimulator(src2, bias, sigma, ratings)
 			go func() {
 				defer wg.Done()
 				t := tournament.Clone()
@@ -116,12 +120,33 @@ func main() {
 		wg.Wait()
 	}()
 
-	// listen for tournaments
-	for t := range tchan {
-		pa.Accumulate(t)
-		prog1.Increment()
+	workers := make([]*b1gbb.PickerAccumulator, nworkers)
+	for i := 0; i < nworkers; i++ {
+		// listen for tournaments
+		workers[i] = b1gbb.NewPickerAccumulator(picks)
 	}
+	var wg sync.WaitGroup
+	for i := 0; i < nworkers; i++ {
+		wg.Add(1)
+		go func(j int) {
+			defer wg.Done()
+			for t := range tchan {
+				workers[j].Accumulate(t)
+				prog1.Increment()
+			}
+		}(i)
+	}
+	wg.Wait()
 	prog1.Finish()
+	for len(workers) > 1 {
+		n := len(workers)
+		for i := 0; i < n/2; i++ {
+			// only works for len(workers) a power of 2
+			workers[i].Add(workers[i+n/2])
+		}
+		workers = workers[:n/2]
+	}
+	pa := workers[0]
 
 	outcomes := pa.ExpectedValues()
 	sort.Sort(sort.Reverse(ByWins(outcomes)))

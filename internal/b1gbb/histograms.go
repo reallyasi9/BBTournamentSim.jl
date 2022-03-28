@@ -102,6 +102,7 @@ func NewPickerAccumulator(picks map[string]Picks) *PickerAccumulator {
 		stats[picker] = pickerStats{winsByPlayInTeam: make(map[int]float64)}
 	}
 	// games and seeds are 1-indexed in input, so correct that now
+	fixedPicks := make(map[string]Picks)
 	for picker, pick := range picks {
 		pk := make(map[int]int)
 		pt := make(map[int]int)
@@ -109,17 +110,48 @@ func NewPickerAccumulator(picks map[string]Picks) *PickerAccumulator {
 			pk[game-1] = pick.Winners[game] - 1
 			pt[game-1] = pick.Points[game]
 		}
-		picks[picker] = Picks{
+		fixedPicks[picker] = Picks{
 			Points:  pt,
 			Winners: pk,
 		}
 	}
 	return &PickerAccumulator{
-		picks:          picks,
+		picks:          fixedPicks,
 		stats:          stats,
 		playInTeamWins: make(map[int]int),
 		nsims:          0,
 	}
+}
+
+func (p *PickerAccumulator) Add(other *PickerAccumulator) *PickerAccumulator {
+	for picker := range other.picks {
+		if _, ok := p.picks[picker]; !ok {
+			panic(fmt.Errorf("picker %s in other PickerAccumulator, but not this", picker))
+		}
+	}
+	for picker := range p.picks {
+		if _, ok := other.picks[picker]; !ok {
+			panic(fmt.Errorf("picker %s in this PickerAccumulator, but not other", picker))
+		}
+	}
+	for picker, stats := range other.stats {
+		s := p.stats[picker]
+		s.wins += stats.wins
+		s.correctPicks += stats.correctPicks
+		s.points += stats.points
+		w := s.winsByPlayInTeam
+		for team, wins := range stats.winsByPlayInTeam {
+			w[team] += wins
+		}
+		s.winsByPlayInTeam = w
+		p.stats[picker] = s
+	}
+	for team, wins := range other.playInTeamWins {
+		p.playInTeamWins[team] += wins
+	}
+	p.nsims += other.nsims
+
+	return p
 }
 
 func (p *PickerAccumulator) Accumulate(t Tournament) {
