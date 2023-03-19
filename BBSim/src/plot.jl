@@ -8,10 +8,10 @@ using CairoMakie
 function plot_ranks(ranks)
     fig = Figure(resolution = (800, 400 * length(ranks)))
 
-    names = sort(keys(ranks))
+    names = sort(collect(keys(ranks)))
     for (i,name) in enumerate(names)
         ax = Axis(fig[i,1], title=name)
-        hist(ax, ranks[name],
+        hist!(ax, ranks[name],
             normalization = :pdf, 
             bar_labels = :values, 
             label_formatter = x -> round(x, digits=2), 
@@ -21,7 +21,7 @@ function plot_ranks(ranks)
             xticks = 1:length(ranks),
         )
     end
-    
+
     return fig
 
 end

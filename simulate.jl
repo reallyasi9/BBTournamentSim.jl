@@ -2,6 +2,7 @@ using ArgParse
 using BBSim
 using InlineStrings
 using YAML
+using CairoMakie
 
 function parse_arguments(args=ARGS)
     s = ArgParseSettings()
@@ -19,7 +20,7 @@ function parse_arguments(args=ARGS)
             help = "Team name mapping from FiveThirtyEight to Pick'Em in YAML format"
     end
 
-    return parse_args(ARGS, s)
+    return parse_args(args, s)
 end
 
 function main(args=ARGS)
@@ -33,19 +34,19 @@ function main(args=ARGS)
 
     team_order = YAML.load_file(options["teamorder"])
 
-    picks_data, values = BBSim.parse_pickem(options["pickem"])
+    picks_data, vals = BBSim.parse_pickem(options["pickem"])
     fte_data = BBSim.parse_fivethirtyeight(options["fivethirtyeight"]; team_name_remap=team_map)
 
-    println(picks_data)
-    println(values)
-    println(fte_data)
+    # println(picks_data)
+    # println(vals)
+    # println(fte_data)
 
     tournament = BBSim.make_tournament(team_order, fte_data)
     
     tournament_winners = Dict{String31, Int}()
     final_fours = Dict{String31, Int}()
     ranks = Dict{String, Vector{Int}}()
-    for _ in 1:10_000
+    for _ in 1:100_000
         sim_winners = BBSim.simulate_wins(tournament)
         winner = last(sim_winners)
         tournament_winners[winner] = get!(tournament_winners, winner, 0) + 1
@@ -54,7 +55,7 @@ function main(args=ARGS)
             final_fours[team] = get!(final_fours, team, 0) + 1
         end
 
-        scores = [picker => BBSim.score(picks, sim_winners, values) for (picker, picks) in picks_data]
+        scores = [picker => BBSim.score(picks, sim_winners, vals) for (picker, picks) in picks_data]
         sort!(scores, by=last, rev=true)
         for (i,picker_score) in enumerate(scores)
             v = get!(ranks, first(picker_score), Vector{Int}())
@@ -63,9 +64,12 @@ function main(args=ARGS)
 
     end
 
-    println(ranks)
+    # println(ranks)
     println(tournament_winners)
-    println(final_fours)
+    # println(final_fours)
+
+    fig = BBSim.plot_ranks(ranks)
+    save("ranks.svg", fig)
 end
 
 if !isinteractive()

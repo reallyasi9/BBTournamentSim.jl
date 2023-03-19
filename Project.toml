@@ -1,5 +1,6 @@
 [deps]
 ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
 BBSim = "2f9dc5a3-ddd6-4aa1-9c38-223866a68bd9"
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 InlineStrings = "842dd82b-1e85-43dc-bf29-5d0ee9dffc48"
 YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
