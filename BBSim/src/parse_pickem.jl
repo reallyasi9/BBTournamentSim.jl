@@ -36,5 +36,14 @@ function parse_pickem(io::IO;
             push!(df, entry)
         end
     end
-    return df
+    values = combine(groupby(df, :game), :value => maximum => :value)[!, :value]
+    picker_groups = groupby(df, :picker)
+    picks = Dict(getindex.(keys(picker_groups), 1) .=> [g.pick for g in picker_groups])
+    return picks, values
+end
+
+function parse_pickem(filename::AbstractString; kwargs...)
+    return open(filename, "r") do io
+        parse_pickem(io; kwargs...)
+    end
 end

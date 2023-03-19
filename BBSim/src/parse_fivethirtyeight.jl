@@ -1,6 +1,7 @@
 using CSV
 using DataFrames
 using Dates
+using InlineStrings
 
 function parse_fivethirtyeight(io::IO;
     gender = "mens",
@@ -26,7 +27,7 @@ function parse_fivethirtyeight(io::IO;
     select!(df, :gender, :forecast_date, :team_name, round_re)
     stack_df = stack(df, round_re, [:gender, :forecast_date, :team_name], variable_name=:round, value_name=:win_probability)
     transform!(stack_df,
-        :round => (r -> parse.(Int, replace.(r, round_re => s"\1"))),
+        :round => (r -> parse.(Int, replace.(r, round_re => s"\1")) .- 1), # round 1 is not meaningful to us
         :team_name => ByRow(n -> team_name_remap[n]),
         renamecols = false)
     
@@ -37,6 +38,18 @@ function parse_fivethirtyeight(io::IO;
         renamecols = false,
     )
 
-    return merged_df
+    # turn into a probability table, indexed by team => round
+    probability_table = Dict{Pair{String31, Int}, Float64}()
+    for row in copy.(eachrow(select(merged_df, :team_name, :round, :win_probability)))
+        probability_table[String31(row.team_name) => row.round] = row.win_probability
+    end
 
+    return probability_table
+
+end
+
+function parse_fivethirtyeight(filename::AbstractString; kwargs...)
+    return open(filename, "r") do io
+        parse_fivethirtyeight(io; kwargs...)
+    end
 end
