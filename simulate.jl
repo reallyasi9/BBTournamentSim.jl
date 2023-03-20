@@ -22,6 +22,9 @@ function parse_arguments(args=ARGS)
         #     help = "Random seed"
         #     arg_type = Int
         #     default = 42
+        "--gender", "-g"
+            help = "Bracket gender ('mens' or 'womens')"
+            required = true
         "--simulations", "-N"
             help = "Number of simulations to run"
             arg_type = Int
@@ -46,7 +49,7 @@ function main(args=ARGS)
     team_order = YAML.load_file(options["teamorder"])
 
     picks_data, vals = BBSim.parse_pickem(options["pickem"])
-    fte_data = BBSim.parse_fivethirtyeight(options["fivethirtyeight"]; team_name_remap=team_map)
+    fte_data = BBSim.parse_fivethirtyeight(options["fivethirtyeight"]; gender=options["gender"], team_name_remap=team_map)
 
     # println(picks_data)
     # println(vals)

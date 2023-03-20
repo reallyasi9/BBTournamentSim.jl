@@ -59,7 +59,7 @@ uuid = "39de3d68-74b9-583c-8d2d-e117c070f3a9"
 version = "0.4.6"
 
 [[deps.BBSim]]
-deps = ["CSV", "CairoMakie", "DataFrames", "Dates", "InlineStrings", "Random"]
+deps = ["CSV", "CairoMakie", "DataFrames", "Dates", "InlineStrings", "Random", "StatsBase"]
 path = "BBSim"
 uuid = "2f9dc5a3-ddd6-4aa1-9c38-223866a68bd9"
 version = "0.1.0"

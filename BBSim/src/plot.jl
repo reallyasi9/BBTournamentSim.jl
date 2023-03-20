@@ -1,5 +1,5 @@
 using CairoMakie
-using StatsBase
+import StatsBase
 
 """
     plot_ranks(ranks)
@@ -16,6 +16,7 @@ function plot_ranks(ranks)
         ax = Axis(fig[i,1], title=name)
         pmap = StatsBase.proportionmap(ranks[name])
         ys = [get(pmap, x, 0.) for x in xs]
+        max_y = maximum(ys)
         barplot!(ax, 
             xs,
             ys,
@@ -25,6 +26,7 @@ function plot_ranks(ranks)
             strokewidth = 0.5, 
             strokecolor = :black,
             xticks = 1:length(ranks),
+            flip_labels_at = max_y * .85,
         )
     end
 
