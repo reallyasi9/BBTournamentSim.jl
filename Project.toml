@@ -2,5 +2,8 @@
 ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
 BBSim = "2f9dc5a3-ddd6-4aa1-9c38-223866a68bd9"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 InlineStrings = "842dd82b-1e85-43dc-bf29-5d0ee9dffc48"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+URIs = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
 YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
