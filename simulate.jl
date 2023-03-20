@@ -18,6 +18,17 @@ function parse_arguments(args=ARGS)
             required = true
         "--teammap", "-m"
             help = "Team name mapping from FiveThirtyEight to Pick'Em in YAML format"
+        # "--seed", "-s"
+        #     help = "Random seed"
+        #     arg_type = Int
+        #     default = 42
+        "--simulations", "-N"
+            help = "Number of simulations to run"
+            arg_type = Int
+            default = 100_000
+        "--outfile", "-o"
+            help = "Path to output file (format determined by extension)"
+            default = "ranks.svg"
     end
 
     return parse_args(args, s)
@@ -46,7 +57,10 @@ function main(args=ARGS)
     tournament_winners = Dict{String31, Int}()
     final_fours = Dict{String31, Int}()
     ranks = Dict{String, Vector{Int}}()
-    for _ in 1:100_000
+
+    n_sims = options["simulations"]
+
+    for _ in 1:n_sims
         sim_winners = BBSim.simulate_wins(tournament)
         winner = last(sim_winners)
         tournament_winners[winner] = get!(tournament_winners, winner, 0) + 1
@@ -69,7 +83,7 @@ function main(args=ARGS)
     # println(final_fours)
 
     fig = BBSim.plot_ranks(ranks)
-    save("ranks.svg", fig)
+    save(options["outfile"], fig)
 end
 
 if !isinteractive()
