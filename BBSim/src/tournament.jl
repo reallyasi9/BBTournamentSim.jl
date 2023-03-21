@@ -56,6 +56,23 @@ function make_tournament(team_list, probability_table)
     return games
 end
 
+"""
+    get_play_in_games(tournament) -> Vector{Bool}
+
+Discover the games that are next to play in a tournament.
+"""
+function get_play_in_teams(tournament::Vector{Game})
+    play_in_games = falses(length(tournament))
+    for i in eachindex(tournament)
+        game = tournament[i]
+        if any(values(game.probabilities) .== 1)
+            continue
+        end
+        play_in_games[i] = true
+    end
+    return play_in_games
+end
+
 function simulate_wins(tournament::Vector{Game})
     competitors = Dict{Int, Set{String}}()
     for i in 1:32
