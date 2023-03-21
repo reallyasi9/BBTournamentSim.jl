@@ -1,13 +1,12 @@
 using CSV
 using DataFrames
 using Dates
-using InlineStrings
 
 Base.@kwdef struct FiveThirtyEightPredictionOptions
     gender::String = "mens"
     forecast_date::Union{Date,Symbol} = :latest
     round_regex::Regex = r"^rd(\d)_win$"
-    team_name_map::Dict{String,String}
+    combine_teams::Dict{String, String}
 end
 
 """
@@ -15,8 +14,8 @@ end
 
 Create a prediction table from input.
 
-The output is a `Dict{Pair{String31, Int}, Float64}` where the keys are pairs of `team => round` and the values are the predicted probability of that `team` winning the game in that `round`.
-The `round` values range from 1 to 6, with 1 being the round of 64 (opening round, excluding the 4 play-in games) and 6 being the championship game.
+The output is a `Dict{String, Vector{Float64}}` where the keys are team names and the values are the probability of that team winning the given round, indexed by round number.
+Rounds start from 1 (round of 64, skipping the play-in games) go to 6 (championship game).
 """
 function Base.parse(options::FiveThirtyEightPredictionOptions, io::IO)
     df = DataFrame(CSV.File(io))
@@ -35,23 +34,19 @@ function Base.parse(options::FiveThirtyEightPredictionOptions, io::IO)
     end
 
     select!(df, :gender, :forecast_date, :team_name, options.round_regex)
-    stack_df = stack(df, round_re, [:gender, :forecast_date, :team_name], variable_name=:round, value_name=:win_probability)
+    stack_df = stack(df, options.round_regex, [:gender, :forecast_date, :team_name], variable_name=:round, value_name=:win_probability)
     transform!(stack_df,
-        :round => (r -> parse.(Int, replace.(r, round_re => s"\1")) .- 1), # round 1 is not meaningful to us
-        :team_name => ByRow(n -> get(options.team_name_map, n, n)),
+        :round => (r -> parse.(Int, replace.(r, options.round_regex => s"\1")) .- 1), # round 1 is not meaningful to us
         renamecols = false)
-    
-    # some team names are shared because Pick'Em does not differentiate between play-in teams
-    merged_df = combine(
-        groupby(stack_df, Not(:win_probability)),
-        :win_probability => p -> maximum(p),
-        renamecols = false,
-    )
+    subset!(stack_df, :round => (r -> r .!= 0))
 
-    # turn into a probability table, indexed by team => round
-    probability_table = Dict{Pair{String31, Int}, Float64}()
-    for row in copy.(eachrow(select(merged_df, :team_name, :round, :win_probability)))
-        probability_table[String31(row.team_name) => row.round] = row.win_probability
+    # turn into a probability table, indexed by team, then round
+    probability_table = Dict{String, Vector{Float64}}()
+    for row in copy.(eachrow(select(stack_df, :team_name, :round, :win_probability)))
+        # combine team probabilities, taking the maximum of the two
+        team_name = get(options.combine_teams, row.team_name, row.team_name)
+        v = get!(probability_table, team_name, zeros(Float64, 6))
+        v[row.round] = max(row.win_probability, v[row.round])
     end
 
     return probability_table

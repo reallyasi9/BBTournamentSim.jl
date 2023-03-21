@@ -87,7 +87,7 @@ function Base.parse(options::PickEmSlateOptions, io::IO)
     # Each picker ought to have the same values for each pick. If not, something is amiss
     # (maybe we are using upset scoring?)
     game_groups = groupby(df, [:game, :value])
-    if length(game_groups) != unique(df[!, :game])
+    if length(game_groups) != length(unique(df[!, :game]))
         error("each game must have the same value across all pickers")
     end
     values = combine(game_groups, :value => first => :value)[!, :value]

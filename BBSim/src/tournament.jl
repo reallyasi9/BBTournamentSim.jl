@@ -1,8 +1,6 @@
-using InlineStrings
-
 struct Game
     number::Int
-    probabilities::Dict{String31,Float64}
+    probabilities::Dict{String,Float64}
     next_game::Ref{Game}
 end
 
@@ -22,8 +20,8 @@ function make_tournament(team_list, probability_table)
         t1 = t2 - 1
         team1 = team_list[t1]
         team2 = team_list[t2]
-        p1 = probability_table[team1 => 1]
-        p2 = probability_table[team2 => 1]
+        p1 = probability_table[team1][1]
+        p2 = probability_table[team2][1]
         probs = Dict(team1=>p1, team2=>p2)
         games[gn] = Game(gn, probs, Ref{Game}())
         gn += 1
@@ -37,13 +35,13 @@ function make_tournament(team_list, probability_table)
         for gn in gamelist
             offset = gn - start_of_this_round
             play_in_games = [start_of_last_round + offset*2, start_of_last_round + offset*2 + 1]
-            probs = Dict{String31,Float64}()
+            probs = Dict{String,Float64}()
             println("Game $gn has play-in games $play_in_games")
             for g in play_in_games
                 for p in games[g].probabilities
                     team = first(p)
                     println(" -> team $team is in play-in game $g")
-                    push!(probs, team => probability_table[team => round_number])
+                    push!(probs, team => probability_table[team][round_number])
                 end
             end
             game = Game(gn, probs, Ref{Game}())
@@ -59,12 +57,12 @@ function make_tournament(team_list, probability_table)
 end
 
 function simulate_wins(tournament::Vector{Game})
-    competitors = Dict{Int, Set{String31}}()
+    competitors = Dict{Int, Set{String}}()
     for i in 1:32
         competitors[i] = Set(keys(tournament[i].probabilities))
     end
     # To avoid altering the tournament, copy out the winners of each game
-    winners = Vector{String31}(undef, 63)
+    winners = Vector{String}(undef, 63)
     for (i,game) in enumerate(tournament)
         # pick a winner (there should be only two)
         t1, t2 = competitors[i]
@@ -79,7 +77,7 @@ function simulate_wins(tournament::Vector{Game})
         end
         winners[i] = winner
         if isassigned(game.next_game)
-            s = get!(competitors, game.next_game[].number, Set{String31}())
+            s = get!(competitors, game.next_game[].number, Set{String}())
             push!(s, winner)
         end
     end
