@@ -140,8 +140,7 @@ function get_game_order_page(pid, gender, pool_id)
     json = JSON3.read(resp.body)
 
     matchups = json["data"]["gameInstance"]["period"]["matchups"]
-    d = Dict(matchups[i+1]["id"] => i+1 for i in matchup_order)
-    println(d)
+    d = Dict(matchups[matchup_order[i]+1]["id"] => i for i in eachindex(matchup_order))
     return d
 end
 
@@ -171,11 +170,10 @@ function get_bracket_page(pid, entry_id, team_map, order)
     json = JSON3.read(resp.body)
     json_picks = json["data"]["entry"]["picks"]
     picks = [team_map[p["itemId"]] for p in json_picks]
+
     permutation = [order[p["slotId"]] for p in json_picks]
     invpermute!(picks, permutation)
-    println("I think the order is $permutation")
-    println("Picks are $picks")
-    exit()
+
     return picks
 
 end
