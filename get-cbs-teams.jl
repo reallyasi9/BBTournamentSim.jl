@@ -16,6 +16,7 @@ function parse_arguments(args)
         "gender"
             help = "Tournament gender to query (either 'mens' or 'womens')"
             range_tester = x -> x ∈ keys(sports_types)
+            required = true
         "--outfile", "-o"
             help = "Path to local output YAML file (default: STDOUT)"
     end

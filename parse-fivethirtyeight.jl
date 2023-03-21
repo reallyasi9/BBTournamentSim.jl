@@ -7,8 +7,10 @@ function parse_arguments(args=ARGS)
     @add_arg_table! s begin
         "fivethirtyeight"
             help = "FiveThirtyEight probability data in CSV format"
+            required = true
         "gender"
             help = "Bracket gender ('mens' or 'womens')"
+            required = true
         "--combine", "-c"
             help = "Path to file containing combined team renamings (YAML format)"
         "--outfile", "-o"
