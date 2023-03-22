@@ -46,7 +46,8 @@ function main(args=ARGS)
     
     ranks_hist = Dict{String, Vector{Int}}()
     play_in_mask = BBSim.get_play_in_games(tournament)
-    picker_wins_by_team_wins = Dict{String, Dict{String, Int}}()
+    # (game_number => (winning_team => picker)) => wins
+    game_team_picker_wins = Dict{Pair{Int,Pair{String,String}},Int}()
 
     n_sims = options["simulations"]
     for _ in 1:n_sims
@@ -58,10 +59,13 @@ function main(args=ARGS)
             v[i] += 1
         end
 
+        # How this works:
+        # If team T wins, we want to know how many times player P comes in first.
+        # The games will be paired back up in plot_matrix.
         first_place = first(scores[1])
-        for winner in sim_winners[play_in_mask]
-            d = get!(picker_wins_by_team_wins, first_place, Dict{String, Int}())
-            d[winner] = get!(d, winner, 0) + 1
+        for (game, winner) in zip(tournament[play_in_mask], sim_winners[play_in_mask])
+            g_t_p = game.number => winner => first_place
+            game_team_picker_wins[g_t_p] = get!(game_team_picker_wins, g_t_p, 0) + 1
         end
     end
 
@@ -73,16 +77,18 @@ function main(args=ARGS)
         YAML.write_file(options["histfile"], p_ranks)
     end
 
-    p_matrix = Dict{String, Dict{String, Float64}}()
-    for (picker, picker_team_wins) in picker_wins_by_team_wins
-        p_teams = Dict(team => wins / ranks_hist[picker][1] for (team, wins) in picker_team_wins)
-        p_matrix[picker] = p_teams
+    g_matrix = Dict{Int, Dict{String, Dict{String, Float64}}}()
+    for (game_team_picker, wins) in game_team_picker_wins
+        game, (team, picker) = game_team_picker
+        t_matrix = get!(g_matrix, game, Dict{String, Dict{String, Float64}}())
+        p_matrix = get!(t_matrix, team, Dict{String, Float64}())
+        p_matrix[picker] = wins / ranks_hist[picker][1]
     end
 
     if isnothing(options["matrixfile"])
-        YAML.write(stdout, p_matrix)
+        YAML.write(stdout, g_matrix)
     else
-        YAML.write_file(options["matrixfile"], p_matrix)
+        YAML.write_file(options["matrixfile"], g_matrix)
     end
 
 end
