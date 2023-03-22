@@ -31,16 +31,13 @@ function make_tournament(team_list, probability_table)
     for (round_number, gamelist) in game_numbers[2:end]
         start_of_this_round = first(gamelist)
         start_of_last_round = first(last(game_numbers[round_number-1]))
-        println("Round $round_number starts at $start_of_this_round (last round started $start_of_last_round)")
         for gn in gamelist
             offset = gn - start_of_this_round
             play_in_games = [start_of_last_round + offset*2, start_of_last_round + offset*2 + 1]
             probs = Dict{String,Float64}()
-            println("Game $gn has play-in games $play_in_games")
             for g in play_in_games
                 for p in games[g].probabilities
                     team = first(p)
-                    println(" -> team $team is in play-in game $g")
                     push!(probs, team => probability_table[team][round_number])
                 end
             end
@@ -61,14 +58,11 @@ end
 
 Discover the games that are next to play in a tournament.
 """
-function get_play_in_teams(tournament::Vector{Game})
+function get_play_in_games(tournament::Vector{Game})
     play_in_games = falses(length(tournament))
     for i in eachindex(tournament)
         game = tournament[i]
-        if any(values(game.probabilities) .== 1)
-            continue
-        end
-        play_in_games[i] = true
+        play_in_games[i] = count(values(game.probabilities) .> 0) == 2
     end
     return play_in_games
 end

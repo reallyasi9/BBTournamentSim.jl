@@ -1,5 +1,7 @@
 using CairoMakie
 import StatsBase
+using ArgParse
+using YAML
 
 """
     plot_ranks(ranks)
@@ -32,4 +34,29 @@ function plot_ranks(ranks)
 
     return fig
 
+end
+
+function parse_arguments(args)
+    s = ArgParseSettings
+    @add_arg_table! s begin
+        "ranks"
+            help = "Ranks histogram information in YAML format"
+            required = true
+        "--outfile", "-o"
+            help = "Plot output file, format determined by extension (default: write to STDOUT)"
+    end
+
+    options = parse_args(args, s)
+
+    return options
+end
+
+function main(args=ARGS)
+    options = parse_arguments(args)
+
+    
+end
+
+if !isinteractive()
+    main()
 end

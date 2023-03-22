@@ -2,7 +2,7 @@
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "aa5213ce88672ccea67a5dced78ad99706d1b1b8"
+project_hash = "8d17e63a88f2a17d6c6529c317a3dd76df504a87"
 
 [[deps.AbstractFFTs]]
 deps = ["ChainRulesCore", "LinearAlgebra"]
@@ -59,7 +59,7 @@ uuid = "39de3d68-74b9-583c-8d2d-e117c070f3a9"
 version = "0.4.6"
 
 [[deps.BBSim]]
-deps = ["CSV", "CairoMakie", "DataFrames", "Dates", "InlineStrings", "Random", "StatsBase"]
+deps = ["CSV", "DataFrames", "Dates", "InlineStrings", "Random"]
 path = "BBSim"
 uuid = "2f9dc5a3-ddd6-4aa1-9c38-223866a68bd9"
 version = "0.1.0"
