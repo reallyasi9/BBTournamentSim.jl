@@ -2,79 +2,139 @@ using CairoMakie
 using ArgParse
 using YAML
 
+# matrix is a Dict of (picker => (game => winner)) => prob
+# need to determine all possible winners of a given game
+# return Dict of game => [winner]
 function get_team_pairs(matrix)
-    pair_count = Dict{Set{String}, Int}()
-    for team_dict in values(matrix)
-        team_names = collect(keys(team_dict))
-        vals = collect(values(team_dict))
-
-        mask = (vals .!= 1) .&& (vals .!= 0)
-        team_names = team_names[mask]
-        vals = vals[mask]
-
-        m = repeat(vals, 1, length(vals))
-        m += m'
-        for i in 1:length(vals)
-            for j in i+1:length(vals)
-                if m[i, j] == 1
-                    s = Set([team_names[i], team_names[j]])
-                    pair_count[s] = get!(pair_count, s, 0) + 1
-                end
-            end
+    pairs = Dict{Int, Set{String}}()
+    for game_winner_prob in values(matrix)
+        for (game, winner_prob) in game_winner_prob
+            winner_set = get!(pairs, game, Set{String}())
+            union!(winner_set, keys(winner_prob))
         end
     end
-    return collect(keys(pair_count))
+    return pairs
+end
+
+percent_format(values) = map(values) do v
+    "$(Int(round(v*100)))%"
 end
 
 """
-    plot_matrix(ranks)
+    plot_matrix(matrix, ranks)
 
-`ranks` is a dict with picker names as keys values are dicts with keys being team names and values being probabilities of coming in first place if that team wins its next game.
+`matrix` is a Dict of (picker => (game => winner)) => prob, and `ranks` is a dict of picker => [prob], where the vector [prob] is sorted by finishing rank (1 = first place, etc.).
+
+If you cannot come in 1st place, you will not be plotted on the matrix.
 """
-function plot_matrix(matrix)
+function plot_matrix(matrix, ranks)
     pickers = collect(keys(matrix))
     sort!(pickers)
     n_pickers = length(pickers)
 
-    pairs = get_team_pairs(matrix)
-    teams = vcat([String[p...] for p in pairs]...)
-    n_teams = length(teams)
+    unordered_pairs = get_team_pairs(matrix)
+    pairs = sort(unordered_pairs) # by index = game number
+    n_games = length(pairs)
 
-    
+    fig = Figure(;
+        resolution = (800, 40 * n_games * n_pickers),
+        fonts = (regular = "DejaVu Sans"),
+    )
 
-    pickers = 
-    n_ranks = length(ranks)
-    fig = Figure(resolution = (800, 240 * n_ranks))
-    names = sort(collect(keys(ranks)))
+    colors = cgrad(:tab10) # simple color scheme
+    for (i,name) in enumerate(pickers)
+        ax = Axis(
+            fig[i,1];
+            title=name,
+            titlealign=:left,
+            titlesize=24,
+            xtrimspine = true,
+            xtickformat = percent_format,
+        )
+        hidespines!(ax, :t, :l, :r)
+        hideydecorations!(ax)
 
-    xs = collect(1:n_ranks)
-    for (i,name) in enumerate(names)
-        ax = Axis(fig[i,1], title=name)
-        pmap = StatsBase.proportionmap(ranks[name])
-        ys = [get(pmap, x, 0.) for x in xs]
-        max_y = maximum(ys)
-        barplot!(ax, 
-            xs,
+        game_winner_prob = matrix[name]
+        p_win = ranks[name][1]
+
+        left_xs = Float64[]
+        right_xs = Float64[]
+        ys = Int[]
+        spans = Float64[] # for sorting
+        left_labels = String[]
+        right_labels = String[]
+
+        y = 1
+        for (game_number, teams) in pairs
+            winner_prob = game_winner_prob[game_number]
+            temp_xs = [get(winner_prob, t, 0.) for t in teams]
+            l_x, r_x = extrema(temp_xs)
+            l_t, r_t = teams
+            if l_x == last(temp_xs)
+                l_t, r_t = r_t, l_t
+            end
+            push!(left_xs, l_x)
+            push!(right_xs, r_x)
+
+            span = abs(l_x - r_x)
+            push!(spans, span)
+            push!(ys, y)
+            y += 1
+
+            push!(left_labels, "$l_t: $(Int(round((l_x - p_win)*100)))%")
+            push!(right_labels, "$r_t: +$(Int(round((r_x - p_win)*100)))%")
+        end
+
+        p = sortperm(spans)
+        invpermute!(ys, p)
+
+        xmin = minimum(left_xs)
+        xmax = maximum(right_xs)
+        barplot!(
+            ax,
             ys,
-            bar_labels = :y, 
-            label_formatter = x -> round(x, digits=2), 
-            label_size = 12,
-            strokewidth = 0.5, 
-            strokecolor = :black,
-            xticks = 1:length(ranks),
-            flip_labels_at = max_y * .85,
-            color_over_background = :black,
+            left_xs,
+            fillto = p_win,
+            direction = :x,
+            color = colors[2],
+            bar_labels = left_labels,
+            flip_labels_at = (xmin + p_win)/2,
+            label_size = 16,
+            color_over_background = :white,
+            color_over_bar = colors[2],
+        )
+        barplot!(
+            ax,
+            ys,
+            right_xs,
+            fillto = p_win,
+            direction = :x,
+            color = colors[1],
+            bar_labels = right_labels,
+            flip_labels_at = (xmax + p_win)/2,
+            label_size = 16,
+            color_over_background = colors[1],
             color_over_bar = :white,
+        )
+        vlines!(
+            ax,
+            p_win,
+            color = :black,
+            linewidth = 4,
+            linestyle = :dash,
         )
     end
 
-    return fig
+    fig
 
 end
 
 function parse_arguments(args)
-    s = ArgParseSettings
+    s = ArgParseSettings()
     @add_arg_table! s begin
+        "ranks"
+            help = "Probability of rank information in YAML format"
+            required = true
         "matrix"
             help = "Probability of win matrix information in YAML format"
             required = true
@@ -90,8 +150,10 @@ end
 function main(args=ARGS)
     options = parse_arguments(args)
 
+    ranks = YAML.load_file(options["ranks"])
     matrix = YAML.load_file(options["matrix"])
-    fig = plot_matrix(matrix)
+
+    fig = plot_matrix(matrix, ranks)
 
     if isnothing(options["outfile"])
         CairoMakie.activate!(; visible=true)

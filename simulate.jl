@@ -46,7 +46,7 @@ function main(args=ARGS)
     
     ranks_hist = Dict{String, Vector{Int}}()
     play_in_mask = BBSim.get_play_in_games(tournament)
-    # (game_number => (winning_team => picker)) => wins
+    # (game_number => (winning_team => picker) => wins
     game_team_picker_wins = Dict{Pair{Int,Pair{String,String}},Int}()
 
     n_sims = options["simulations"]
@@ -77,18 +77,28 @@ function main(args=ARGS)
         YAML.write_file(options["histfile"], p_ranks)
     end
 
-    g_matrix = Dict{Int, Dict{String, Dict{String, Float64}}}()
-    for (game_team_picker, wins) in game_team_picker_wins
-        game, (team, picker) = game_team_picker
-        t_matrix = get!(g_matrix, game, Dict{String, Dict{String, Float64}}())
-        p_matrix = get!(t_matrix, team, Dict{String, Float64}())
-        p_matrix[picker] = wins / ranks_hist[picker][1]
+    # to compute the proper probability, first need the number of times a team won a game
+    # (each team only plays one play-in game, so we don't need the game number here)
+    team_wins = Dict{String, Int}()
+    for (g_t_p, wins) in game_team_picker_wins
+        _, (winner, _) = g_t_p
+        team_wins[winner] = get!(team_wins, winner, 0) + wins
+    end
+
+    # picker => (game_number => winner) => prob. of coming in first place given winner of game_number
+    picker_game_team_probs = Dict{String, Dict{Int, Dict{String, Float64}}}()
+    for (g_t_p, wins) in game_team_picker_wins
+        game, (winner, picker) = g_t_p
+        
+        game_team_probs = get!(picker_game_team_probs, picker, Dict{Int, Dict{String, Float64}}())
+        team_probs = get!(game_team_probs, game, Dict{String, Float64}())
+        team_probs[winner] = wins / team_wins[winner]
     end
 
     if isnothing(options["matrixfile"])
-        YAML.write(stdout, g_matrix)
+        YAML.write(stdout, picker_game_team_probs)
     else
-        YAML.write_file(options["matrixfile"], g_matrix)
+        YAML.write_file(options["matrixfile"], picker_game_team_probs)
     end
 
 end
