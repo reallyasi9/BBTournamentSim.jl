@@ -2,6 +2,22 @@ using ArgParse
 using BBSim
 using YAML
 
+function cluster_ties(sorted::Vector{Pair})
+    ties = Vector{eltype(sorted)}[]
+    prev = last(first(sorted))
+    cache = Vector{eltype(sorted)}()
+    for (key, val) in sorted
+        if val != prev
+            push!(ties, copy(cache))
+            empty!(cache)
+            prev = val
+        end
+        push!(cache, key=>val)
+    end
+    push!(ties, cache)
+    return ties
+end
+
 function parse_arguments(args=ARGS)
     s = ArgParseSettings()
     @add_arg_table! s begin
@@ -44,28 +60,36 @@ function main(args=ARGS)
 
     tournament = BBSim.make_tournament(team_order, fte_data)
     
-    ranks_hist = Dict{String, Vector{Int}}()
+    # Note: places are fractional in case of ties
+    ranks_hist = Dict{String, Vector{Float64}}()
     play_in_mask = BBSim.get_play_in_games(tournament)
     # (game_number => (winning_team => picker) => wins
-    game_team_picker_wins = Dict{Pair{Int,Pair{String,String}},Int}()
+    game_team_picker_wins = Dict{Pair{Int,Pair{String,String}},Float64}()
 
     n_sims = options["simulations"]
     for _ in 1:n_sims
         sim_winners = BBSim.simulate_wins(tournament)
         scores = [picker => BBSim.score(picks, sim_winners, vals) for (picker, picks) in picks_data]
         sort!(scores, by=last, rev=true)
-        for (i, picker_score) in enumerate(scores)
-            v = get!(ranks_hist, first(picker_score), zeros(Int, length(scores)))
-            v[i] += 1
+        score_ties = cluster_ties(scores)
+        for cluster in score_ties
+            n_ties = length(cluster)
+            for (i, picker_score) in enumerate(cluster)
+                v = get!(ranks_hist, first(picker_score), zeros(Float64, length(scores)))
+                v[i] += 1 / n_ties
+            end
         end
 
         # How this works:
         # If team T wins, we want to know how many times player P comes in first.
         # The games will be paired back up in plot_matrix.
-        first_place = first(scores[1])
+        first_places = first(score_ties[1])
         for (game, winner) in zip(tournament[play_in_mask], sim_winners[play_in_mask])
-            g_t_p = game.number => winner => first_place
-            game_team_picker_wins[g_t_p] = get!(game_team_picker_wins, g_t_p, 0) + 1
+            n_ties = length(first_places)
+            for (first_place, _) in first_places
+                g_t_p = game.number => winner => first_place
+                game_team_picker_wins[g_t_p] = get!(game_team_picker_wins, g_t_p, 0.) + 1 / n_ties
+            end
         end
     end
 
@@ -79,7 +103,7 @@ function main(args=ARGS)
 
     # to compute the proper probability, first need the number of times a team won a game
     # (each team only plays one play-in game, so we don't need the game number here)
-    team_wins = Dict{String, Int}()
+    team_wins = Dict{String, Float64}()
     for (g_t_p, wins) in game_team_picker_wins
         _, (winner, _) = g_t_p
         team_wins[winner] = get!(team_wins, winner, 0) + wins
