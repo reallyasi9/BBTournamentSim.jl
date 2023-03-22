@@ -1,5 +1,5 @@
 using DataFrames
-using DataFrames.PrettyTables
+using PrettyTables
 using YAML
 using ArgParse
 
