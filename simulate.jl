@@ -2,18 +2,18 @@ using ArgParse
 using BBSim
 using YAML
 
-function cluster_ties(sorted::AbstractVector)
+function tied_indices(sorted::AbstractVector)
     ties = Vector{Vector{keytype(sorted)}}()
     from = firstindex(sorted)
     to = from
     while to <= lastindex(sorted)
         if sorted[to] != sorted[from]
-            push!(ties, sorted[from:prevind(sorted, to)])
+            push!(ties, collect(from:prevind(sorted, to)))
             from = to
         end
         to = nextind(sorted, to)
     end
-    push!(ties, sorted[from:end])
+    push!(ties, collect(from:lastindex(sorted)))
     return ties
 end
 
@@ -68,27 +68,28 @@ function main(args=ARGS)
     n_sims = options["simulations"]
     for _ in 1:n_sims
         sim_winners = BBSim.simulate_wins(tournament)
-        pickers = keys(picks_data)
+        pickers = collect(keys(picks_data))
         scores = BBSim.score.(values(picks_data), Ref(sim_winners), Ref(vals))
         score_permutation = sortperm(scores, rev=true)
-        invpermute!(pickers)
-        invpermute!(scores)
-        score_ties = cluster_ties(scores)
+        permute!(pickers, score_permutation)
+        permute!(scores, score_permutation)
+        score_ties = tied_indices(scores)
         for cluster in score_ties
             n_ties = length(cluster)
-            for (i, picker_score) in enumerate(cluster)
-                v = get!(ranks_hist, first(picker_score), zeros(Float64, length(scores)))
-                v[i] += 1 / n_ties
+            for idx in cluster
+                v = get!(ranks_hist, pickers[idx], zeros(Float64, length(scores)))
+                v[idx] += 1 / n_ties
             end
         end
 
         # How this works:
         # If team T wins, we want to know how many times player P comes in first.
         # The games will be paired back up in plot_matrix.
-        first_places = first(score_ties[1])
+        first_places = score_ties[1]
         for (game, winner) in zip(tournament[play_in_mask], sim_winners[play_in_mask])
             n_ties = length(first_places)
-            for (first_place, _) in first_places
+            for idx in first_places
+                first_place = pickers[idx]
                 g_t_p = game.number => winner => first_place
                 game_team_picker_wins[g_t_p] = get!(game_team_picker_wins, g_t_p, 0.) + 1 / n_ties
             end
