@@ -2,19 +2,18 @@ using ArgParse
 using BBSim
 using YAML
 
-function cluster_ties(sorted::Vector{Pair})
-    ties = Vector{eltype(sorted)}[]
-    prev = last(first(sorted))
-    cache = Vector{eltype(sorted)}()
-    for (key, val) in sorted
-        if val != prev
-            push!(ties, copy(cache))
-            empty!(cache)
-            prev = val
+function cluster_ties(sorted::AbstractVector)
+    ties = Vector{Vector{keytype(sorted)}}()
+    from = firstindex(sorted)
+    to = from
+    while to <= lastindex(sorted)
+        if sorted[to] != sorted[from]
+            push!(ties, sorted[from:prevind(sorted, to)])
+            from = to
         end
-        push!(cache, key=>val)
+        to = nextind(sorted, to)
     end
-    push!(ties, cache)
+    push!(ties, sorted[from:end])
     return ties
 end
 
@@ -69,8 +68,11 @@ function main(args=ARGS)
     n_sims = options["simulations"]
     for _ in 1:n_sims
         sim_winners = BBSim.simulate_wins(tournament)
-        scores = [picker => BBSim.score(picks, sim_winners, vals) for (picker, picks) in picks_data]
-        sort!(scores, by=last, rev=true)
+        pickers = keys(picks_data)
+        scores = BBSim.score.(values(picks_data), Ref(sim_winners), Ref(vals))
+        score_permutation = sortperm(scores, rev=true)
+        invpermute!(pickers)
+        invpermute!(scores)
         score_ties = cluster_ties(scores)
         for cluster in score_ties
             n_ties = length(cluster)
