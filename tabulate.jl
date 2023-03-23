@@ -25,7 +25,7 @@ function parse_arguments(args)
             help = "Probability of win by team win in YAML format"
             required = true
         "--outfile", "-o"
-            help = "Output location of tables in HTML format (default: print to STDOUT)"
+            help = "Output location of tables in markdown format (default: print to STDOUT)"
     end
 
     options = parse_args(args, s)
@@ -64,8 +64,8 @@ function main(args=ARGS)
     else
         io = open(options["outfile"], "w")
     end
-    pretty_table(io, ranks_df; backend=Val(:html), tf=DataFrames.PrettyTables.tf_html_default, formatters=ft_printf("%d"))
-    pretty_table(io, matrix_df; backend=Val(:html), tf=DataFrames.PrettyTables.tf_html_default, formatters=ft_printf("%+d"))
+    pretty_table(io, ranks_df; backend=Val(:text), tf=tf_markdown, formatters=ft_printf("%.1f"))
+    pretty_table(io, matrix_df; backend=Val(:text), tf=tf_markdown, formatters=ft_printf("%+.1f"))
     close(io)
 end
 

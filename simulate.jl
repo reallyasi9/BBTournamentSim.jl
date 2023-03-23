@@ -74,12 +74,14 @@ function main(args=ARGS)
         permute!(pickers, score_permutation)
         permute!(scores, score_permutation)
         score_ties = tied_indices(scores)
+        place = 1
         for cluster in score_ties
             n_ties = length(cluster)
             for idx in cluster
                 v = get!(ranks_hist, pickers[idx], zeros(Float64, length(scores)))
-                v[idx] += 1 / n_ties
+                v[place] += 1 / n_ties
             end
+            place += n_ties
         end
 
         # How this works:
