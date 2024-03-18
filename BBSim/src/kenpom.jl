@@ -6,13 +6,13 @@ function get_kenpom(url::AbstractString="https://kenpom.com/")
     return String(resp.body)
 end
 
-function is_ratings_table(elem::HTMLNode)
+function is_kenpom_table(elem::HTMLNode)
     return tag(elem) == :table && getattr(elem, "id", "") == "ratings-table"
 end
 
-is_ratings_table(::HTMLText) = false
+is_kenpom_table(::HTMLText) = false
 
-function parse_team_row(elem::HTMLNode)
+function parse_kenpom_row(elem::HTMLNode)
     if tag(elem) != :tr
         return nothing
     end
@@ -28,17 +28,17 @@ function parse_team_row(elem::HTMLNode)
     return (team_name, team_rating)
 end
 
-parse_team_row(::HTMLText) = nothing
+parse_kenpom_row(::HTMLText) = nothing
 
 function parse_kenpom_html(html::AbstractString)
     doc = parsehtml(html)
 
-    ratings_table = first(filter(is_ratings_table, collect(PreOrderDFS(doc.root))))
+    ratings_table = first(filter(is_kenpom_table, collect(PreOrderDFS(doc.root))))
     if isnothing(ratings_table)
         throw(ErrorException("no table element with id='rataings-table' found"))
     end
 
-    ratings = filter(!isnothing, parse_team_row.(PreOrderDFS(ratings_table)))
+    ratings = filter(!isnothing, parse_kenpom_row.(PreOrderDFS(ratings_table)))
 
     return ratings
 end

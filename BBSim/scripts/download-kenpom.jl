@@ -10,7 +10,7 @@ function parse_arguments(args=ARGS)
             help = "Kenpom URL"
             default = "https://kenpom.com"
         "--outfile", "-o"
-            help = "Path to output probability table (YAML format)"
+            help = "Path to output ratings file (YAML format)"
     end
 
     return parse_args(args, s)

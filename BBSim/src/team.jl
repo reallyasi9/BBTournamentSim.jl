@@ -1,13 +1,8 @@
-@enum Quadrant begin
-    NW = 1
-    SW
-    NE
-    SE
-end
-
 @kwdef struct Team
+    id::Int
     name::String
-    kenpom::Float32
+    league::String
+    rating::Float32
     seed::Union{Nothing, Int8} = nothing
     quadrant::Union{Nothing, Quadrant} = nothing
 end

@@ -1,7 +1,5 @@
-struct Game
-    number::Int
-    probabilities::Dict{String,Float64}
-    next_game::Ref{Game}
+struct Tournament
+    games::Vector{AbstractGame}
 end
 
 function make_tournament(team_list, probability_table)
