@@ -1,6 +1,7 @@
 .vscode/
 
-cmd/expected/expected*
-cmd/optimize/optimize*
+*.yaml
+*.svg
+*.png
 
-*.json
+**/Manifest.toml
