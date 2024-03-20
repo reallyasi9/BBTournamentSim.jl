@@ -1,4 +1,4 @@
-abstract type AbstractTeam end
+abstract type AbstractTeam{T} end
 
 id(::AbstractTeam) = nothing
 name(::AbstractTeam) = nothing
@@ -7,10 +7,10 @@ rating(::AbstractTeam) = nothing
 seed(::AbstractTeam) = nothing
 quadrant(::AbstractTeam) = nothing
 
-@kwdef struct Team <: AbstractTeam
-    id::Int
+@kwdef struct Team{T} <: AbstractTeam{T}
+    id::T
     name::String
-    league::String
+    league::String = ""
     rating::Float32
     seed::Union{Nothing, Int8} = nothing
     quadrant::Union{Nothing, Quadrant} = nothing

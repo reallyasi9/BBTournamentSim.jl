@@ -1,6 +1,14 @@
-struct Tournament
-    games::Vector{AbstractGame}
+struct Tournament{T,P}
+    # always in tournament order such that games[i+1] occurs in the same round as, or one round later than, games[i]
+    games::Vector{AbstractGame{T,P}}
+    active::Vector{AbstractTeam{T}}
 end
+
+winner(t::Tournament, game::Int) = return winner(t.games[game])
+value(t::Tournament, game::Int) = return value(t.games[game])
+is_eliminated(t::Tournament, team) = return !(team ∈ t.active)
+games(t::Tournament) = return t.games
+Base.size(t::Tournament) = size(t.games)
 
 function make_tournament(team_list, probability_table)
     games = Vector{Game}(undef, 63)

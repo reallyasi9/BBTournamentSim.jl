@@ -3,6 +3,7 @@ module BBSim
 using AbstractTrees
 using Gumbo
 using HTTP
+using Random
 using StructTypes
 using YAML
 
