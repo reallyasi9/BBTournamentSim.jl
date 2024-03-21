@@ -7,16 +7,17 @@ struct GaussianModel <: AbstractModel
     dist::Normal
 end
 
-function GaussianModel(d::Dict{Symbol, Any})
-    dist = Normal(get(d, "mean", 0.), get(d, "std", 1.))
+function GaussianModel(d::Dict{Symbol,Any})
+    dist = Normal(get(d, :mean, 0.), get(d, :std, 1.))
     return GaussianModel("gaussian", dist)
 end
 
-StructTypes.StructType(::Type{GaussianModel}) = StructTypes.Struct()
+StructTypes.StructType(::Type{GaussianModel}) = StructTypes.DictType()
 
-function simulate_winner(rng::AbstractRNG, model::GaussianModel, game::Game)
-    t1 = team(game, 1)
-    t2 = team(game, 2)
+function simulate_winner(rng::AbstractRNG, model::GaussianModel, teams::AbstractVector{Union{Nothing,Team}})
+    length(teams) != 2 && throw(ErrorException("GaussianModel can only predict outcomes for two teams"))
+    t1 = teams[1]
+    t2 = teams[2]
     (isnothing(t1) || isnothing(t2)) && return nothing
     δ = rating(t1) - rating(t2)
     if rand(rng, model.dist) < δ

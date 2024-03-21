@@ -5,10 +5,14 @@ using JSON3
 
 function parse_arguments(args=ARGS)
     s = ArgParseSettings()
+    leagues = ("ncaam", "ncaaw")
     @add_arg_table! s begin
         "--url"
             help = "Kenpom URL"
             default = "https://kenpom.com"
+        "--league", "-l"
+            help = "League type (must be one of $(join(leagues, ", ", " or ")))"
+            range_tester = in(leagues)
         "--outfile", "-o"
             help = "Path to output ratings file (YAML format)"
     end
@@ -22,8 +26,8 @@ function main(args=ARGS)
     kenpom_html = BBSim.get_kenpom(options["url"])
     pairs = BBSim.parse_kenpom_html(kenpom_html)
     teams = BBSim.Team[]
-    for pair in pairs
-        push!(teams, BBSim.Team(pair[1], pair[2], nothing, nothing))
+    for (i, pair) in pairs
+        push!(teams, BBSim.Team(i, pair[1], options["league"], pair[2], nothing, nothing))
     end
     
     if !isnothing(options["outfile"])

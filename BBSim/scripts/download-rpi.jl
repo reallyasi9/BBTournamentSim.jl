@@ -13,7 +13,6 @@ function parse_arguments(args=ARGS)
         "--league", "-l"
             help = "League type (must be one of $(join(leagues, ", ", " or ")))"
             range_tester = in(leagues)
-            default = "ncaaw"
         "--outfile", "-o"
             help = "Path to output ratings file (YAML format)"
     end
@@ -28,7 +27,7 @@ function main(args=ARGS)
     pairs = BBSim.parse_rpi_html(rpi_html)
     teams = BBSim.Team[]
     for (i,pair) in enumerate(pairs)
-        push!(teams, BBSim.Team(i, options["league"], pair[1], pair[2], nothing, nothing))
+        push!(teams, BBSim.Team(i, pair[1], options["league"], pair[2], nothing, nothing))
     end
     
     if !isnothing(options["outfile"])

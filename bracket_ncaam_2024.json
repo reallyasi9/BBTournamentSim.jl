@@ -51,7 +51,7 @@
         "quadrant": "SW",
         "game": 9,
         "value": 1,
-        "teams": [4,242]
+        "teams": [4,262]
     },
     {
         "quadrant": "SW",
@@ -135,7 +135,7 @@
         "quadrant": "NE",
         "game": 23,
         "value": 1,
-        "teams": [41,35]
+        "teams": [41,47]
     },
     {
         "quadrant": "NE",
@@ -147,7 +147,7 @@
         "quadrant": "SE",
         "game": 25,
         "value": 1,
-        "teams": [1,228]
+        "teams": [1,179]
     },
     {
         "quadrant": "SE",
@@ -183,7 +183,7 @@
         "quadrant": "SE",
         "game": 31,
         "value": 1,
-        "teams": [61,49]
+        "teams": [61,32]
     },
     {
         "quadrant": "SE",

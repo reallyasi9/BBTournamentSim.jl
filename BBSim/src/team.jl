@@ -8,6 +8,12 @@
 end
 
 Team(i::Integer) = Team(;id=i)
+function Team(id::AbstractString)
+    quad = getproperty(BBSim, Symbol(id[1:2]))
+    seed = parse(Int8, id[3:end])
+    idnum = (quad - 1) * 4 + seed
+    return Team(;id=idnum, seed=seed, quadrant=quad)
+end
 
 StructTypes.StructType(::Type{Team}) = StructTypes.Struct()
 

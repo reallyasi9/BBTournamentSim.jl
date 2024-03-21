@@ -20,14 +20,15 @@ function make_game(g, team_dict)
     quadrant = getproperty(BBSim, Symbol(get(g, "quadrant", "None")))
     game = g["game"]
     teams = (get(team_dict, g["teams"][1], nothing), get(team_dict, g["teams"][2], nothing))
-    winner = get(g, "winner", nothing)
+    winner_id = get(g, "winner", nothing)
+    winner_team = get(team_dict, winner_id, nothing)
     value = get(g, "value", 0)
 
     return BBSim.Game(
         quadrant,
         game,
         teams,
-        winner,
+        winner_team,
         value,
     )
 end
@@ -43,7 +44,7 @@ function main(args=ARGS)
         JSON3.read(io, Vector{BBSim.Team})
     end
 
-    team_dict = Dict(BBSim.id(team) => team for team in teams)
+    team_dict = Dict(string(BBSim.quadrant(team)) * string(BBSim.seed(team)) => team for team in filter(t -> !isnothing(BBSim.seed(t)), teams))
     games = make_game.(bracket, Ref(team_dict))
 
     tournament = BBSim.Tournament(games)
