@@ -5,7 +5,7 @@ using Gumbo
 using HTTP
 using Random
 using StructTypes
-using YAML
+using Distributions
 
 include("quadrant.jl")
 include("team.jl")
@@ -17,6 +17,8 @@ include("realtimerpi.jl")
 include("tournament.jl")
 include("picks.jl")
 include("score.jl")
+include("model.jl")
+include("simulate.jl")
 
 # export PickEmSlateOptions, FiveThirtyEightPredictionOptions
 
