@@ -1,14 +1,7 @@
-@enum Quadrant begin
-    NW = 1
-    SW
-    NE
-    SE
-end
-
-struct Pick{T}
+struct Pick
     round::Int
     game::Int
-    team::AbstractTeam{T}
+    team::Team
 end
 
 round(p::Pick) = p.round
@@ -16,9 +9,9 @@ game(p::Pick) = p.game
 team(p::Pick) = p.team
 
 
-struct Picks{T,P}
-    picks::Vector{Pick{T}}
-    tiebreaker::P
+struct Picks
+    picks::Vector{Pick}
+    tiebreaker::Int
 end
 
 Base.size(p::Picks) = size(p.picks)

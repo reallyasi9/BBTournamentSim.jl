@@ -7,16 +7,17 @@ using Random
 using StructTypes
 using YAML
 
-include("bracket.jl")
+include("quadrant.jl")
 include("team.jl")
 include("game.jl")
 include("kenpom.jl")
 include("realtimerpi.jl")
-include("pickem.jl")
-include("fivethirtyeight.jl")
+# include("pickem.jl")
+# include("fivethirtyeight.jl")
 include("tournament.jl")
+include("picks.jl")
 include("score.jl")
 
-export PickEmSlateOptions, FiveThirtyEightPredictionOptions
+# export PickEmSlateOptions, FiveThirtyEightPredictionOptions
 
 end # module BBSim

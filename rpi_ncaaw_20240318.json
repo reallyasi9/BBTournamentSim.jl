@@ -5,7 +5,7 @@
         "league": "South Carolina Gamecocks",
         "rating": 89.82,
         "seed": 1,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "league": "Iowa Hawkeyes",
         "rating": 85.81,
         "seed": 1,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 3,
@@ -29,7 +29,7 @@
         "league": "Stanford Cardinal",
         "rating": 84.39,
         "seed": 2,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "league": "Connecticut Huskies",
         "rating": 83.92,
         "seed": 3,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "league": "USC Trojans",
         "rating": 83.17,
         "seed": 1,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "league": "UCLA Bruins",
         "rating": 82.09,
         "seed": 2,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "league": "Gonzaga Bulldogs",
         "rating": 82,
         "seed": 4,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "league": "N.C. State Wolfpack",
         "rating": 81.61,
         "seed": 3,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 10,
@@ -77,7 +77,7 @@
         "league": "Ohio St. Buckeyes",
         "rating": 81.17,
         "seed": 2,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 11,
@@ -85,7 +85,7 @@
         "league": "UNLV Rebels",
         "rating": 80.93,
         "seed": 10,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 12,
@@ -93,7 +93,7 @@
         "league": "Creighton Bluejays",
         "rating": 80.85,
         "seed": 7,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 13,
@@ -101,7 +101,7 @@
         "league": "LSU Tigers",
         "rating": 80.56,
         "seed": 3,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 14,
@@ -109,7 +109,7 @@
         "league": "Indiana Hoosiers",
         "rating": 80.45,
         "seed": 4,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 15,
@@ -117,7 +117,7 @@
         "league": "Princeton Tigers",
         "rating": 79.82,
         "seed": 9,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 16,
@@ -125,7 +125,7 @@
         "league": "Oregon St. Beavers",
         "rating": 79.71,
         "seed": 3,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 17,
@@ -133,7 +133,7 @@
         "league": "Notre Dame Fighting Irish",
         "rating": 79.6,
         "seed": 2,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 18,
@@ -141,7 +141,7 @@
         "league": "Kansas St. Wildcats",
         "rating": 79.52,
         "seed": 4,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 19,
@@ -149,7 +149,7 @@
         "league": "Richmond Spiders",
         "rating": 79.4,
         "seed": 10,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 20,
@@ -157,7 +157,7 @@
         "league": "Fairfield Stags",
         "rating": 79.3,
         "seed": 13,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 21,
@@ -165,7 +165,7 @@
         "league": "Virginia Tech Hokies",
         "rating": 77.65,
         "seed": 4,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 22,
@@ -173,7 +173,7 @@
         "league": "Drake Bulldogs",
         "rating": 77.33,
         "seed": 12,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 23,
@@ -181,7 +181,7 @@
         "league": "Oklahoma Sooners",
         "rating": 77.07,
         "seed": 5,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 24,
@@ -197,7 +197,7 @@
         "league": "Baylor Bears",
         "rating": 76.91,
         "seed": 5,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 26,
@@ -205,7 +205,7 @@
         "league": "Colorado Buffaloes",
         "rating": 76.74,
         "seed": 5,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 27,
@@ -221,7 +221,7 @@
         "league": "Chattanooga Mocs",
         "rating": 76.3,
         "seed": 14,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 29,
@@ -237,7 +237,7 @@
         "league": "Fla Gulf Coast Eagles",
         "rating": 76.11,
         "seed": 12,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 31,
@@ -245,7 +245,7 @@
         "league": "West Virginia Mountaineers",
         "rating": 76.07,
         "seed": 8,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 32,
@@ -261,7 +261,7 @@
         "league": "Middle Tenn. St. Blue Raiders",
         "rating": 76.01,
         "seed": 11,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 34,
@@ -269,7 +269,7 @@
         "league": "Louisville Cardinals",
         "rating": 75.71,
         "seed": 6,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 35,
@@ -277,7 +277,7 @@
         "league": "S. Dakota St. Jackrabbits",
         "rating": 75.46,
         "seed": 12,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 36,
@@ -285,7 +285,7 @@
         "league": "Mississippi Rebels",
         "rating": 75.21,
         "seed": 7,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 37,
@@ -293,7 +293,7 @@
         "league": "Duke Blue Devils",
         "rating": 75.17,
         "seed": 7,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 38,
@@ -301,7 +301,7 @@
         "league": "Marshall Thundering Herd",
         "rating": 75.1,
         "seed": 13,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 39,
@@ -325,7 +325,7 @@
         "league": "Syracuse Orange",
         "rating": 74.86,
         "seed": 6,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 42,
@@ -333,7 +333,7 @@
         "league": "Tennessee Volunteers",
         "rating": 74.82,
         "seed": 6,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 43,
@@ -341,7 +341,7 @@
         "league": "Alabama Crimson Tide",
         "rating": 74.71,
         "seed": 8,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 44,
@@ -357,7 +357,7 @@
         "league": "Cal Baptist Lancers",
         "rating": 74.66,
         "seed": 15,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 46,
@@ -365,7 +365,7 @@
         "league": "Iowa St. Cyclones",
         "rating": 74.62,
         "seed": 7,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 47,
@@ -373,7 +373,7 @@
         "league": "Green Bay Phoenix",
         "rating": 74.24,
         "seed": 11,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 48,
@@ -381,7 +381,7 @@
         "league": "Michigan St. Spartans",
         "rating": 73.68,
         "seed": 9,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 49,
@@ -389,7 +389,7 @@
         "league": "Utah Utes",
         "rating": 73.64,
         "seed": 5,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 50,
@@ -397,7 +397,7 @@
         "league": "Vanderbilt Commodores",
         "rating": 73.49,
         "seed": 12,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 51,
@@ -405,7 +405,7 @@
         "league": "Marquette Golden Eagles",
         "rating": 73.42,
         "seed": 10,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 52,
@@ -413,7 +413,7 @@
         "league": "Eastern Wash. Eagles",
         "rating": 73.28,
         "seed": 14,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 53,
@@ -437,7 +437,7 @@
         "league": "Nebraska Cornhuskers",
         "rating": 72.49,
         "seed": 6,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 56,
@@ -445,7 +445,7 @@
         "league": "Florida St. Seminoles",
         "rating": 72.34,
         "seed": 9,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 57,
@@ -453,7 +453,7 @@
         "league": "Maryland Terrapins",
         "rating": 72.16,
         "seed": 10,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 58,
@@ -469,7 +469,7 @@
         "league": "Kansas Jayhawks",
         "rating": 71.81,
         "seed": 8,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 60,
@@ -477,7 +477,7 @@
         "league": "N. Carolina Tar Heels",
         "rating": 71.51,
         "seed": 8,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 61,
@@ -485,7 +485,7 @@
         "league": "Auburn Tigers",
         "rating": 71.35,
         "seed": 11,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 62,
@@ -549,7 +549,7 @@
         "league": "Jackson St. Tigers",
         "rating": 70.32,
         "seed": 14,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 70,
@@ -557,7 +557,7 @@
         "league": "Texas A&M Aggies",
         "rating": 69.81,
         "seed": 11,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 71,
@@ -565,7 +565,7 @@
         "league": "Michigan Wolverines",
         "rating": 69.68,
         "seed": 9,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 72,
@@ -573,7 +573,7 @@
         "league": "Maine Black Bears",
         "rating": 69.44,
         "seed": 15,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 73,
@@ -629,7 +629,7 @@
         "league": "Kent St. Golden Flashes",
         "rating": 68.92,
         "seed": 15,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 80,
@@ -637,7 +637,7 @@
         "league": "Norfolk St. Spartans",
         "rating": 68.85,
         "seed": 15,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 81,
@@ -733,7 +733,7 @@
         "league": "UC Irvine Anteaters",
         "rating": 67.79,
         "seed": 13,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 93,
@@ -781,7 +781,7 @@
         "league": "Portland Pilots",
         "rating": 66.54,
         "seed": 13,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 99,
@@ -813,7 +813,7 @@
         "league": "TAMU Corpus Christi Islanders",
         "rating": 66.16,
         "seed": 16,
-        "quadrant": 4
+        "quadrant": "SE"
     },
     {
         "id": 103,
@@ -917,7 +917,7 @@
         "league": "Rice Owls",
         "rating": 65.26,
         "seed": 14,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 116,
@@ -949,7 +949,7 @@
         "league": "Texas Tech Red Raiders",
         "rating": 64.94,
         "seed": 1,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 120,
@@ -965,7 +965,7 @@
         "league": "Drexel Dragons",
         "rating": 64.89,
         "seed": 16,
-        "quadrant": 2
+        "quadrant": "SW"
     },
     {
         "id": 122,
@@ -1037,7 +1037,7 @@
         "league": "Sacred Heart Pioneers",
         "rating": 63.81,
         "seed": 16,
-        "quadrant": 1
+        "quadrant": "NW"
     },
     {
         "id": 131,
@@ -1109,7 +1109,7 @@
         "league": "Holy Cross Crusaders",
         "rating": 63.11,
         "seed": 16,
-        "quadrant": 3
+        "quadrant": "NE"
     },
     {
         "id": 140,

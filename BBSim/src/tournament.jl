@@ -1,102 +1,83 @@
-struct Tournament{T,P}
-    # always in tournament order such that games[i+1] occurs in the same round as, or one round later than, games[i]
-    games::Vector{AbstractGame{T,P}}
-    active::Vector{AbstractTeam{T}}
-end
-
-winner(t::Tournament, game::Int) = return winner(t.games[game])
-value(t::Tournament, game::Int) = return value(t.games[game])
-is_eliminated(t::Tournament, team) = return !(team ∈ t.active)
-games(t::Tournament) = return t.games
-Base.size(t::Tournament) = size(t.games)
-
-function make_tournament(team_list, probability_table)
-    games = Vector{Game}(undef, 63)
-    game_numbers = [
-        1 => 1:32,
-        2 => 33:48,
-        3 => 49:56,
-        4 => 57:60,
-        5 => 61:62,
-        6 => 63:63,
-    ]
-    # first 32 are special
-    for gn in 1:32
-        t2 = gn*2
-        t1 = t2 - 1
-        team1 = team_list[t1]
-        team2 = team_list[t2]
-        p1 = probability_table[team1][1]
-        p2 = probability_table[team2][1]
-        probs = Dict(team1=>p1, team2=>p2)
-        games[gn] = Game(gn, probs, Ref{Game}())
-        gn += 1
+struct Tournament
+    # who has won each game
+    winners::Vector{Union{Nothing,Team}}
+    # who is playing in each game
+    teams::Array{Union{Nothing,Team},2}
+    # how much is each game worth
+    values::Vector{Int}
+    
+    function Tournament()
+        winners = Vector{Union{Nothing,Team}}(nothing, 63)
+        teams = Array{Union{Nothing,Team},2}(nothing, 2, 63)
+        values = zeros(Int, 63)
+        return new(winners, teams, values)
     end
 
-    # round of 32 on
-    for (round_number, gamelist) in game_numbers[2:end]
-        start_of_this_round = first(gamelist)
-        start_of_last_round = first(last(game_numbers[round_number-1]))
-        for gn in gamelist
-            offset = gn - start_of_this_round
-            play_in_games = [start_of_last_round + offset*2, start_of_last_round + offset*2 + 1]
-            probs = Dict{String,Float64}()
-            for g in play_in_games
-                for p in games[g].probabilities
-                    team = first(p)
-                    push!(probs, team => probability_table[team][round_number])
-                end
+    function Tournament(games::AbstractVector{Game})
+        winners = Vector{Union{Nothing,Team}}(nothing, 63)
+        ts = Array{Union{Nothing,Team},2}(nothing, 2, 63)
+        values = vcat(
+            repeat([1], 32),
+            repeat([2], 16),
+            repeat([4], 8),
+            repeat([8], 4),
+            repeat([16], 2),
+            repeat([32], 1),
+        )
+        for game in games
+            winners[game_number(game)] = winner(game)
+            ts[:, game_number(game)] .= teams(game)
+            values[game_number(game)] = value(game)
+        end
+        return new(winners, ts, values)
+    end
+end
+
+function next_slot(t::Tournament, this_game::Integer)
+    @boundscheck checkbounds(Bool, t.winners, this_game)
+    this_game == 63 && return nothing
+    slot = mod1(this_game, 2)
+    this_game -= 1 # easier in 0-indexed numbers
+    this_game < 32 && return (slot, 32 + this_game ÷ 2 + 1)
+    this_game -= 32
+    this_game < 16 && return (slot, 48 + this_game ÷ 2 + 1)
+    this_game -= 16
+    this_game < 8 && return (slot, 56 + this_game ÷ 2 + 1)
+    this_game -= 8
+    this_game < 4 && return (slot, 60 + this_game ÷ 2 + 1)
+    return 63
+end
+
+function propagate_winner!(t::Tournament, game::Integer, team::Team)
+    g = next_slot(t, game)
+    isnothing(g) && return t
+    t.teams[g] = team
+    return t
+end
+
+function is_filled(t::Tournament, game::Integer)
+    return !any(is_null, teams(t, game))
+end
+
+function is_done(t::Tournament, game::Integer)
+    return is_filled(t, game) && !is_null(winner(t, game))
+end
+
+Base.size(t::Tournament) = size(t.winners)
+
+function is_eliminated(t::Tournament, team::Team)
+    for game in 1:length(t)
+        if is_done(t, game) 
+            if team in teams(t, game) && team != winner(t, game)
+                return true
             end
-            game = Game(gn, probs, Ref{Game}())
-            for g in play_in_games
-                games[g].next_game[] = game
-            end
-            games[gn] = game
-            gn += 1
+        elseif team in teams(t, game)
+            return false
         end
     end
-
-    return games
+    return false
 end
 
-"""
-    get_play_in_games(tournament) -> Vector{Bool}
-
-Discover the games that are next to play in a tournament.
-"""
-function get_play_in_games(tournament::Vector{Game})
-    play_in_games = falses(length(tournament))
-    for i in eachindex(tournament)
-        game = tournament[i]
-        play_in_games[i] = count(values(game.probabilities) .> 0) == 2
-    end
-    return play_in_games
-end
-
-function simulate_wins(tournament::Vector{Game})
-    competitors = Dict{Int, Set{String}}()
-    for i in 1:32
-        competitors[i] = Set(keys(tournament[i].probabilities))
-    end
-    # To avoid altering the tournament, copy out the winners of each game
-    winners = Vector{String}(undef, 63)
-    for (i,game) in enumerate(tournament)
-        # pick a winner (there should be only two)
-        t1, t2 = competitors[i]
-        p1 = game.probabilities[t1]
-        p2 = game.probabilities[t2]
-        p1 = p1/(p1+p2)
-        p = rand(Float64)
-        if p < p1
-            winner = t1
-        else
-            winner = t2
-        end
-        winners[i] = winner
-        if isassigned(game.next_game)
-            s = get!(competitors, game.next_game[].number, Set{String}())
-            push!(s, winner)
-        end
-    end
-    return winners
-end
+winner(t::Tournament, game::Integer) = return t.winners[game]
+teams(t::Tournament, game::Integer) = return @view(t.teams[:, game])
+team(t::Tournament, game::Integer, slot::Integer) = return t.teams[slot, game]
