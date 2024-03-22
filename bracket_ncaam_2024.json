@@ -1,194 +1,378 @@
 [
     {
-        "quadrant": "NW",
         "game": 1,
-        "value": 1,
-        "teams": [3,133]
+        "teams": [
+            "NW1",
+            "NW16"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 2,
-        "value": 1,
-        "teams": [19,62]
+        "teams": [
+            "NW8",
+            "NW9"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 3,
-        "value": 1,
-        "teams": [17,53]
+        "teams": [
+            "NW5",
+            "NW12"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 4,
-        "value": 1,
-        "teams": [5,50]
+        "teams": [
+            "NW4",
+            "NW13"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 5,
-        "value": 1,
-        "teams": [45,38]
+        "teams": [
+            "NW6",
+            "NW11"
+        ],
+        "winner": "NW11",
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 6,
-        "value": 1,
-        "teams": [11,80]
+        "teams": [
+            "NW3",
+            "NW14"
+        ],
+        "winner": "NW3",
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 7,
-        "value": 1,
-        "teams": [34,7]
-    },
-    {
+        "teams": [
+            "NW7",
+            "NW10"
+        ],
+        "winner": "NW7",
         "quadrant": "NW",
+        "value": 1
+    },
+    {
         "game": 8,
-        "value": 1,
-        "teams": [9,130]
+        "teams": [
+            "NW2",
+            "NW15"
+        ],
+        "winner": "NW2",
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 9,
-        "value": 1,
-        "teams": [4,262]
+        "teams": [
+            "SW1",
+            "SW16"
+        ],
+        "winner": "SW1",
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 10,
-        "value": 1,
-        "teams": [54,66]
+        "teams": [
+            "SW8",
+            "SW9"
+        ],
+        "winner": "SW9",
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 11,
-        "value": 1,
-        "teams": [18,13]
+        "teams": [
+            "SW5",
+            "SW12"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 12,
-        "value": 1,
-        "teams": [20,39]
+        "teams": [
+            "SW4",
+            "SW13"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 13,
-        "value": 1,
-        "teams": [46,26]
+        "teams": [
+            "SW6",
+            "SW11"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 14,
-        "value": 1,
-        "teams": [25,87]
+        "teams": [
+            "SW3",
+            "SW14"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 15,
-        "value": 1,
-        "teams": [8,14]
-    },
-    {
+        "teams": [
+            "SW7",
+            "SW10"
+        ],
+        "winner": "SW7",
         "quadrant": "SW",
+        "value": 1
+    },
+    {
         "game": 16,
-        "value": 1,
-        "teams": [12,154]
+        "teams": [
+            "SW2",
+            "SW15"
+        ],
+        "winner": "SW2",
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 17,
-        "value": 1,
-        "teams": [2,151]
+        "teams": [
+            "NE1",
+            "NE16"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 18,
-        "value": 1,
-        "teams": [44,77]
+        "teams": [
+            "NE8",
+            "NE9"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 19,
-        "value": 1,
-        "teams": [43,28]
+        "teams": [
+            "NE5",
+            "NE12"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 20,
-        "value": 1,
-        "teams": [29,30]
+        "teams": [
+            "NE4",
+            "NE13"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 21,
-        "value": 1,
-        "teams": [40,72]
+        "teams": [
+            "NE6",
+            "NE11"
+        ],
+        "winner": "NE11",
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 22,
-        "value": 1,
-        "teams": [37,82]
+        "teams": [
+            "NE3",
+            "NE14"
+        ],
+        "winner": "NE14",
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 23,
-        "value": 1,
-        "teams": [41,47]
-    },
-    {
+        "teams": [
+            "NE7",
+            "NE10"
+        ],
         "quadrant": "NE",
+        "value": 1
+    },
+    {
         "game": 24,
-        "value": 1,
-        "teams": [16,127]
+        "teams": [
+            "NE2",
+            "NE15"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 25,
-        "value": 1,
-        "teams": [1,179]
+        "teams": [
+            "SE1",
+            "SE16"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 26,
-        "value": 1,
-        "teams": [10,68]
+        "teams": [
+            "SE8",
+            "SE9"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 27,
-        "value": 1,
-        "teams": [27,24]
+        "teams": [
+            "SE5",
+            "SE12"
+        ],
+        "winner": "SE5",
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 28,
-        "value": 1,
-        "teams": [31,23]
+        "teams": [
+            "SE4",
+            "SE13"
+        ],
+        "winner": "SE4",
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 29,
-        "value": 1,
-        "teams": [22,52]
+        "teams": [
+            "SE6",
+            "SE11"
+        ],
+        "winner": "SE11",
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 30,
-        "value": 1,
-        "teams": [33,69]
+        "teams": [
+            "SE3",
+            "SE14"
+        ],
+        "winner": "SE3",
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 31,
-        "value": 1,
-        "teams": [61,32]
+        "teams": [
+            "SE7",
+            "SE10"
+        ],
+        "winner": "SE7",
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 32,
-        "value": 1,
-        "teams": [6,146]
+        "teams": [
+            "SE2",
+            "SE15"
+        ],
+        "winner": "SE2",
+        "quadrant": "SE",
+        "value": 1
+    },
+    {
+        "game": 35,
+        "teams": [
+            "NW11",
+            "NW3"
+        ],
+        "quadrant": "NW",
+        "value": 2
+    },
+    {
+        "game": 36,
+        "teams": [
+            "NW7",
+            "NW2"
+        ],
+        "quadrant": "NW",
+        "value": 2
+    },
+    {
+        "game": 37,
+        "teams": [
+            "SW1",
+            "SW9"
+        ],
+        "quadrant": "SW",
+        "value": 2
+    },
+    {
+        "game": 40,
+        "teams": [
+            "SW7",
+            "SW2"
+        ],
+        "quadrant": "SW",
+        "value": 2
+    },
+    {
+        "game": 43,
+        "teams": [
+            "NE11",
+            "NE14"
+        ],
+        "quadrant": "NE",
+        "value": 2
+    },
+    {
+        "game": 46,
+        "teams": [
+            "SE5",
+            "SE4"
+        ],
+        "quadrant": "SE",
+        "value": 2
+    },
+    {
+        "game": 47,
+        "teams": [
+            "SE11",
+            "SE3"
+        ],
+        "quadrant": "SE",
+        "value": 2
+    },
+    {
+        "game": 48,
+        "teams": [
+            "SE7",
+            "SE2"
+        ],
+        "quadrant": "SE",
+        "value": 2
     }
 ]

@@ -1,194 +1,290 @@
 [
     {
-        "quadrant": "NW",
         "game": 1,
-        "value": 1,
-        "teams": [1,130]
+        "teams": [
+            "NW1",
+            "NW16"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 2,
-        "value": 1,
-        "teams": [60,48]
+        "teams": [
+            "NW8",
+            "NW9"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 3,
-        "value": 1,
-        "teams": [23,30]
+        "teams": [
+            "NW5",
+            "NW12"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 4,
-        "value": 1,
-        "teams": [14,20]
+        "teams": [
+            "NW4",
+            "NW13"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 5,
-        "value": 1,
-        "teams": [55,70]
+        "teams": [
+            "NW6",
+            "NW11"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 6,
-        "value": 1,
-        "teams": [16,52]
+        "teams": [
+            "NW3",
+            "NW14"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "NW",
         "game": 7,
-        "value": 1,
-        "teams": [36,51]
-    },
-    {
+        "teams": [
+            "NW7",
+            "NW10"
+        ],
         "quadrant": "NW",
+        "value": 1
+    },
+    {
         "game": 8,
-        "value": 1,
-        "teams": [17,79]
+        "teams": [
+            "NW2",
+            "NW15"
+        ],
+        "quadrant": "NW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 9,
-        "value": 1,
-        "teams": [3,121]
+        "teams": [
+            "SW1",
+            "SW16"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 10,
-        "value": 1,
-        "teams": [43,56]
+        "teams": [
+            "SW8",
+            "SW9"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 11,
-        "value": 1,
-        "teams": [49,35]
+        "teams": [
+            "SW5",
+            "SW12"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 12,
-        "value": 1,
-        "teams": [8,92]
+        "teams": [
+            "SW4",
+            "SW13"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 13,
-        "value": 1,
-        "teams": [42,47]
+        "teams": [
+            "SW6",
+            "SW11"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 14,
-        "value": 1,
-        "teams": [9,28]
+        "teams": [
+            "SW3",
+            "SW14"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "SW",
         "game": 15,
-        "value": 1,
-        "teams": [46,57]
-    },
-    {
+        "teams": [
+            "SW7",
+            "SW10"
+        ],
         "quadrant": "SW",
+        "value": 1
+    },
+    {
         "game": 16,
-        "value": 1,
-        "teams": [4,80]
+        "teams": [
+            "SW2",
+            "SW15"
+        ],
+        "quadrant": "SW",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 17,
-        "value": 1,
-        "teams": [2,139]
+        "teams": [
+            "NE1",
+            "NE16"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 18,
-        "value": 1,
-        "teams": [31,15]
+        "teams": [
+            "NE8",
+            "NE9"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 19,
-        "value": 1,
-        "teams": [26,22]
+        "teams": [
+            "NE5",
+            "NE12"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 20,
-        "value": 1,
-        "teams": [18,98]
+        "teams": [
+            "NE4",
+            "NE13"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 21,
-        "value": 1,
-        "teams": [34,33]
+        "teams": [
+            "NE6",
+            "NE11"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 22,
-        "value": 1,
-        "teams": [13,115]
+        "teams": [
+            "NE3",
+            "NE14"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "NE",
         "game": 23,
-        "value": 1,
-        "teams": [12,11]
-    },
-    {
+        "teams": [
+            "NE7",
+            "NE10"
+        ],
         "quadrant": "NE",
+        "value": 1
+    },
+    {
         "game": 24,
-        "value": 1,
-        "teams": [7,45]
+        "teams": [
+            "NE2",
+            "NE15"
+        ],
+        "quadrant": "NE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 25,
-        "value": 1,
-        "teams": [6,102]
+        "teams": [
+            "SE1",
+            "SE16"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 26,
-        "value": 1,
-        "teams": [59,71]
+        "teams": [
+            "SE8",
+            "SE9"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 27,
-        "value": 1,
-        "teams": [25,50]
+        "teams": [
+            "SE5",
+            "SE12"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 28,
-        "value": 1,
-        "teams": [21,38]
+        "teams": [
+            "SE4",
+            "SE13"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 29,
-        "value": 1,
-        "teams": [41,61]
+        "teams": [
+            "SE6",
+            "SE11"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 30,
-        "value": 1,
-        "teams": [5,69]
+        "teams": [
+            "SE3",
+            "SE14"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 31,
-        "value": 1,
-        "teams": [37,19]
+        "teams": [
+            "SE7",
+            "SE10"
+        ],
+        "quadrant": "SE",
+        "value": 1
     },
     {
-        "quadrant": "SE",
         "game": 32,
-        "value": 1,
-        "teams": [10,72]
+        "teams": [
+            "SE2",
+            "SE15"
+        ],
+        "quadrant": "SE",
+        "value": 1
     }
 ]

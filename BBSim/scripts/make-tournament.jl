@@ -7,8 +7,10 @@ function parse_arguments(args=ARGS)
     @add_arg_table! s begin
         "bracket"
             help = "Bracket definition JSON file"
+            required = true
         "teams"
             help = "Team ranking JSON file"
+            required = true
         "--outfile", "-o"
             help = "Path to output tournament definition (JSON format)"
     end

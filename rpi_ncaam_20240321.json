@@ -1,0 +1,2906 @@
+[
+    {
+        "id": 1,
+        "name": "Purdue Boilermakers",
+        "league": "ncaam",
+        "rating": 89.89,
+        "seed": 1,
+        "quadrant": "SE"
+    },
+    {
+        "id": 2,
+        "name": "Houston Cougars",
+        "league": "ncaam",
+        "rating": 89.3,
+        "seed": 1,
+        "quadrant": "NE"
+    },
+    {
+        "id": 3,
+        "name": "Connecticut Huskies",
+        "league": "ncaam",
+        "rating": 86.22,
+        "seed": 1,
+        "quadrant": "NW"
+    },
+    {
+        "id": 4,
+        "name": "N. Carolina Tar Heels",
+        "league": "ncaam",
+        "rating": 83.96,
+        "seed": 1,
+        "quadrant": "SW"
+    },
+    {
+        "id": 5,
+        "name": "Auburn Tigers",
+        "league": "ncaam",
+        "rating": 83.48,
+        "seed": 4,
+        "quadrant": "NW"
+    },
+    {
+        "id": 6,
+        "name": "Tennessee Volunteers",
+        "league": "ncaam",
+        "rating": 83.41,
+        "seed": 2,
+        "quadrant": "SE"
+    },
+    {
+        "id": 7,
+        "name": "Drake Bulldogs",
+        "league": "ncaam",
+        "rating": 83.42,
+        "seed": 10,
+        "quadrant": "NW"
+    },
+    {
+        "id": 8,
+        "name": "Dayton Flyers",
+        "league": "ncaam",
+        "rating": 82.95,
+        "seed": 7,
+        "quadrant": "SW"
+    },
+    {
+        "id": 9,
+        "name": "Iowa St. Cyclones",
+        "league": "ncaam",
+        "rating": 83.02,
+        "seed": 2,
+        "quadrant": "NW"
+    },
+    {
+        "id": 10,
+        "name": "Utah St. Aggies",
+        "league": "ncaam",
+        "rating": 82.44,
+        "seed": 8,
+        "quadrant": "SE"
+    },
+    {
+        "id": 11,
+        "name": "Illinois Fighting Illini",
+        "league": "ncaam",
+        "rating": 82.35,
+        "seed": 3,
+        "quadrant": "NW"
+    },
+    {
+        "id": 12,
+        "name": "Arizona Wildcats",
+        "league": "ncaam",
+        "rating": 82.12,
+        "seed": 2,
+        "quadrant": "SW"
+    },
+    {
+        "id": 13,
+        "name": "Grand Canyon Antelopes",
+        "league": "ncaam",
+        "rating": 81.84,
+        "seed": 12,
+        "quadrant": "SW"
+    },
+    {
+        "id": 14,
+        "name": "Nevada Wolf Pack",
+        "league": "ncaam",
+        "rating": 80.98,
+        "seed": 10,
+        "quadrant": "SW"
+    },
+    {
+        "id": 15,
+        "name": "Princeton Tigers",
+        "league": "ncaam",
+        "rating": 79.4,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 16,
+        "name": "Marquette Golden Eagles",
+        "league": "ncaam",
+        "rating": 80.43,
+        "seed": 2,
+        "quadrant": "NE"
+    },
+    {
+        "id": 17,
+        "name": "S. Diego St. Aztecs",
+        "league": "ncaam",
+        "rating": 80.43,
+        "seed": 5,
+        "quadrant": "NW"
+    },
+    {
+        "id": 18,
+        "name": "St. Mary's Gaels",
+        "league": "ncaam",
+        "rating": 80.22,
+        "seed": 5,
+        "quadrant": "SW"
+    },
+    {
+        "id": 19,
+        "name": "Florida Atlantic Owls",
+        "league": "ncaam",
+        "rating": 80.2,
+        "seed": 8,
+        "quadrant": "NW"
+    },
+    {
+        "id": 20,
+        "name": "Alabama Crimson Tide",
+        "league": "ncaam",
+        "rating": 80.1,
+        "seed": 4,
+        "quadrant": "SW"
+    },
+    {
+        "id": 21,
+        "name": "Indiana St. Sycamores",
+        "league": "ncaam",
+        "rating": 80.53,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 22,
+        "name": "South Carolina Gamecocks",
+        "league": "ncaam",
+        "rating": 80.01,
+        "seed": 6,
+        "quadrant": "SE"
+    },
+    {
+        "id": 23,
+        "name": "Samford Bulldogs",
+        "league": "ncaam",
+        "rating": 79.98,
+        "seed": 13,
+        "quadrant": "SE"
+    },
+    {
+        "id": 24,
+        "name": "McNeese St. Cowboys",
+        "league": "ncaam",
+        "rating": 79.85,
+        "seed": 12,
+        "quadrant": "SE"
+    },
+    {
+        "id": 25,
+        "name": "Baylor Bears",
+        "league": "ncaam",
+        "rating": 79.75,
+        "seed": 3,
+        "quadrant": "SW"
+    },
+    {
+        "id": 26,
+        "name": "New Mexico Lobos",
+        "league": "ncaam",
+        "rating": 79.68,
+        "seed": 11,
+        "quadrant": "SW"
+    },
+    {
+        "id": 27,
+        "name": "Gonzaga Bulldogs",
+        "league": "ncaam",
+        "rating": 79.4,
+        "seed": 5,
+        "quadrant": "SE"
+    },
+    {
+        "id": 28,
+        "name": "James Madison Dukes",
+        "league": "ncaam",
+        "rating": 79.28,
+        "seed": 12,
+        "quadrant": "NE"
+    },
+    {
+        "id": 29,
+        "name": "Duke Blue Devils",
+        "league": "ncaam",
+        "rating": 79.48,
+        "seed": 4,
+        "quadrant": "NE"
+    },
+    {
+        "id": 30,
+        "name": "Vermont Catamounts",
+        "league": "ncaam",
+        "rating": 79.41,
+        "seed": 13,
+        "quadrant": "NE"
+    },
+    {
+        "id": 31,
+        "name": "Kansas Jayhawks",
+        "league": "ncaam",
+        "rating": 79.18,
+        "seed": 4,
+        "quadrant": "SE"
+    },
+    {
+        "id": 32,
+        "name": "Colorado St. Rams",
+        "league": "ncaam",
+        "rating": 79.11,
+        "seed": 10,
+        "quadrant": "SE"
+    },
+    {
+        "id": 33,
+        "name": "Creighton Bluejays",
+        "league": "ncaam",
+        "rating": 78.44,
+        "seed": 3,
+        "quadrant": "SE"
+    },
+    {
+        "id": 34,
+        "name": "Washington St. Cougars",
+        "league": "ncaam",
+        "rating": 78.46,
+        "seed": 7,
+        "quadrant": "NW"
+    },
+    {
+        "id": 35,
+        "name": "Boise St. Broncos",
+        "league": "ncaam",
+        "rating": 77.48,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 36,
+        "name": "South Florida Bulls",
+        "league": "ncaam",
+        "rating": 78.78,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 37,
+        "name": "Kentucky Wildcats",
+        "league": "ncaam",
+        "rating": 78.29,
+        "seed": 3,
+        "quadrant": "NE"
+    },
+    {
+        "id": 38,
+        "name": "Duquesne Dukes",
+        "league": "ncaam",
+        "rating": 78.05,
+        "seed": 11,
+        "quadrant": "NW"
+    },
+    {
+        "id": 39,
+        "name": "Charleston Cougars",
+        "league": "ncaam",
+        "rating": 77.73,
+        "seed": 13,
+        "quadrant": "SW"
+    },
+    {
+        "id": 40,
+        "name": "Texas Tech Red Raiders",
+        "league": "ncaam",
+        "rating": 77.6,
+        "seed": 6,
+        "quadrant": "NE"
+    },
+    {
+        "id": 41,
+        "name": "Florida Gators",
+        "league": "ncaam",
+        "rating": 77.67,
+        "seed": 7,
+        "quadrant": "NE"
+    },
+    {
+        "id": 42,
+        "name": "Appalachian St. Mountaineers",
+        "league": "ncaam",
+        "rating": 76.27,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 43,
+        "name": "Wisconsin Badgers",
+        "league": "ncaam",
+        "rating": 77.26,
+        "seed": 5,
+        "quadrant": "NE"
+    },
+    {
+        "id": 44,
+        "name": "Nebraska Cornhuskers",
+        "league": "ncaam",
+        "rating": 77.15,
+        "seed": 8,
+        "quadrant": "NE"
+    },
+    {
+        "id": 45,
+        "name": "BYU Cougars",
+        "league": "ncaam",
+        "rating": 76.9,
+        "seed": 6,
+        "quadrant": "NW"
+    },
+    {
+        "id": 46,
+        "name": "Clemson Tigers",
+        "league": "ncaam",
+        "rating": 76.98,
+        "seed": 6,
+        "quadrant": "SW"
+    },
+    {
+        "id": 47,
+        "name": "Colorado Buffaloes",
+        "league": "ncaam",
+        "rating": 77.55,
+        "seed": 10,
+        "quadrant": "NE"
+    },
+    {
+        "id": 48,
+        "name": "Loyola Chicago Ramblers",
+        "league": "ncaam",
+        "rating": 75.81,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 49,
+        "name": "Virginia Cavaliers",
+        "league": "ncaam",
+        "rating": 75.83,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 50,
+        "name": "Yale Bulldogs",
+        "league": "ncaam",
+        "rating": 75.88,
+        "seed": 13,
+        "quadrant": "NW"
+    },
+    {
+        "id": 51,
+        "name": "Bradley Braves",
+        "league": "ncaam",
+        "rating": 76.94,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 52,
+        "name": "Oregon Ducks",
+        "league": "ncaam",
+        "rating": 76.12,
+        "seed": 11,
+        "quadrant": "SE"
+    },
+    {
+        "id": 53,
+        "name": "UAB Blazers",
+        "league": "ncaam",
+        "rating": 76,
+        "seed": 5,
+        "quadrant": "NW"
+    },
+    {
+        "id": 54,
+        "name": "Mississippi St. Bulldogs",
+        "league": "ncaam",
+        "rating": 75.89,
+        "seed": 8,
+        "quadrant": "NW"
+    },
+    {
+        "id": 55,
+        "name": "Richmond Spiders",
+        "league": "ncaam",
+        "rating": 74.74,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 56,
+        "name": "Cornell Big Red",
+        "league": "ncaam",
+        "rating": 74.28,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 57,
+        "name": "VCU Rams",
+        "league": "ncaam",
+        "rating": 75.7,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 58,
+        "name": "Memphis Tigers",
+        "league": "ncaam",
+        "rating": 75.09,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 59,
+        "name": "Syracuse Orange",
+        "league": "ncaam",
+        "rating": 75.14,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 60,
+        "name": "Pittsburgh Panthers",
+        "league": "ncaam",
+        "rating": 74.89,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 61,
+        "name": "Texas Longhorns",
+        "league": "ncaam",
+        "rating": 74.59,
+        "seed": 7,
+        "quadrant": "SE"
+    },
+    {
+        "id": 62,
+        "name": "Northwestern Wildcats",
+        "league": "ncaam",
+        "rating": 74.73,
+        "seed": 9,
+        "quadrant": "NW"
+    },
+    {
+        "id": 63,
+        "name": "UC Irvine Anteaters",
+        "league": "ncaam",
+        "rating": 73.39,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 64,
+        "name": "Mississippi Rebels",
+        "league": "ncaam",
+        "rating": 74.02,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 65,
+        "name": "Oklahoma Sooners",
+        "league": "ncaam",
+        "rating": 73.86,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 66,
+        "name": "Michigan St. Spartans",
+        "league": "ncaam",
+        "rating": 73.93,
+        "seed": 9,
+        "quadrant": "SW"
+    },
+    {
+        "id": 67,
+        "name": "Tarleton St. Texans",
+        "league": "ncaam",
+        "rating": 74.58,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 68,
+        "name": "TCU Horned Frogs",
+        "league": "ncaam",
+        "rating": 73.54,
+        "seed": 9,
+        "quadrant": "SE"
+    },
+    {
+        "id": 69,
+        "name": "Akron Zips",
+        "league": "ncaam",
+        "rating": 73.41,
+        "seed": 14,
+        "quadrant": "SE"
+    },
+    {
+        "id": 70,
+        "name": "St. John's Red Storm",
+        "league": "ncaam",
+        "rating": 73,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 71,
+        "name": "UNLV Rebels",
+        "league": "ncaam",
+        "rating": 74.17,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 72,
+        "name": "N.C. State Wolfpack",
+        "league": "ncaam",
+        "rating": 73.12,
+        "seed": 11,
+        "quadrant": "NE"
+    },
+    {
+        "id": 73,
+        "name": "High Point Panthers",
+        "league": "ncaam",
+        "rating": 73.08,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 74,
+        "name": "Indiana Hoosiers",
+        "league": "ncaam",
+        "rating": 73.16,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 75,
+        "name": "Ohio St. Buckeyes",
+        "league": "ncaam",
+        "rating": 73.95,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 76,
+        "name": "Providence Friars",
+        "league": "ncaam",
+        "rating": 71.94,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 77,
+        "name": "Texas A&M Aggies",
+        "league": "ncaam",
+        "rating": 72.88,
+        "seed": 9,
+        "quadrant": "NE"
+    },
+    {
+        "id": 78,
+        "name": "Seton Hall Pirates",
+        "league": "ncaam",
+        "rating": 73.39,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 79,
+        "name": "Cincinnati Bearcats",
+        "league": "ncaam",
+        "rating": 73.47,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 80,
+        "name": "Morehead St. Eagles",
+        "league": "ncaam",
+        "rating": 72.82,
+        "seed": 14,
+        "quadrant": "NW"
+    },
+    {
+        "id": 81,
+        "name": "UMass Minutemen",
+        "league": "ncaam",
+        "rating": 72.73,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 82,
+        "name": "Oakland Golden Grizzlies",
+        "league": "ncaam",
+        "rating": 72.65,
+        "seed": 14,
+        "quadrant": "NE"
+    },
+    {
+        "id": 83,
+        "name": "Wake Forest Demon Deacons",
+        "league": "ncaam",
+        "rating": 73.38,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 84,
+        "name": "George Mason Patriots",
+        "league": "ncaam",
+        "rating": 72.08,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 85,
+        "name": "St. Joseph's Hawks",
+        "league": "ncaam",
+        "rating": 71.35,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 86,
+        "name": "Utah Utes",
+        "league": "ncaam",
+        "rating": 73.17,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 87,
+        "name": "Colgate Raiders",
+        "league": "ncaam",
+        "rating": 72.13,
+        "seed": 14,
+        "quadrant": "SW"
+    },
+    {
+        "id": 88,
+        "name": "St. Bonaventure Bonnies",
+        "league": "ncaam",
+        "rating": 71.99,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 89,
+        "name": "San Francisco Dons",
+        "league": "ncaam",
+        "rating": 71.22,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 90,
+        "name": "Louisiana Tech Bulldogs",
+        "league": "ncaam",
+        "rating": 71.79,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 91,
+        "name": "Charlotte 49ers",
+        "league": "ncaam",
+        "rating": 71.73,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 92,
+        "name": "Kansas St. Wildcats",
+        "league": "ncaam",
+        "rating": 70.8,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 93,
+        "name": "Quinnipiac Bobcats",
+        "league": "ncaam",
+        "rating": 71.53,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 94,
+        "name": "Iowa Hawkeyes",
+        "league": "ncaam",
+        "rating": 71.95,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 95,
+        "name": "Virginia Tech Hokies",
+        "league": "ncaam",
+        "rating": 71.88,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 96,
+        "name": "Western Carolina Catamounts",
+        "league": "ncaam",
+        "rating": 70.82,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 97,
+        "name": "N.C. Wilmington Seahawks",
+        "league": "ncaam",
+        "rating": 70.69,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 98,
+        "name": "Montana Grizzlies",
+        "league": "ncaam",
+        "rating": 70.73,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 99,
+        "name": "SMU Mustangs",
+        "league": "ncaam",
+        "rating": 70.19,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 100,
+        "name": "Toledo Rockets",
+        "league": "ncaam",
+        "rating": 70.37,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 101,
+        "name": "Florida St. Seminoles",
+        "league": "ncaam",
+        "rating": 70.45,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 102,
+        "name": "Villanova Wildcats",
+        "league": "ncaam",
+        "rating": 69.27,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 103,
+        "name": "Boston Coll. Eagles",
+        "league": "ncaam",
+        "rating": 70.82,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 104,
+        "name": "UCF Knights",
+        "league": "ncaam",
+        "rating": 69.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 105,
+        "name": "Northern Iowa Panthers",
+        "league": "ncaam",
+        "rating": 70.04,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 106,
+        "name": "Belmont Bruins",
+        "league": "ncaam",
+        "rating": 69.99,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 107,
+        "name": "Mass-Lowell Hawks",
+        "league": "ncaam",
+        "rating": 69.86,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 108,
+        "name": "Hofstra Pride",
+        "league": "ncaam",
+        "rating": 69.74,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 109,
+        "name": "Santa Clara Broncos",
+        "league": "ncaam",
+        "rating": 69.45,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 110,
+        "name": "Washington Huskies",
+        "league": "ncaam",
+        "rating": 69.57,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 111,
+        "name": "Butler Bulldogs",
+        "league": "ncaam",
+        "rating": 68.29,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 112,
+        "name": "Georgia Bulldogs",
+        "league": "ncaam",
+        "rating": 69.87,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 113,
+        "name": "N.C. Asheville Bulldogs",
+        "league": "ncaam",
+        "rating": 69.23,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 114,
+        "name": "Xavier Musketeers",
+        "league": "ncaam",
+        "rating": 68.14,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 115,
+        "name": "Fairfield Stags",
+        "league": "ncaam",
+        "rating": 69.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 116,
+        "name": "UCSD Tritons",
+        "league": "ncaam",
+        "rating": 68.63,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 117,
+        "name": "N.C. Greensboro spartans",
+        "league": "ncaam",
+        "rating": 68.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 118,
+        "name": "LSU Tigers",
+        "league": "ncaam",
+        "rating": 67.88,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 119,
+        "name": "Sam Houston St. Bearkats",
+        "league": "ncaam",
+        "rating": 68.5,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 120,
+        "name": "Minnesota Golden Gophers",
+        "league": "ncaam",
+        "rating": 69.22,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 121,
+        "name": "Drexel Dragons",
+        "league": "ncaam",
+        "rating": 68.26,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 122,
+        "name": "Youngstown St. Penguins",
+        "league": "ncaam",
+        "rating": 68.35,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 123,
+        "name": "North Texas Mean Green",
+        "league": "ncaam",
+        "rating": 68.85,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 124,
+        "name": "Towson Tigers",
+        "league": "ncaam",
+        "rating": 68.17,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 125,
+        "name": "Eastern Wash. Eagles",
+        "league": "ncaam",
+        "rating": 68.14,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 126,
+        "name": "Chattanooga Mocs",
+        "league": "ncaam",
+        "rating": 68.12,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 127,
+        "name": "W. Kentucky Hilltoppers",
+        "league": "ncaam",
+        "rating": 67.96,
+        "seed": 15,
+        "quadrant": "NE"
+    },
+    {
+        "id": 128,
+        "name": "Southern Ill. Salukis",
+        "league": "ncaam",
+        "rating": 68.03,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 129,
+        "name": "Arkansas Razorbacks",
+        "league": "ncaam",
+        "rating": 67.79,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 130,
+        "name": "S. Dakota St. Jackrabbits",
+        "league": "ncaam",
+        "rating": 67.56,
+        "seed": 15,
+        "quadrant": "NW"
+    },
+    {
+        "id": 131,
+        "name": "Weber St. Wildcats",
+        "league": "ncaam",
+        "rating": 67.53,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 132,
+        "name": "Bryant Bulldogs",
+        "league": "ncaam",
+        "rating": 67.41,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 133,
+        "name": "Stetson Hatters",
+        "league": "ncaam",
+        "rating": 67.13,
+        "seed": 16,
+        "quadrant": "NW"
+    },
+    {
+        "id": 134,
+        "name": "Troy Trojans",
+        "league": "ncaam",
+        "rating": 67.12,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 135,
+        "name": "Seattle Redhawks",
+        "league": "ncaam",
+        "rating": 67.14,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 136,
+        "name": "Stony Brook Seawolves",
+        "league": "ncaam",
+        "rating": 66.9,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 137,
+        "name": "Rutgers Scarlet Knights",
+        "league": "ncaam",
+        "rating": 66.85,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 138,
+        "name": "TX Arlington Mavericks",
+        "league": "ncaam",
+        "rating": 66.75,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 139,
+        "name": "La Lafayet. Ragin' Cajuns",
+        "league": "ncaam",
+        "rating": 66.49,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 140,
+        "name": "Hawaii Warriors",
+        "league": "ncaam",
+        "rating": 66.43,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 141,
+        "name": "USC Trojans",
+        "league": "ncaam",
+        "rating": 66.46,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 142,
+        "name": "Ohio Bobcats",
+        "league": "ncaam",
+        "rating": 66.29,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 143,
+        "name": "Penn St. Nittany Lions",
+        "league": "ncaam",
+        "rating": 66.46,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 144,
+        "name": "Tenn-Martin Skyhawks",
+        "league": "ncaam",
+        "rating": 66.27,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 145,
+        "name": "Arkansas St. Red Wolves",
+        "league": "ncaam",
+        "rating": 66.17,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 146,
+        "name": "St. Peter's Peacocks",
+        "league": "ncaam",
+        "rating": 66.25,
+        "seed": 15,
+        "quadrant": "SE"
+    },
+    {
+        "id": 147,
+        "name": "Lipscomb Bisons",
+        "league": "ncaam",
+        "rating": 66.1,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 148,
+        "name": "Maryland Terrapins",
+        "league": "ncaam",
+        "rating": 66.22,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 149,
+        "name": "UC Davis Aggies",
+        "league": "ncaam",
+        "rating": 65.98,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 150,
+        "name": "Cleveland St. Vikings",
+        "league": "ncaam",
+        "rating": 66.05,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 151,
+        "name": "Longwood Lancers",
+        "league": "ncaam",
+        "rating": 65.78,
+        "seed": 16,
+        "quadrant": "NE"
+    },
+    {
+        "id": 152,
+        "name": "Missouri St. Bears",
+        "league": "ncaam",
+        "rating": 65.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 153,
+        "name": "Arizona St. Sun Devils",
+        "league": "ncaam",
+        "rating": 65.59,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 154,
+        "name": "Long Beach St. 49ers",
+        "league": "ncaam",
+        "rating": 65.3,
+        "seed": 15,
+        "quadrant": "SW"
+    },
+    {
+        "id": 155,
+        "name": "Monmouth Hawks",
+        "league": "ncaam",
+        "rating": 65.29,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 156,
+        "name": "Georgia Tech Yellow Jackets",
+        "league": "ncaam",
+        "rating": 65.44,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 157,
+        "name": "Merrimack Warriors",
+        "league": "ncaam",
+        "rating": 65.34,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 158,
+        "name": "Liberty Flames",
+        "league": "ncaam",
+        "rating": 65.2,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 159,
+        "name": "IPFW Mastodons",
+        "league": "ncaam",
+        "rating": 66.02,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 160,
+        "name": "Bowling Green Falcons",
+        "league": "ncaam",
+        "rating": 64.51,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 161,
+        "name": "Miami (FL) Hurricanes",
+        "league": "ncaam",
+        "rating": 65.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 162,
+        "name": "AR Little Rock Trojans",
+        "league": "ncaam",
+        "rating": 64.97,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 163,
+        "name": "Furman Paladins",
+        "league": "ncaam",
+        "rating": 64.85,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 164,
+        "name": "Northern Colorado Bears",
+        "league": "ncaam",
+        "rating": 64.9,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 165,
+        "name": "Delaware Fightin Blue Hens",
+        "league": "ncaam",
+        "rating": 64.76,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 166,
+        "name": "San Diego Toreros",
+        "league": "ncaam",
+        "rating": 64.53,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 167,
+        "name": "Wright St. Raiders",
+        "league": "ncaam",
+        "rating": 64.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 168,
+        "name": "E. Tennessee St. Buccaneers",
+        "league": "ncaam",
+        "rating": 64.55,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 169,
+        "name": "UCLA Bruins",
+        "league": "ncaam",
+        "rating": 64.58,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 170,
+        "name": "Milwaukee Panthers",
+        "league": "ncaam",
+        "rating": 64.46,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 171,
+        "name": "Davidson Wildcats",
+        "league": "ncaam",
+        "rating": 64.18,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 172,
+        "name": "TAMU Corpus Christi Islanders",
+        "league": "ncaam",
+        "rating": 63.33,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 173,
+        "name": "Harvard Crimson",
+        "league": "ncaam",
+        "rating": 63.77,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 174,
+        "name": "Western Ill. Leathernecks",
+        "league": "ncaam",
+        "rating": 64.03,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 175,
+        "name": "Gardner-Webb Runnin' Bulldogs",
+        "league": "ncaam",
+        "rating": 63.89,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 176,
+        "name": "New Hampshire Wildcats",
+        "league": "ncaam",
+        "rating": 63.88,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 177,
+        "name": "Wyoming Cowboys",
+        "league": "ncaam",
+        "rating": 63.84,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 178,
+        "name": "Nicholls Colonels",
+        "league": "ncaam",
+        "rating": 63.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 179,
+        "name": "Grambling St. Tigers",
+        "league": "ncaam",
+        "rating": 63.83,
+        "seed": 16,
+        "quadrant": "SE"
+    },
+    {
+        "id": 180,
+        "name": "Wofford Terriers",
+        "league": "ncaam",
+        "rating": 63.79,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 181,
+        "name": "S.F. Austin Lumberjacks",
+        "league": "ncaam",
+        "rating": 63.84,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 182,
+        "name": "Central Conn. St. Blue Devils",
+        "league": "ncaam",
+        "rating": 63.7,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 183,
+        "name": "Cent. Michigan Chippewas",
+        "league": "ncaam",
+        "rating": 63.58,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 184,
+        "name": "Marist Red Foxes",
+        "league": "ncaam",
+        "rating": 63.68,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 185,
+        "name": "Green Bay Phoenix",
+        "league": "ncaam",
+        "rating": 63.66,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 186,
+        "name": "Norfolk St. Spartans",
+        "league": "ncaam",
+        "rating": 63.45,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 187,
+        "name": "North. Kentucky Norse",
+        "league": "ncaam",
+        "rating": 63.47,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 188,
+        "name": "Austin Peay Governors",
+        "league": "ncaam",
+        "rating": 62.3,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 189,
+        "name": "Kent St. Golden Flashes",
+        "league": "ncaam",
+        "rating": 63.21,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 190,
+        "name": "Stanford Cardinal",
+        "league": "ncaam",
+        "rating": 63.31,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 191,
+        "name": "UTEP Miners",
+        "league": "ncaam",
+        "rating": 63.08,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 192,
+        "name": "Utah Valley Wolverines",
+        "league": "ncaam",
+        "rating": 63.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 193,
+        "name": "Wichita St. Shockers",
+        "league": "ncaam",
+        "rating": 62.93,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 194,
+        "name": "Texas St. Bobcats",
+        "league": "ncaam",
+        "rating": 62.86,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 195,
+        "name": "Evansville Aces",
+        "league": "ncaam",
+        "rating": 62.98,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 196,
+        "name": "UCSB Gauchos",
+        "league": "ncaam",
+        "rating": 62.61,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 197,
+        "name": "St. Thomas Tommies",
+        "league": "ncaam",
+        "rating": 62.71,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 198,
+        "name": "Tulane Green Wave",
+        "league": "ncaam",
+        "rating": 62.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 199,
+        "name": "Illinois St. Redbirds",
+        "league": "ncaam",
+        "rating": 62.65,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 200,
+        "name": "Saint Louis Billikens",
+        "league": "ncaam",
+        "rating": 62.42,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 201,
+        "name": "Tulsa Golden Hurricane",
+        "league": "ncaam",
+        "rating": 62.5,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 202,
+        "name": "La Salle Explorers",
+        "league": "ncaam",
+        "rating": 62.28,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 203,
+        "name": "California Golden Bears",
+        "league": "ncaam",
+        "rating": 62.38,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 204,
+        "name": "Geo. Wash. Colonials",
+        "league": "ncaam",
+        "rating": 62.12,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 205,
+        "name": "Notre Dame Fighting Irish",
+        "league": "ncaam",
+        "rating": 62.33,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 206,
+        "name": "E. Kentucky Colonels",
+        "league": "ncaam",
+        "rating": 62.03,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 207,
+        "name": "Mercer Bears",
+        "league": "ncaam",
+        "rating": 62.14,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 208,
+        "name": "Iona Gaels",
+        "league": "ncaam",
+        "rating": 62.05,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 209,
+        "name": "East Carolina Pirates",
+        "league": "ncaam",
+        "rating": 61.95,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 210,
+        "name": "Southern Miss Golden Eagles",
+        "league": "ncaam",
+        "rating": 61.68,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 211,
+        "name": "Oklahoma St. Cowboys",
+        "league": "ncaam",
+        "rating": 61.54,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 212,
+        "name": "Oregon St. Beavers",
+        "league": "ncaam",
+        "rating": 61.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 213,
+        "name": "Temple Owls",
+        "league": "ncaam",
+        "rating": 61.47,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 214,
+        "name": "CSU Northridge Matadors",
+        "league": "ncaam",
+        "rating": 61.39,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 215,
+        "name": "Winthrop Eagles",
+        "league": "ncaam",
+        "rating": 61.36,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 216,
+        "name": "Lamar Cardinals",
+        "league": "ncaam",
+        "rating": 61.21,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 217,
+        "name": "UC Riverside Highlanders",
+        "league": "ncaam",
+        "rating": 61.11,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 218,
+        "name": "Southern Jaguars",
+        "league": "ncaam",
+        "rating": 61.21,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 219,
+        "name": "Rhode Island Rams",
+        "league": "ncaam",
+        "rating": 60.85,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 220,
+        "name": "Abilene Christian Wildcats",
+        "league": "ncaam",
+        "rating": 61.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 221,
+        "name": "Binghamton Bearcats",
+        "league": "ncaam",
+        "rating": 60.87,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 222,
+        "name": "Portland St. Vikings",
+        "league": "ncaam",
+        "rating": 60.82,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 223,
+        "name": "Fordham Rams",
+        "league": "ncaam",
+        "rating": 60.59,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 224,
+        "name": "Brown Bears",
+        "league": "ncaam",
+        "rating": 60.3,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 225,
+        "name": "South Alabama Jaguars",
+        "league": "ncaam",
+        "rating": 60.6,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 226,
+        "name": "Rider Broncos",
+        "league": "ncaam",
+        "rating": 60.53,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 227,
+        "name": "Maine Black Bears",
+        "league": "ncaam",
+        "rating": 60.48,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 228,
+        "name": "Montana St. Bobcats",
+        "league": "ncaam",
+        "rating": 60.44,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 229,
+        "name": "Cal Baptist Lancers",
+        "league": "ncaam",
+        "rating": 60.3,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 230,
+        "name": "Texas Southern Tigers",
+        "league": "ncaam",
+        "rating": 59.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 231,
+        "name": "North Dakota Fighting Sioux",
+        "league": "ncaam",
+        "rating": 59.92,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 232,
+        "name": "Tennessee St. Tigers",
+        "league": "ncaam",
+        "rating": 59.9,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 233,
+        "name": "Radford Highlanders",
+        "league": "ncaam",
+        "rating": 59.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 234,
+        "name": "Canisius Golden Griffins",
+        "league": "ncaam",
+        "rating": 59.62,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 235,
+        "name": "Murray St. Racers",
+        "league": "ncaam",
+        "rating": 59.52,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 236,
+        "name": "Niagara Purple Eagles",
+        "league": "ncaam",
+        "rating": 59.35,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 237,
+        "name": "Miami (OH) RedHawks",
+        "league": "ncaam",
+        "rating": 59.25,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 238,
+        "name": "Fresno St. Bulldogs",
+        "league": "ncaam",
+        "rating": 59.11,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 239,
+        "name": "West Virginia Mountaineers",
+        "league": "ncaam",
+        "rating": 58.97,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 240,
+        "name": "Michigan Wolverines",
+        "league": "ncaam",
+        "rating": 59.02,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 241,
+        "name": "CSU Fullerton Titans",
+        "league": "ncaam",
+        "rating": 58.66,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 242,
+        "name": "Howard Bison",
+        "league": "ncaam",
+        "rating": 58.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 243,
+        "name": "Middle Tenn. St. Blue Raiders",
+        "league": "ncaam",
+        "rating": 58.81,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 244,
+        "name": "Marshall Thundering Herd",
+        "league": "ncaam",
+        "rating": 58.66,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 245,
+        "name": "Georgia St. Panthers",
+        "league": "ncaam",
+        "rating": 58.65,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 246,
+        "name": "Mo. Kansas City Kangaroos",
+        "league": "ncaam",
+        "rating": 58.44,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 247,
+        "name": "Northern Arizona Lumberjacks",
+        "league": "ncaam",
+        "rating": 58.37,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 248,
+        "name": "SIU Edwardsville Cougars",
+        "league": "ncaam",
+        "rating": 58.35,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 249,
+        "name": "N. Dakota St. Bison",
+        "league": "ncaam",
+        "rating": 58.26,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 250,
+        "name": "Queens Royals",
+        "league": "ncaam",
+        "rating": 58.1,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 251,
+        "name": "Columbia Lions",
+        "league": "ncaam",
+        "rating": 57.85,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 252,
+        "name": "North Alabama Lions",
+        "league": "ncaam",
+        "rating": 57.87,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 253,
+        "name": "Loyola Marymount Lions",
+        "league": "ncaam",
+        "rating": 57.92,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 254,
+        "name": "N.C. Central Eagles",
+        "league": "ncaam",
+        "rating": 57.85,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 255,
+        "name": "Pennsylvania Quakers",
+        "league": "ncaam",
+        "rating": 57.48,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 256,
+        "name": "Northeastern Huskies",
+        "league": "ncaam",
+        "rating": 57.71,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 257,
+        "name": "North Florida Ospreys",
+        "league": "ncaam",
+        "rating": 57.65,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 258,
+        "name": "Bethune-Cookman Wildcats",
+        "league": "ncaam",
+        "rating": 57.76,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 259,
+        "name": "Ill. Chicago Flames",
+        "league": "ncaam",
+        "rating": 57.75,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 260,
+        "name": "Vanderbilt Commodores",
+        "league": "ncaam",
+        "rating": 57.62,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 261,
+        "name": "Denver Pioneers",
+        "league": "ncaam",
+        "rating": 57.6,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 262,
+        "name": "Wagner Seahawks",
+        "league": "ncaam",
+        "rating": 57.59,
+        "seed": 16,
+        "quadrant": "SW"
+    },
+    {
+        "id": 263,
+        "name": "Albany Great Danes",
+        "league": "ncaam",
+        "rating": 57.54,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 264,
+        "name": "Ball St. Cardinals",
+        "league": "ncaam",
+        "rating": 57.23,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 265,
+        "name": "Jacksonville Dolphins",
+        "league": "ncaam",
+        "rating": 57.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 266,
+        "name": "Jackson St. Tigers",
+        "league": "ncaam",
+        "rating": 57.08,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 267,
+        "name": "Rice Owls",
+        "league": "ncaam",
+        "rating": 57,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 268,
+        "name": "Bucknell Bison",
+        "league": "ncaam",
+        "rating": 56.91,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 269,
+        "name": "Boston U. Terriers",
+        "league": "ncaam",
+        "rating": 56.79,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 270,
+        "name": "Pepperdine Waves",
+        "league": "ncaam",
+        "rating": 56.75,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 271,
+        "name": "Sacred Heart Pioneers",
+        "league": "ncaam",
+        "rating": 56.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 272,
+        "name": "Portland Pilots",
+        "league": "ncaam",
+        "rating": 56.44,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 273,
+        "name": "SE Louisiana Lions",
+        "league": "ncaam",
+        "rating": 56.25,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 274,
+        "name": "Kennesaw St. Owls",
+        "league": "ncaam",
+        "rating": 56.29,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 275,
+        "name": "Alcorn St. Braves",
+        "league": "ncaam",
+        "rating": 56.29,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 276,
+        "name": "N. Mex. St. Aggies",
+        "league": "ncaam",
+        "rating": 56.15,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 277,
+        "name": "Fla Gulf Coast Eagles",
+        "league": "ncaam",
+        "rating": 55.84,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 278,
+        "name": "Missouri Tigers",
+        "league": "ncaam",
+        "rating": 55.87,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 279,
+        "name": "CSU Bakersfield Roadrunners",
+        "league": "ncaam",
+        "rating": 55.7,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 280,
+        "name": "Georgetown Hoyas",
+        "league": "ncaam",
+        "rating": 55.26,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 281,
+        "name": "Jacksonville St. Gamecocks",
+        "league": "ncaam",
+        "rating": 55.32,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 282,
+        "name": "W. Michigan Broncos",
+        "league": "ncaam",
+        "rating": 55.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 283,
+        "name": "American Eagles",
+        "league": "ncaam",
+        "rating": 55.11,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 284,
+        "name": "Lehigh Mountain Hawks",
+        "league": "ncaam",
+        "rating": 55.08,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 285,
+        "name": "Idaho St. Bengals",
+        "league": "ncaam",
+        "rating": 55.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 286,
+        "name": "Utah Tech Trailblazers",
+        "league": "ncaam",
+        "rating": 55.25,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 287,
+        "name": "San Jose St. Spartans",
+        "league": "ncaam",
+        "rating": 55.05,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 288,
+        "name": "Northern Illinois Huskies",
+        "league": "ncaam",
+        "rating": 55.04,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 289,
+        "name": "S. Carolina St. Bulldogs",
+        "league": "ncaam",
+        "rating": 54.98,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 290,
+        "name": "LA Monroe Indians",
+        "league": "ncaam",
+        "rating": 54.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 291,
+        "name": "Delaware St. Hornets",
+        "league": "ncaam",
+        "rating": 54.69,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 292,
+        "name": "Mount St. Mary's Mountaineers",
+        "league": "ncaam",
+        "rating": 54.67,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 293,
+        "name": "Campbell Fighting Camels",
+        "league": "ncaam",
+        "rating": 54.56,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 294,
+        "name": "Fair. Dickinson Knights",
+        "league": "ncaam",
+        "rating": 54.49,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 295,
+        "name": "UTSA Roadrunners",
+        "league": "ncaam",
+        "rating": 54.47,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 296,
+        "name": "Air Force Falcons",
+        "league": "ncaam",
+        "rating": 54.34,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 297,
+        "name": "Nebraska Omaha Mavericks",
+        "league": "ncaam",
+        "rating": 54.13,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 298,
+        "name": "Louisville Cardinals",
+        "league": "ncaam",
+        "rating": 54.17,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 299,
+        "name": "East. Michigan Eagles",
+        "league": "ncaam",
+        "rating": 53.99,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 300,
+        "name": "Eastern Illinois Panthers",
+        "league": "ncaam",
+        "rating": 54.05,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 301,
+        "name": "Chicago St. Cougars",
+        "league": "ncaam",
+        "rating": 53.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 302,
+        "name": "Le Moyne Dolphins",
+        "league": "ncaam",
+        "rating": 53.76,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 303,
+        "name": "Elon Phoenix",
+        "league": "ncaam",
+        "rating": 53.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 304,
+        "name": "Oral Roberts Golden Eagles",
+        "league": "ncaam",
+        "rating": 53.54,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 305,
+        "name": "Florida Intl. Golden Panthers",
+        "league": "ncaam",
+        "rating": 53.33,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 306,
+        "name": "Presbyterian Blue Hose",
+        "league": "ncaam",
+        "rating": 53.29,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 307,
+        "name": "Alabama St. Hornets",
+        "league": "ncaam",
+        "rating": 53.03,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 308,
+        "name": "Texas A&M-Commerce Lines",
+        "league": "ncaam",
+        "rating": 52.78,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 309,
+        "name": "Southern Utah Thunderbirds",
+        "league": "ncaam",
+        "rating": 52.92,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 310,
+        "name": "Charleston Sou. Buccaneers",
+        "league": "ncaam",
+        "rating": 52.63,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 311,
+        "name": "Citadel Bulldogs",
+        "league": "ncaam",
+        "rating": 52.24,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 312,
+        "name": "UMBC Retreivers",
+        "league": "ncaam",
+        "rating": 52.19,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 313,
+        "name": "Navy Midshipmen",
+        "league": "ncaam",
+        "rating": 52.09,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 314,
+        "name": "Lafayette Leopards",
+        "league": "ncaam",
+        "rating": 51.7,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 315,
+        "name": "Alabama A&M Bulldogs",
+        "league": "ncaam",
+        "rating": 52.9,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 316,
+        "name": "Idaho Vandals",
+        "league": "ncaam",
+        "rating": 51.63,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 317,
+        "name": "Valparaiso Crusaders",
+        "league": "ncaam",
+        "rating": 51.4,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 318,
+        "name": "Georgia Southern Eagles",
+        "league": "ncaam",
+        "rating": 50.9,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 319,
+        "name": "Robert Morris Colonials",
+        "league": "ncaam",
+        "rating": 51,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 320,
+        "name": "Sacramento St. Hornets",
+        "league": "ncaam",
+        "rating": 50.91,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 321,
+        "name": "S.Car. Upstate Spartans",
+        "league": "ncaam",
+        "rating": 50.75,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 322,
+        "name": "South Dakota Coyotes",
+        "league": "ncaam",
+        "rating": 50.28,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 323,
+        "name": "Morgan St. Golden Bears",
+        "league": "ncaam",
+        "rating": 49.92,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 324,
+        "name": "AR Pine Bluff Golden Lions",
+        "league": "ncaam",
+        "rating": 50.12,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 325,
+        "name": "Coastal Car. Chanticleers",
+        "league": "ncaam",
+        "rating": 49.83,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 326,
+        "name": "N.J.I.T. Highlanders",
+        "league": "ncaam",
+        "rating": 49.58,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 327,
+        "name": "Manhattan Jaspers",
+        "league": "ncaam",
+        "rating": 49.23,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 328,
+        "name": "Tennessee Tech Golden Eagles",
+        "league": "ncaam",
+        "rating": 49.1,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 329,
+        "name": "Old Dominion Monarchs",
+        "league": "ncaam",
+        "rating": 48.88,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 330,
+        "name": "N.C. A&T Aggies",
+        "league": "ncaam",
+        "rating": 48.97,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 331,
+        "name": "Dartmouth Big Green",
+        "league": "ncaam",
+        "rating": 48.6,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 332,
+        "name": "Prairie View A&M Panthers",
+        "league": "ncaam",
+        "rating": 48.8,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 333,
+        "name": "William & Mary Tribe",
+        "league": "ncaam",
+        "rating": 48.58,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 334,
+        "name": "DePaul Blue Demons",
+        "league": "ncaam",
+        "rating": 48.18,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 335,
+        "name": "Holy Cross Crusaders",
+        "league": "ncaam",
+        "rating": 47.73,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 336,
+        "name": "Army Black Knights",
+        "league": "ncaam",
+        "rating": 47.15,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 337,
+        "name": "Hampton Pirates",
+        "league": "ncaam",
+        "rating": 46.72,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 338,
+        "name": "N'western St. Demons",
+        "league": "ncaam",
+        "rating": 46.58,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 339,
+        "name": "Bellarmine Knights",
+        "league": "ncaam",
+        "rating": 46.59,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 340,
+        "name": "Florida A&M Rattlers",
+        "league": "ncaam",
+        "rating": 46.75,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 341,
+        "name": "LIU Brooklyn Blackbirds",
+        "league": "ncaam",
+        "rating": 46.31,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 342,
+        "name": "Central Arkansas Bears",
+        "league": "ncaam",
+        "rating": 46.05,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 343,
+        "name": "New Orleans Privateers",
+        "league": "ncaam",
+        "rating": 45.77,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 344,
+        "name": "UTRGV Vaqueros",
+        "league": "ncaam",
+        "rating": 45.91,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 345,
+        "name": "SE Missouri St. Indians",
+        "league": "ncaam",
+        "rating": 45.81,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 346,
+        "name": "Southern Indiana Screaming Eagles ovc",
+        "league": "ncaam",
+        "rating": 45.75,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 347,
+        "name": "St. Francis (PA) Red Flash",
+        "league": "ncaam",
+        "rating": 45.26,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 348,
+        "name": "Pacific Tigers",
+        "league": "ncaam",
+        "rating": 45.08,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 349,
+        "name": "Lindenwood Lions",
+        "league": "ncaam",
+        "rating": 45.04,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 350,
+        "name": "Siena Saints",
+        "league": "ncaam",
+        "rating": 44.78,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 351,
+        "name": "MD Eastern Shore Hawks",
+        "league": "ncaam",
+        "rating": 44.68,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 352,
+        "name": "Buffalo Bulls",
+        "league": "ncaam",
+        "rating": 44.07,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 353,
+        "name": "Loyola (MD) Greyhounds",
+        "league": "ncaam",
+        "rating": 43.66,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 354,
+        "name": "Incarnate Word Cardinals",
+        "league": "ncaam",
+        "rating": 43.53,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 355,
+        "name": "Houston Christian Huskies",
+        "league": "ncaam",
+        "rating": 43.18,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 356,
+        "name": "Cal Poly Mustangs",
+        "league": "ncaam",
+        "rating": 42.91,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 357,
+        "name": "Stonehill Skyhawks",
+        "league": "ncaam",
+        "rating": 42.12,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 358,
+        "name": "IUPUI Jaguars",
+        "league": "ncaam",
+        "rating": 41.81,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 359,
+        "name": "Virginia Military Keydets",
+        "league": "ncaam",
+        "rating": 41.24,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 360,
+        "name": "Detroit Mercy Titans",
+        "league": "ncaam",
+        "rating": 40.49,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 361,
+        "name": "Miss. Valley St. Delta Devils",
+        "league": "ncaam",
+        "rating": 38.04,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 362,
+        "name": "Coppin St. Eagles",
+        "league": "ncaam",
+        "rating": 37.79,
+        "seed": null,
+        "quadrant": null
+    },
+    {
+        "id": 363,
+        "name": "Savannah St. Tigers",
+        "league": "ncaam",
+        "rating": 0,
+        "seed": null,
+        "quadrant": null
+    }
+]

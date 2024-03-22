@@ -1,0 +1,5612 @@
+[
+    {
+        "owner": "Henry",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 30,
+                "name": "Fla Gulf Coast Eagles",
+                "league": "ncaaw",
+                "rating": 76.11,
+                "seed": 12,
+                "quadrant": "NW"
+            },
+            {
+                "id": 20,
+                "name": "Fairfield Stags",
+                "league": "ncaaw",
+                "rating": 79.3,
+                "seed": 13,
+                "quadrant": "NW"
+            },
+            {
+                "id": 70,
+                "name": "Texas A&M Aggies",
+                "league": "ncaaw",
+                "rating": 69.81,
+                "seed": 11,
+                "quadrant": "NW"
+            },
+            {
+                "id": 52,
+                "name": "Eastern Wash. Eagles",
+                "league": "ncaaw",
+                "rating": 73.28,
+                "seed": 14,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 79,
+                "name": "Kent St. Golden Flashes",
+                "league": "ncaaw",
+                "rating": 68.92,
+                "seed": 15,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 56,
+                "name": "Florida St. Seminoles",
+                "league": "ncaaw",
+                "rating": 72.34,
+                "seed": 9,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 47,
+                "name": "Green Bay Phoenix",
+                "league": "ncaaw",
+                "rating": 74.24,
+                "seed": 11,
+                "quadrant": "SW"
+            },
+            {
+                "id": 28,
+                "name": "Chattanooga Mocs",
+                "league": "ncaaw",
+                "rating": 76.3,
+                "seed": 14,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 80,
+                "name": "Norfolk St. Spartans",
+                "league": "ncaaw",
+                "rating": 68.85,
+                "seed": 15,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 31,
+                "name": "West Virginia Mountaineers",
+                "league": "ncaaw",
+                "rating": 76.07,
+                "seed": 8,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 33,
+                "name": "Middle Tenn. St. Blue Raiders",
+                "league": "ncaaw",
+                "rating": 76.01,
+                "seed": 11,
+                "quadrant": "NE"
+            },
+            {
+                "id": 115,
+                "name": "Rice Owls",
+                "league": "ncaaw",
+                "rating": 65.26,
+                "seed": 14,
+                "quadrant": "NE"
+            },
+            {
+                "id": 11,
+                "name": "UNLV Rebels",
+                "league": "ncaaw",
+                "rating": 80.93,
+                "seed": 10,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 38,
+                "name": "Marshall Thundering Herd",
+                "league": "ncaaw",
+                "rating": 75.1,
+                "seed": 13,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 72,
+                "name": "Maine Black Bears",
+                "league": "ncaaw",
+                "rating": 69.44,
+                "seed": 15,
+                "quadrant": "SE"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 30,
+                "name": "Fla Gulf Coast Eagles",
+                "league": "ncaaw",
+                "rating": 76.11,
+                "seed": 12,
+                "quadrant": "NW"
+            },
+            {
+                "id": 70,
+                "name": "Texas A&M Aggies",
+                "league": "ncaaw",
+                "rating": 69.81,
+                "seed": 11,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 28,
+                "name": "Chattanooga Mocs",
+                "league": "ncaaw",
+                "rating": 76.3,
+                "seed": 14,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 33,
+                "name": "Middle Tenn. St. Blue Raiders",
+                "league": "ncaaw",
+                "rating": 76.01,
+                "seed": 11,
+                "quadrant": "NE"
+            },
+            {
+                "id": 11,
+                "name": "UNLV Rebels",
+                "league": "ncaaw",
+                "rating": 80.93,
+                "seed": 10,
+                "quadrant": "NE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 11,
+                "name": "UNLV Rebels",
+                "league": "ncaaw",
+                "rating": 80.93,
+                "seed": 10,
+                "quadrant": "NE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Dale",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 48,
+                "name": "Michigan St. Spartans",
+                "league": "ncaaw",
+                "rating": 73.68,
+                "seed": 9,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 51,
+                "name": "Marquette Golden Eagles",
+                "league": "ncaaw",
+                "rating": 73.42,
+                "seed": 10,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 56,
+                "name": "Florida St. Seminoles",
+                "league": "ncaaw",
+                "rating": 72.34,
+                "seed": 9,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 47,
+                "name": "Green Bay Phoenix",
+                "league": "ncaaw",
+                "rating": 74.24,
+                "seed": 11,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 57,
+                "name": "Maryland Terrapins",
+                "league": "ncaaw",
+                "rating": 72.16,
+                "seed": 10,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Dawn",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 48,
+                "name": "Michigan St. Spartans",
+                "league": "ncaaw",
+                "rating": 73.68,
+                "seed": 9,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 31,
+                "name": "West Virginia Mountaineers",
+                "league": "ncaaw",
+                "rating": 76.07,
+                "seed": 8,
+                "quadrant": "NE"
+            },
+            {
+                "id": 22,
+                "name": "Drake Bulldogs",
+                "league": "ncaaw",
+                "rating": 77.33,
+                "seed": 12,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 11,
+                "name": "UNLV Rebels",
+                "league": "ncaaw",
+                "rating": 80.93,
+                "seed": 10,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 59,
+                "name": "Kansas Jayhawks",
+                "league": "ncaaw",
+                "rating": 71.81,
+                "seed": 8,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 19,
+                "name": "Richmond Spiders",
+                "league": "ncaaw",
+                "rating": 79.4,
+                "seed": 10,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 22,
+                "name": "Drake Bulldogs",
+                "league": "ncaaw",
+                "rating": 77.33,
+                "seed": 12,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "John",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 57,
+                "name": "Maryland Terrapins",
+                "league": "ncaaw",
+                "rating": 72.16,
+                "seed": 10,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 19,
+                "name": "Richmond Spiders",
+                "league": "ncaaw",
+                "rating": 79.4,
+                "seed": 10,
+                "quadrant": "SE"
+            },
+            {
+                "id": 72,
+                "name": "Maine Black Bears",
+                "league": "ncaaw",
+                "rating": 69.44,
+                "seed": 15,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 72,
+                "name": "Maine Black Bears",
+                "league": "ncaaw",
+                "rating": 69.44,
+                "seed": 15,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Luke",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 48,
+                "name": "Michigan St. Spartans",
+                "league": "ncaaw",
+                "rating": 73.68,
+                "seed": 9,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 31,
+                "name": "West Virginia Mountaineers",
+                "league": "ncaaw",
+                "rating": 76.07,
+                "seed": 8,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 48,
+                "name": "Michigan St. Spartans",
+                "league": "ncaaw",
+                "rating": 73.68,
+                "seed": 9,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Matt",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 51,
+                "name": "Marquette Golden Eagles",
+                "league": "ncaaw",
+                "rating": 73.42,
+                "seed": 10,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 56,
+                "name": "Florida St. Seminoles",
+                "league": "ncaaw",
+                "rating": 72.34,
+                "seed": 9,
+                "quadrant": "SW"
+            },
+            {
+                "id": 35,
+                "name": "S. Dakota St. Jackrabbits",
+                "league": "ncaaw",
+                "rating": 75.46,
+                "seed": 12,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 57,
+                "name": "Maryland Terrapins",
+                "league": "ncaaw",
+                "rating": 72.16,
+                "seed": 10,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 22,
+                "name": "Drake Bulldogs",
+                "league": "ncaaw",
+                "rating": 77.33,
+                "seed": 12,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 59,
+                "name": "Kansas Jayhawks",
+                "league": "ncaaw",
+                "rating": 71.81,
+                "seed": 8,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Neil",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 48,
+                "name": "Michigan St. Spartans",
+                "league": "ncaaw",
+                "rating": 73.68,
+                "seed": 9,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 51,
+                "name": "Marquette Golden Eagles",
+                "league": "ncaaw",
+                "rating": 73.42,
+                "seed": 10,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 57,
+                "name": "Maryland Terrapins",
+                "league": "ncaaw",
+                "rating": 72.16,
+                "seed": 10,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Phil K",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 59,
+                "name": "Kansas Jayhawks",
+                "league": "ncaaw",
+                "rating": 71.81,
+                "seed": 8,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 19,
+                "name": "Richmond Spiders",
+                "league": "ncaaw",
+                "rating": 79.4,
+                "seed": 10,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Ron",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 48,
+                "name": "Michigan St. Spartans",
+                "league": "ncaaw",
+                "rating": 73.68,
+                "seed": 9,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 56,
+                "name": "Florida St. Seminoles",
+                "league": "ncaaw",
+                "rating": 72.34,
+                "seed": 9,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 59,
+                "name": "Kansas Jayhawks",
+                "league": "ncaaw",
+                "rating": 71.81,
+                "seed": 8,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Sara",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 56,
+                "name": "Florida St. Seminoles",
+                "league": "ncaaw",
+                "rating": 72.34,
+                "seed": 9,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 57,
+                "name": "Maryland Terrapins",
+                "league": "ncaaw",
+                "rating": 72.16,
+                "seed": 10,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 15,
+                "name": "Princeton Tigers",
+                "league": "ncaaw",
+                "rating": 79.82,
+                "seed": 9,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    },
+    {
+        "owner": "Sasha",
+        "picks": [
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 60,
+                "name": "N. Carolina Tar Heels",
+                "league": "ncaaw",
+                "rating": 71.51,
+                "seed": 8,
+                "quadrant": "NW"
+            },
+            {
+                "id": 23,
+                "name": "Oklahoma Sooners",
+                "league": "ncaaw",
+                "rating": 77.07,
+                "seed": 5,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 55,
+                "name": "Nebraska Cornhuskers",
+                "league": "ncaaw",
+                "rating": 72.49,
+                "seed": 6,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 36,
+                "name": "Mississippi Rebels",
+                "league": "ncaaw",
+                "rating": 75.21,
+                "seed": 7,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 43,
+                "name": "Alabama Crimson Tide",
+                "league": "ncaaw",
+                "rating": 74.71,
+                "seed": 8,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 8,
+                "name": "Gonzaga Bulldogs",
+                "league": "ncaaw",
+                "rating": 82,
+                "seed": 4,
+                "quadrant": "SW"
+            },
+            {
+                "id": 42,
+                "name": "Tennessee Volunteers",
+                "league": "ncaaw",
+                "rating": 74.82,
+                "seed": 6,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 46,
+                "name": "Iowa St. Cyclones",
+                "league": "ncaaw",
+                "rating": 74.62,
+                "seed": 7,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 31,
+                "name": "West Virginia Mountaineers",
+                "league": "ncaaw",
+                "rating": 76.07,
+                "seed": 8,
+                "quadrant": "NE"
+            },
+            {
+                "id": 26,
+                "name": "Colorado Buffaloes",
+                "league": "ncaaw",
+                "rating": 76.74,
+                "seed": 5,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 34,
+                "name": "Louisville Cardinals",
+                "league": "ncaaw",
+                "rating": 75.71,
+                "seed": 6,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 12,
+                "name": "Creighton Bluejays",
+                "league": "ncaaw",
+                "rating": 80.85,
+                "seed": 7,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 71,
+                "name": "Michigan Wolverines",
+                "league": "ncaaw",
+                "rating": 69.68,
+                "seed": 9,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 21,
+                "name": "Virginia Tech Hokies",
+                "league": "ncaaw",
+                "rating": 77.65,
+                "seed": 4,
+                "quadrant": "SE"
+            },
+            {
+                "id": 41,
+                "name": "Syracuse Orange",
+                "league": "ncaaw",
+                "rating": 74.86,
+                "seed": 6,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 37,
+                "name": "Duke Blue Devils",
+                "league": "ncaaw",
+                "rating": 75.17,
+                "seed": 7,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 14,
+                "name": "Indiana Hoosiers",
+                "league": "ncaaw",
+                "rating": 80.45,
+                "seed": 4,
+                "quadrant": "NW"
+            },
+            {
+                "id": 16,
+                "name": "Oregon St. Beavers",
+                "league": "ncaaw",
+                "rating": 79.71,
+                "seed": 3,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 49,
+                "name": "Utah Utes",
+                "league": "ncaaw",
+                "rating": 73.64,
+                "seed": 5,
+                "quadrant": "SW"
+            },
+            {
+                "id": 9,
+                "name": "N.C. State Wolfpack",
+                "league": "ncaaw",
+                "rating": 81.61,
+                "seed": 3,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 18,
+                "name": "Kansas St. Wildcats",
+                "league": "ncaaw",
+                "rating": 79.52,
+                "seed": 4,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 7,
+                "name": "UCLA Bruins",
+                "league": "ncaaw",
+                "rating": 82.09,
+                "seed": 2,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 25,
+                "name": "Baylor Bears",
+                "league": "ncaaw",
+                "rating": 76.91,
+                "seed": 5,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 10,
+                "name": "Ohio St. Buckeyes",
+                "league": "ncaaw",
+                "rating": 81.17,
+                "seed": 2,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 17,
+                "name": "Notre Dame Fighting Irish",
+                "league": "ncaaw",
+                "rating": 79.6,
+                "seed": 2,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 4,
+                "name": "Stanford Cardinal",
+                "league": "ncaaw",
+                "rating": 84.39,
+                "seed": 2,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 13,
+                "name": "LSU Tigers",
+                "league": "ncaaw",
+                "rating": 80.56,
+                "seed": 3,
+                "quadrant": "NE"
+            },
+            {
+                "id": 6,
+                "name": "USC Trojans",
+                "league": "ncaaw",
+                "rating": 83.17,
+                "seed": 1,
+                "quadrant": "SE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 119,
+                "name": "Texas Tech Red Raiders",
+                "league": "ncaaw",
+                "rating": 64.94,
+                "seed": 1,
+                "quadrant": "SW"
+            },
+            {
+                "id": 2,
+                "name": "Iowa Hawkeyes",
+                "league": "ncaaw",
+                "rating": 85.81,
+                "seed": 1,
+                "quadrant": "NE"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            },
+            {
+                "id": 5,
+                "name": "Connecticut Huskies",
+                "league": "ncaaw",
+                "rating": 83.92,
+                "seed": 3,
+                "quadrant": "SE"
+            },
+            {
+                "id": 1,
+                "name": "South Carolina Gamecocks",
+                "league": "ncaaw",
+                "rating": 89.82,
+                "seed": 1,
+                "quadrant": "NW"
+            }
+        ],
+        "tiebreaker": null
+    }
+]
