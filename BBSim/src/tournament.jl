@@ -60,11 +60,11 @@ function propagate_winner!(t::Tournament, game::Integer, team::Team)
 end
 
 function is_filled(t::Tournament, game::Integer)
-    return !any(is_null, teams(t, game))
+    return !any(isnothing, teams(t, game))
 end
 
 function is_done(t::Tournament, game::Integer)
-    return is_filled(t, game) && !is_null(winner(t, game))
+    return is_filled(t, game) && !isnothing(winner(t, game))
 end
 
 Base.size(t::Tournament) = size(t.winners)
@@ -83,6 +83,10 @@ function is_eliminated(t::Tournament, team::Team)
     return false
 end
 
+
+is_eliminated(::Tournament, team::Nothing) = false
+
 winner(t::Tournament, game::Integer) = return t.winners[game]
 teams(t::Tournament, game::Integer) = return @view(t.teams[(game-1)*2+1:(game-1)*2+2])
 team(t::Tournament, game::Integer, slot::Integer) = return t.teams[(game-1)*2+slot]
+value(t::Tournament, game::Integer) = return t.values[game]

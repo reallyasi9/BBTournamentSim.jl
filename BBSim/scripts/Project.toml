@@ -1,7 +1,9 @@
 [deps]
 ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
 BBSim = "2f9dc5a3-ddd6-4aa1-9c38-223866a68bd9"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
 Parquet2 = "98572fba-bba0-415d-956f-fa77e587d26d"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 XLSX = "fdbf4ff8-1666-58a4-91e7-1b58723a45e0"
