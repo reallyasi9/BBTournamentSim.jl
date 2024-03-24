@@ -2,6 +2,22 @@ using ArgParse
 using BBSim
 using JSON3
 
+struct IntOrRange
+    values::Vector{Int}
+end
+
+function ArgParse.parse_item(::Type{IntOrRange}, x::AbstractString)
+    split_vals = split(x, ':')
+    vals = parse.(Int, split_vals)
+    if length(split_vals) == 2
+        return collect(vals[1]:vals[2])
+    elseif length(split_vals) == 3
+        return collect(valse[1]:[vals[2]:vals[3]])
+    else
+        return vals
+    end
+end
+
 function parse_arguments(args=ARGS)
     s = ArgParseSettings()
     @add_arg_table! s begin
@@ -12,9 +28,8 @@ function parse_arguments(args=ARGS)
             help = "Team ranking JSON file"
             required = true
         "--include", "-i"
-            help = "Include only these game number (default: all)"
-            nargs = '*'
-            arg_type = Int
+            help = "Include only this game or range of game numbers specified as START:[STEP:]STOP (default: all)"
+            arg_type = IntOrRange
         "--outfile", "-o"
             help = "Path to output tournament definition (JSON format)"
     end
