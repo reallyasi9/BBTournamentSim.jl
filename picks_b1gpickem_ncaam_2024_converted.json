@@ -11,18 +11,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -74,7 +74,14 @@
                 "seed": 1,
                 "quadrant": "SW"
             },
-            null,
+            {
+                "id": 54,
+                "name": "Mississippi St. Bulldogs",
+                "league": "ncaam",
+                "rating": 75.89,
+                "seed": 8,
+                "quadrant": "SW"
+            },
             {
                 "id": 18,
                 "name": "St. Mary's Gaels",
@@ -522,10 +529,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -770,10 +777,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -1024,18 +1031,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -1542,10 +1549,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -2044,18 +2051,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -2107,7 +2114,14 @@
                 "seed": 1,
                 "quadrant": "SW"
             },
-            null,
+            {
+                "id": 54,
+                "name": "Mississippi St. Bulldogs",
+                "league": "ncaam",
+                "rating": 75.89,
+                "seed": 8,
+                "quadrant": "SW"
+            },
             {
                 "id": 18,
                 "name": "St. Mary's Gaels",
@@ -2293,10 +2307,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -2547,14 +2561,21 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
-            null,
+            {
+                "id": 53,
+                "name": "UAB Blazers",
+                "league": "ncaam",
+                "rating": 75.92,
+                "seed": 12,
+                "quadrant": "NW"
+            },
             {
                 "id": 5,
                 "name": "Auburn Tigers",
@@ -3058,10 +3079,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -3306,10 +3327,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -3560,18 +3581,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -3623,7 +3644,14 @@
                 "seed": 1,
                 "quadrant": "SW"
             },
-            null,
+            {
+                "id": 54,
+                "name": "Mississippi St. Bulldogs",
+                "league": "ncaam",
+                "rating": 75.89,
+                "seed": 8,
+                "quadrant": "SW"
+            },
             {
                 "id": 18,
                 "name": "St. Mary's Gaels",
@@ -3809,10 +3837,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -4063,18 +4091,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -4573,18 +4601,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -4829,10 +4857,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -5083,18 +5111,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -5146,7 +5174,14 @@
                 "seed": 1,
                 "quadrant": "SW"
             },
-            null,
+            {
+                "id": 54,
+                "name": "Mississippi St. Bulldogs",
+                "league": "ncaam",
+                "rating": 75.89,
+                "seed": 8,
+                "quadrant": "SW"
+            },
             {
                 "id": 18,
                 "name": "St. Mary's Gaels",
@@ -5332,10 +5367,10 @@
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -5586,18 +5621,18 @@
                 "quadrant": "NW"
             },
             {
-                "id": 54,
-                "name": "Mississippi St. Bulldogs",
+                "id": 19,
+                "name": "Florida Atlantic Owls",
                 "league": "ncaam",
-                "rating": 75.89,
+                "rating": 80.18,
                 "seed": 8,
                 "quadrant": "NW"
             },
             {
-                "id": 53,
-                "name": "UAB Blazers",
+                "id": 17,
+                "name": "S. Diego St. Aztecs",
                 "league": "ncaam",
-                "rating": 75.92,
+                "rating": 80.46,
                 "seed": 5,
                 "quadrant": "NW"
             },
@@ -5649,7 +5684,14 @@
                 "seed": 1,
                 "quadrant": "SW"
             },
-            null,
+            {
+                "id": 54,
+                "name": "Mississippi St. Bulldogs",
+                "league": "ncaam",
+                "rating": 75.89,
+                "seed": 8,
+                "quadrant": "SW"
+            },
             {
                 "id": 18,
                 "name": "St. Mary's Gaels",

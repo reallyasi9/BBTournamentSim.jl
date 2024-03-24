@@ -46,9 +46,10 @@ function main(args=ARGS)
     if !isnothing(options["outfile"])
         # stored as nsim (second dim) columns of winners (first dim) in tournament order
         games = repeat(collect(1:length(tournament)), nsim)
+        values = repeat(tournament.values, nsim)
         # cheat
         sims = sort!(repeat(collect(1:nsim), length(tournament)))
-        data = (simulation=sims, game=games, winner=simulated_winners[:])
+        data = (simulation=sims, game=games, winner=simulated_winners[:], value=values)
 
         open(options["outfile"], "w") do f
             Parquet2.writefile(f, data)

@@ -89,4 +89,5 @@ is_eliminated(::Tournament, team::Nothing) = false
 winner(t::Tournament, game::Integer) = return t.winners[game]
 teams(t::Tournament, game::Integer) = return @view(t.teams[(game-1)*2+1:(game-1)*2+2])
 team(t::Tournament, game::Integer, slot::Integer) = return t.teams[(game-1)*2+slot]
+values(t::Tournament) = return t.values
 value(t::Tournament, game::Integer) = return t.values[game]

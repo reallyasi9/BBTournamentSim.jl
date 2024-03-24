@@ -4,6 +4,7 @@ using JSON3
 using CSV
 using Parquet2
 using StatsBase
+using DataFrames
 
 function parse_arguments(args=ARGS)
     s = ArgParseSettings()
@@ -46,17 +47,41 @@ function main(args=ARGS)
     scores_now = first.(scores)
     scores_best = last.(scores)
     owners = BBSim.owner.(picks)
-    ranks = competerank(scores_now)
-    ranks_best = competerank(scores_best)
-    
+    ranks = competerank(scores_now; rev=true)
 
     if !isnothing(options["rankfile"])
         open(options["rankfile"], "w") do io
-            CSV.write(io, (owner=owners, score=scores_now, rank=ranks, best_score=scores_best, best_rank=ranks_best))
+            CSV.write(io, (owner=owners, rank=ranks, score=scores_now, best_score=scores_best))
         end
     else
-        CSV.write(stdout, (owner=owners, score=scores_now, rank=ranks, best_score=scores_best, best_ranks=ranks_best))
+        CSV.write(stdout, (owner=owners, rank=ranks, score=scores_now, best_score=scores_best))
     end
+
+    isnothing(simulations) && return
+
+    pick_matrix = stack([BBSim.id.(v) for v in BBSim.picks.(picks)])
+    df = DataFrame(simulations; copycols=false)
+    # df = sort!(df, [:simulation, :game])
+    df = combine(
+        groupby(df, :simulation),
+        [:winner, :value] => ((w, v) -> score_sim(pick_matrix, owners, w, v)) => AsTable
+    )
+
+    if !isnothing(options["posterior"])
+        open(options["posterior"], "w") do f
+            Parquet2.writefile(f, df)
+        end
+    else
+        print(first(df, 30; view=true))
+        println("...")
+        print(last(df, 30; view=true))
+    end
+end
+
+function score_sim(picks, owners, winners, values)
+    points = vec(sum((picks .== winners) .* values; dims=1))
+    ranks = competerank(points; rev=true)
+    return (owner=owners, points=points, ranks=ranks)
 end
 
 if !isinteractive()

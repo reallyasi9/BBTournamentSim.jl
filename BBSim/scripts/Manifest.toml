@@ -2,7 +2,7 @@
 
 julia_version = "1.10.2"
 manifest_format = "2.0"
-project_hash = "dbc1ae9a1fc40f4a873aa368b9113c176c76b624"
+project_hash = "50d0e0ed6e0ce73b74ea9fae4a5e1409f1585625"
 
 [[deps.AbstractTrees]]
 git-tree-sha1 = "2d9c9a55f9c93e8887ad391fbae72f8ef55e1177"
@@ -57,9 +57,9 @@ version = "1.1.1"
 
 [[deps.ArrayLayouts]]
 deps = ["FillArrays", "LinearAlgebra"]
-git-tree-sha1 = "2aeaeaff72cdedaa0b5f30dfb8c1f16aefdac65d"
+git-tree-sha1 = "6404a564c24a994814106c374bec893195e19bac"
 uuid = "4c555306-a7a7-4459-81d9-ec55ddd5c99a"
-version = "1.7.0"
+version = "1.8.0"
 weakdeps = ["SparseArrays"]
 
     [deps.ArrayLayouts.extensions]
@@ -858,9 +858,9 @@ uuid = "9be31aac-5446-47db-bfeb-416acd2e4415"
 version = "0.1.4"
 
 [[deps.TranscodingStreams]]
-git-tree-sha1 = "a09c933bebed12501890d8e92946bbab6a1690f1"
+git-tree-sha1 = "14389d51751169994b2e1317d5c72f7dc4f21045"
 uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
-version = "0.10.5"
+version = "0.10.6"
 weakdeps = ["Random", "Test"]
 
     [deps.TranscodingStreams.extensions]
