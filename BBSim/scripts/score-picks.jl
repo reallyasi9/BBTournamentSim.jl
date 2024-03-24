@@ -81,7 +81,7 @@ end
 function score_sim(picks, owners, winners, values)
     points = vec(sum((picks .== winners) .* values; dims=1))
     ranks = competerank(points; rev=true)
-    return (owner=owners, points=points, ranks=ranks)
+    return (owner=owners, points=points, rank=ranks)
 end
 
 if !isinteractive()
