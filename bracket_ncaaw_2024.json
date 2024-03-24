@@ -44,7 +44,8 @@
             "NW11"
         ],
         "quadrant": "NW",
-        "value": 1
+        "value": 1,
+        "winner": "NW6"
     },
     {
         "game": 6,
@@ -301,5 +302,77 @@
         "quadrant": "SE",
         "value": 1,
         "winner": "SE2"
+    },
+    {
+        "game": 33,
+        "quadrant": "NW",
+        "teams": [
+            "NW1",
+            "NW8"
+        ],
+        "value": 2
+    },
+    {
+        "game": 35,
+        "quadrant": "NW",
+        "teams": [
+            "NW6",
+            "NW3"
+        ],
+        "value": 2
+    },
+    {
+        "game": 37,
+        "quadrant": "SW",
+        "teams": [
+            "SW1",
+            "SW8"
+        ],
+        "value": 2
+    },
+    {
+        "game": 40,
+        "quadrant": "SW",
+        "teams": [
+            "SW7",
+            "SW2"
+        ],
+        "value": 2
+    },
+    {
+        "game": 42,
+        "quadrant": "NE",
+        "teams": [
+            "NE5",
+            "NE4"
+        ],
+        "value": 2
+    },
+    {
+        "game": 43,
+        "quadrant": "NE",
+        "teams": [
+            "NE11",
+            "NE3"
+        ],
+        "value": 2
+    },
+    {
+        "game": 46,
+        "quadrant": "SE",
+        "teams": [
+            "SE5",
+            "SE4"
+        ],
+        "value": 2
+    },
+    {
+        "game": 48,
+        "quadrant": "SE",
+        "teams": [
+            "SE7",
+            "SE2"
+        ],
+        "value": 2
     }
 ]

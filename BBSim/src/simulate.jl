@@ -9,6 +9,7 @@ function simulate(rng::AbstractRNG, model::AbstractModel, tournament::Tournament
     n_games = length(tournament)
     simulated_winners = zeros(Int, n_games, n)
     Threads.@threads for sim in 1:n
+    # for sim in 1:n
         t = deepcopy(tournament)
         for g in 1:n_games
             w = simulate_winner(rng, model, teams(t, g))

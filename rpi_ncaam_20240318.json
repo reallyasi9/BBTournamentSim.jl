@@ -420,7 +420,7 @@
         "league": "ncaam",
         "name": "UAB Blazers",
         "rating": 75.92,
-        "seed": 5,
+        "seed": 12,
         "quadrant": "NW"
     },
     {
@@ -429,7 +429,7 @@
         "name": "Mississippi St. Bulldogs",
         "rating": 75.89,
         "seed": 8,
-        "quadrant": "NW"
+        "quadrant": "SW"
     },
     {
         "id": 55,

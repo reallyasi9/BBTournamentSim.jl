@@ -11,6 +11,10 @@ function parse_arguments(args=ARGS)
         "teams"
             help = "Team ranking JSON file"
             required = true
+        "--include", "-i"
+            help = "Include only these game number (default: all)"
+            nargs = '*'
+            arg_type = Int
         "--outfile", "-o"
             help = "Path to output tournament definition (JSON format)"
     end
@@ -47,7 +51,7 @@ function main(args=ARGS)
     end
 
     team_dict = Dict(string(BBSim.quadrant(team)) * string(BBSim.seed(team)) => team for team in filter(t -> !isnothing(BBSim.seed(t)), teams))
-    games = make_game.(bracket, Ref(team_dict))
+    games = make_game.(filter(g -> isnothing(options["include"]) || g["game"] ∈ options["include"], bracket), Ref(team_dict))
 
     tournament = BBSim.Tournament(games)
     

@@ -60,5 +60,5 @@ end
 
 if !isinteractive()
     main(ARGS)
-    # main(split(raw"../tournament_ncaaw_2024_20240318.json ../model_2024.json -s 42 -o ../test.parquet", " "))
+    # main(split(raw"./tournament_ncaam_2024_20240321.json ./model_2024.json -s 42", " "))
 end 

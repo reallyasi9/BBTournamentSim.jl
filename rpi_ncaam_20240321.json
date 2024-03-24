@@ -420,7 +420,7 @@
         "name": "UAB Blazers",
         "league": "ncaam",
         "rating": 76,
-        "seed": 5,
+        "seed": 12,
         "quadrant": "NW"
     },
     {
@@ -429,7 +429,7 @@
         "league": "ncaam",
         "rating": 75.89,
         "seed": 8,
-        "quadrant": "NW"
+        "quadrant": "SW"
     },
     {
         "id": 55,

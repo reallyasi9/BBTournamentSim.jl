@@ -106,7 +106,8 @@
             "SW12"
         ],
         "quadrant": "SW",
-        "value": 1
+        "value": 1,
+        "winner": "SW12"
     },
     {
         "game": 12,
@@ -255,7 +256,8 @@
             "SE9"
         ],
         "quadrant": "SE",
-        "value": 1
+        "value": 1,
+        "winner": "SE8"
     },
     {
         "game": 27,
@@ -363,8 +365,17 @@
         "value": 2
     },
     {
+        "game": 38,
+        "teams": [
+            "SW12",
+            "SW4"
+        ],
+        "quadrant": "SW",
+        "value": 2
+    },
+    {
         "game": 39,
-        "quadrant": "SW"
+        "quadrant": "SW",
         "teams": [
             "SW6",
             "SW3"
@@ -413,6 +424,15 @@
         "teams": [
             "NE10",
             "NE2"
+        ],
+        "value": 2
+    },
+    {
+        "game": 45,
+        "quadrant": "SE",
+        "teams": [
+            "SE1",
+            "SE8"
         ],
         "value": 2
     },
