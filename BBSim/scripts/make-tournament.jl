@@ -30,6 +30,9 @@ function parse_arguments(args=ARGS)
         "--include", "-i"
             help = "Include only this game or range of game numbers specified as START:[STEP:]STOP (default: all)"
             arg_type = IntOrRange
+        "--winners", "-w"
+            help = "Include only the winners of this game or range of game numbers specified as START:[STEP:]STOP (default: all where winner is defined)"
+            arg_type = IntOrRange
         "--outfile", "-o"
             help = "Path to output tournament definition (JSON format)"
     end

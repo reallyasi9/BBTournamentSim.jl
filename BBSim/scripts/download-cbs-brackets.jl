@@ -1,6 +1,5 @@
 using HTTP
 using JSON3
-using YAML
 using ArgParse
 
 const query_url = "https://picks.cbssports.com/graphql"
@@ -10,7 +9,7 @@ const game_order_operation_name = "PoolPeriodQuery"
 
 const version = 1
 const entries_query_hash = "797a9386ad10d089d4d493a911bce5a63dae4efb4c02a0a32a40b20de37e002d"
-const entry_query_hash = "d2a67474fb3276c6f9f0b8d24eceda58de511926a9dadb7aa55f1065f67e6d85"
+const entry_query_hash = "20bc0168a6b1e097dec66495e6220abc3af4c3f81fd956566bbf71cb47acffd6"
 const game_order_query_hash = "1f7753b6edfd22c41fb1d59e2850260f008782ffd8d5606a91837dbb78e54cb3"
 
 const default_pool_variables = Dict(
@@ -27,7 +26,7 @@ const default_order_variables = Dict(
     "includeEvents" => false,
 )
 
-const game_instances = Dict("mens" => "cbs-ncaab-tournament-manager", "womens" => "cbs-ncaaw-tournament-manager")
+const game_instances = Dict("ncaam" => "cbs-ncaab-tournament-manager", "ncaaw" => "cbs-ncaaw-tournament-manager")
 
 function parse_arguments(args)
     s = ArgParseSettings()
@@ -38,19 +37,19 @@ function parse_arguments(args)
         "poolid"
             help = "ID of pool"
             required = true
-        "gender"
-            help = "Tournament gender to query (either 'mens' or 'womens')"
+        "league"
+            help = "Tournament league to query (either 'ncaam' or 'ncaaw')"
             range_tester = x -> x ∈ keys(game_instances)
             required = true
         "teammap"
-            help = "Map of team IDs to team names in YAML format (use get-cbs-teams.jl to create)"
+            help = "Map of team IDs to team names in JSON format (use get-cbs-teams.jl to create)"
             required = true
         "--entries", "-n"
             help = "Maximum number of entries in pool (results are paginated in units of 50 entries)"
             arg_type = Int
             default = 50
         "--outfile", "-o"
-            help = "Path to local output YAML file (default: STDOUT)"
+            help = "Path to local output JSON file (default: STDOUT)"
     end
 
     options = parse_args(args, s)
@@ -58,11 +57,11 @@ function parse_arguments(args)
     return options
 end
 
-function get_entiries_page(pid, gender, pool_id, entries)
+function get_entiries_page(pid, league, pool_id, entries)
     cookies = Dict("pid" => pid)
 
     variables = copy(default_pool_variables)
-    variables["gameInstanceUid"] = game_instances[gender]
+    variables["gameInstanceUid"] = game_instances[league]
     variables["poolId"] = pool_id
 
     extensions = Dict(
@@ -116,11 +115,11 @@ const matchup_order = vcat(
     [62], # championship
 )
 
-function get_game_order_page(pid, gender, pool_id)
+function get_game_order_page(pid, league, pool_id)
     cookies = Dict("pid" => pid)
 
     variables = copy(default_order_variables)
-    variables["gameInstanceUid"] = game_instances[gender]
+    variables["gameInstanceUid"] = game_instances[league]
     variables["poolId"] = pool_id
 
     extensions = Dict(
@@ -181,16 +180,24 @@ end
 function main(args=ARGS)
     options = parse_arguments(args)
 
-    team_map = YAML.load_file(options["teammap"])
+    team_map = open(options["teammap"], "r") do io
+        JSON3.read(io)
+    end
 
-    entries = get_entiries_page(options["pid"], options["gender"], options["poolid"], options["entries"])
-    order = get_game_order_page(options["pid"], options["gender"], options["poolid"])
-    d = Dict(key => get_bracket_page(options["pid"], val, team_map, order) for (key, val) in entries)
+    entries = get_entiries_page(options["pid"], options["league"], options["poolid"], options["entries"])
+    order = get_game_order_page(options["pid"], options["league"], options["poolid"])
+    d = Dict{String, Any}()
+    for (key, val) in entries
+        d[key] = get_bracket_page(options["pid"], val, team_map, order)
+    end
+    # d = Dict(key => get_bracket_page(options["pid"], val, team_map, order) for (key, val) in entries)
 
     if isnothing(options["outfile"])
-        YAML.write(stdout, d)
+        JSON3.pretty(d)
     else
-        YAML.write_file(options["outfile"], d)
+        open(options["outfile"], "w") do f
+            JSON3.pretty(f, d)
+        end
     end
 end
 

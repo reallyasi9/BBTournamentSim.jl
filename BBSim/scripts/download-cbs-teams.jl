@@ -1,24 +1,23 @@
 using HTTP
 using JSON3
-using YAML
 using ArgParse
 
 const query_url = "https://picks.cbssports.com/graphql"
 const operation_name = "CentralTeamsQuery"
 
-const sports_types = Dict("mens" => "NCAAB", "womens" => "NCAAW")
+const sports_types = Dict("ncaam" => "NCAAB", "ncaaw" => "NCAAW")
 const version = 1
 const query_hash = "0a75bf16d2074af6893f4386e7a17bed7f6fe04f96a00edfb75de3d5bdf527ba"
 
 function parse_arguments(args)
     s = ArgParseSettings()
     @add_arg_table! s begin
-        "gender"
-            help = "Tournament gender to query (either 'mens' or 'womens')"
+        "league"
+            help = "Tournament league to query (either 'ncaam' or 'ncaaw')"
             range_tester = x -> x ∈ keys(sports_types)
             required = true
         "--outfile", "-o"
-            help = "Path to local output YAML file (default: STDOUT)"
+            help = "Path to local output JSON file (default: STDOUT)"
     end
 
     options = parse_args(args, s)
@@ -26,9 +25,9 @@ function parse_arguments(args)
     return options
 end
 
-function get_team_page(gender)
+function get_team_page(league)
     variables = Dict(
-        "sportTypes" => [sports_types[gender]],
+        "sportTypes" => [sports_types[league]],
     )
     extensions = Dict(
         "persistedQuery" => Dict(
@@ -54,12 +53,14 @@ end
 
 function main(args=ARGS)
     options = parse_arguments(args)
-    d = get_team_page(options["gender"])
+    d = get_team_page(options["league"])
 
     if isnothing(options["outfile"])
-        YAML.write(stdout, d)
+        JSON3.pretty(d)
     else
-        YAML.write_file(options["outfile"], d)
+        open(options["outfile"], "w") do f
+            JSON3.pretty(f, d)
+        end
     end
 end
 
