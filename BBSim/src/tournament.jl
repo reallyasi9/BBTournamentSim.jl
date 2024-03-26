@@ -73,18 +73,18 @@ Base.length(t::Tournament) = length(t.winners)
 function is_eliminated(t::Tournament, team::Team)
     for game in 1:length(t)
         if is_done(t, game) 
-            if team in teams(t, game) && team != winner(t, game)
+            if id(team) in id.(teams(t, game)) && id(team) != id(winner(t, game))
                 return true
             end
-        elseif team in teams(t, game)
+        elseif is_filled(t, game) && id(team) in id.(teams(t, game))
             return false
         end
     end
-    return false
+    return true
 end
 
 
-is_eliminated(::Tournament, team::Nothing) = false
+is_eliminated(::Tournament, team::Nothing) = true
 
 winner(t::Tournament, game::Integer) = return t.winners[game]
 teams(t::Tournament, game::Integer) = return @view(t.teams[(game-1)*2+1:(game-1)*2+2])

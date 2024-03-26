@@ -13,7 +13,7 @@ function points(p::Picks, tournament::Tournament)
     best_possible = 0
     for (g, team) in pairs(picks(p))
         val = value(tournament, g)
-        if team == winner(tournament, g)
+        if is_done(tournament, g) && id(team) == id(winner(tournament, g))
             score_now += val
             best_possible += val
         elseif !is_eliminated(tournament, team)

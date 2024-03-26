@@ -21,7 +21,7 @@ function parse_arguments(args=ARGS)
         "--expecto", "-e"
             help = "Path to output expected values file (CSV format)"
         "--exciteo", "-x"
-            help = "Path to output expected values conditional on game winners file (CSV format)"
+            help = "Path to output expected values conditional on game winners file (Parquet format)"
     end
 
     return parse_args(args, s)
@@ -56,13 +56,13 @@ function main(args=ARGS)
         :points => median => :points_median,
         :points => (x -> quantile(x, 0.75)) => :points_q75,
         :points => maximum => :points_max,
-        :ranks => mean => :rank_mean,
-        :ranks => maximum => :rank_now,
-        :ranks => (x -> quantile(x, 0.75)) => :rank_q25,
-        :ranks => median => :rank_median,
-        :ranks => (x -> quantile(x, 0.25)) => :rank_q75,
-        :ranks => minimum => :rank_max,
-        :ranks => (x -> count(==(1), x) / n_simulations) => :p_win,
+        :rank => mean => :rank_mean,
+        :rank => maximum => :rank_now,
+        :rank => (x -> quantile(x, 0.75)) => :rank_q25,
+        :rank => median => :rank_median,
+        :rank => (x -> quantile(x, 0.25)) => :rank_q75,
+        :rank => minimum => :rank_max,
+        :rank => (x -> count(==(1), x) / n_simulations) => :p_win,
     )
 
     if !isnothing(options["expecto"])
@@ -74,12 +74,16 @@ function main(args=ARGS)
     end
 
     subset!(simulations, :game => ByRow(in(next_up)))
-    subset!(posteriors, :ranks => ByRow(==(1)))
+    transform!(
+        groupby(simulations, [:game, :winner]),
+        nrow => :team_wins
+    )
+    subset!(posteriors, :rank => ByRow(==(1)))
     exciteo = combine(
-        groupby(leftjoin(posteriors, simulations, on=:simulation), [:owner, :game, :winner]),
+        groupby(leftjoin(posteriors, simulations, on=:simulation), [:owner, :game, :winner, :team_wins]),
         nrow => :victories
     )
-    transform!(exciteo, :victories => ByRow(x -> x/n_simulations) => :conditional_p_win)
+    transform!(exciteo, [:victories, :team_wins] => ByRow((v,w) -> v/w) => :conditional_p_win)
 
     if !isnothing(options["exciteo"])
         open(options["exciteo"], "w") do f

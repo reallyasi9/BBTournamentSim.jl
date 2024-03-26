@@ -200,7 +200,7 @@ function main(args=ARGS)
     for (key, val) in entries
         teams = get_bracket_page(options["pid"], val, team_map, order)
         teams = map(x -> team_seeds[x], teams)
-        d = Dict("owner" => key, "teams" => teams)
+        d = Dict("owner" => key, "picks" => teams)
         push!(v, d)
     end
 
