@@ -44,6 +44,9 @@ function parse_arguments(args)
         "teammap"
             help = "Map of team IDs to team names in JSON format (use get-cbs-teams.jl to create)"
             required = true
+        "teamseed"
+            help = "Map to team names to seeds in JSON format (must be manually created)"
+            required = true
         "--entries", "-n"
             help = "Maximum number of entries in pool (results are paginated in units of 50 entries)"
             arg_type = Int
@@ -95,24 +98,24 @@ function get_entiries_page(pid, league, pool_id, entries)
 end
 
 const matchup_order = vcat(
-    collect(0:7),
-    collect(30:37),
-    collect(15:22),
-    collect(45:52), # round 1
+    collect(4:11),
+    collect(34:41),
+    collect(19:26),
+    collect(49:56), # round 1
 
-    collect(8:11),
-    collect(38:41),
-    collect(23:26),
-    collect(53:56), # round 2
+    collect(12:15),
+    collect(42:45),
+    collect(27:30),
+    collect(57:60), # round 2
 
-    collect(12:13),
-    collect(42:43),
-    collect(27:28),
-    collect(57:58), # sweet sixteen
+    collect(16:17),
+    collect(46:47),
+    collect(31:32),
+    collect(61:62), # sweet sixteen
 
-    [14, 44, 29, 59], # elite eight
-    [60, 61], # final four
-    [62], # championship
+    [18, 48, 33, 63], # elite eight
+    [64, 65], # final four
+    [66], # championship
 )
 
 function get_game_order_page(pid, league, pool_id)
@@ -133,6 +136,7 @@ function get_game_order_page(pid, league, pool_id)
         "operationName" => game_order_operation_name,
         "variables" => JSON3.write(variables),
         "extensions" => JSON3.write(extensions),
+        "entryId" => "ivxhi4tzhiytkobugy3domzx"
     )
 
     resp = HTTP.request("GET", query_url; query=query, cookies=cookies)
@@ -184,19 +188,27 @@ function main(args=ARGS)
         JSON3.read(io)
     end
 
+    team_seeds = open(options["teamseed"], "r") do io
+        JSON3.read(io)
+    end
+
     entries = get_entiries_page(options["pid"], options["league"], options["poolid"], options["entries"])
     order = get_game_order_page(options["pid"], options["league"], options["poolid"])
-    d = Dict{String, Any}()
+    
+    # new format: vector of objects with "owner" and "picks" keys
+    v = Vector{Dict{String, Any}}()
     for (key, val) in entries
-        d[key] = get_bracket_page(options["pid"], val, team_map, order)
+        teams = get_bracket_page(options["pid"], val, team_map, order)
+        teams = map(x -> team_seeds[x], teams)
+        d = Dict("owner" => key, "teams" => teams)
+        push!(v, d)
     end
-    # d = Dict(key => get_bracket_page(options["pid"], val, team_map, order) for (key, val) in entries)
 
     if isnothing(options["outfile"])
-        JSON3.pretty(d)
+        JSON3.pretty(v)
     else
         open(options["outfile"], "w") do f
-            JSON3.pretty(f, d)
+            JSON3.pretty(f, v)
         end
     end
 end
