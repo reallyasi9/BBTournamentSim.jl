@@ -61,20 +61,20 @@ function main(args=ARGS)
 
     pick_matrix = stack([BBSim.id.(v) for v in BBSim.picks.(picks)])
     df = DataFrame(simulations; copycols=false)
-    # df = sort!(df, [:simulation, :game])
-    df = combine(
+    sort!(df, [:simulation, :game])
+    score_df = combine(
         groupby(df, :simulation),
         [:winner, :value] => ((w, v) -> score_sim(pick_matrix, owners, w, v)) => AsTable
     )
 
     if !isnothing(options["posterior"])
         open(options["posterior"], "w") do f
-            Parquet2.writefile(f, df)
+            Parquet2.writefile(f, score_df)
         end
     else
-        print(first(df, 30; view=true))
+        print(first(score_df, 30; view=true))
         println("...")
-        print(last(df, 30; view=true))
+        print(last(score_df, 30; view=true))
     end
 end
 

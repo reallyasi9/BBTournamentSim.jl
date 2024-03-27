@@ -19,8 +19,8 @@ function simulate_winner(rng::AbstractRNG, model::GaussianModel, teams::Abstract
     t1 = teams[1]
     t2 = teams[2]
     (isnothing(t1) || isnothing(t2)) && return nothing
-    δ = rating(t1) - rating(t2)
-    if rand(rng, model.dist) < δ
+    Δ = rating(t1) - rating(t2)
+    if rand(rng, model.dist) < Δ
         return t1
     else
         return t2

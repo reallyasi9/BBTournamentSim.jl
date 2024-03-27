@@ -43,8 +43,8 @@ function main(args=ARGS)
     # find games in the tournament that do not have winners but do have teams
     next_up = Vector{Int}()
     for game in 1:length(tournament)
-        isnothing(BBSim.winner(tournament, game)) || continue
-        (isnothing(BBSim.team(tournament, game, 1)) || isnothing(BBSim.team(tournament, game, 2))) && continue
+        BBSim.is_done(tournament, game) && continue
+        !BBSim.is_filled(tournament, game) && continue
         push!(next_up, game)
     end
 
