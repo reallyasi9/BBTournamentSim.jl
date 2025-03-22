@@ -6,8 +6,9 @@ const query_url = "https://picks.cbssports.com/graphql"
 const operation_name = "CentralTeamsQuery"
 
 const sports_types = Dict("ncaam" => "NCAAB", "ncaaw" => "NCAAW")
+const subsection = nothing
 const version = 1
-const query_hash = "0a75bf16d2074af6893f4386e7a17bed7f6fe04f96a00edfb75de3d5bdf527ba"
+const query_hash = "8a220108aa5f077e329cd6de9e6aff0a9f37fbec3221ab142369d0e18717c243"
 
 function parse_arguments(args)
     s = ArgParseSettings()
