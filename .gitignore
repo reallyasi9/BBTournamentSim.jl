@@ -4,4 +4,4 @@
 *.svg
 *.png
 
-**/Manifest.toml
+Manifest.toml
