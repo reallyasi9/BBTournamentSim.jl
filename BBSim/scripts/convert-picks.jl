@@ -6,10 +6,10 @@ function parse_arguments(args=ARGS)
     s = ArgParseSettings()
     @add_arg_table! s begin
         "picks"
-            help = "Simple picks JSON file"
+            help = "Simple picks JSON file (as produced by download-cbs-picks.jl)"
             required = true
         "teams"
-            help = "Team ranking JSON file"
+            help = "Team ranking JSON file (as produced by download-rpi.jl)"
             required = true
         "--outfile", "-o"
             help = "Path to output more complete picks file (JSON format)"
