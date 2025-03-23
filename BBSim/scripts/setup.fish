@@ -31,11 +31,11 @@ for league in $LEAGUES
 
         eval "julia --project=. generate-bracket-shell.jl $league --values" (string join ' ' {$COMP_VALUES[$i]}) "-o $OUTDIR/$comp/$league/brackets/shell-$CURRENT_YEAR.json"
         julia --project=. download-cbs-teams.jl $league -o $OUTDIR/$comp/$league/teams/map-$CURRENT_YEAR.json
-        if test -e $OUTDIR/$comp/$league/rpi/rpi-shell.json
+        if test -e $OUTDIR/$comp/$league/rpi/rpi-shell-$CURRENT_YEAR.json
             echo "RPI file already exists, refusing to overwrite"
         else
-            julia --project=. download-rpi.jl $league -o $OUTDIR/$comp/$league/rpi/rpi-shell.json
+            julia --project=. download-rpi.jl $league -o $OUTDIR/$comp/$league/rpi/rpi-shell-$CURRENT_YEAR.json
         end
-        echo "Update $OUTDIR/$comp/$league/rpi/rpi-shell.json with proper seed quadrant values, then proceed with running julia --project=. make-tournament.jl"
+        echo "Update $OUTDIR/$comp/$league/rpi/rpi-shell-$CURRENT_YEAR.json with proper seed quadrant values, then proceed with running julia --project=. make-tournament.jl"
     end
 end

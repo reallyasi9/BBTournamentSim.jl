@@ -8,9 +8,9 @@ const entry_operation_name = "EntryDetailsQuery"
 const game_order_operation_name = "PoolPeriodQuery"
 
 const version = 1
-const entries_query_hash = "797a9386ad10d089d4d493a911bce5a63dae4efb4c02a0a32a40b20de37e002d"
-const entry_query_hash = "20bc0168a6b1e097dec66495e6220abc3af4c3f81fd956566bbf71cb47acffd6"
-const game_order_query_hash = "1f7753b6edfd22c41fb1d59e2850260f008782ffd8d5606a91837dbb78e54cb3"
+const entries_query_hash = "d4a5f361f30ebb86e3d9171ea21713de96057ad22dc12533d304fea89f8dea57"
+const entry_query_hash = "720253f4494bde0f40858ce0819fcbd70a5beb7b3de55becb9d8bfd5976059be"
+const game_order_query_hash = "bd4dd3122d072d332e7cd9143d0d29dcbde35798a79cea4703319efa42a95e04"
 
 const default_pool_variables = Dict(
     "skipAncestorPools" => false,
@@ -42,10 +42,10 @@ function parse_arguments(args)
             range_tester = x -> x ∈ keys(game_instances)
             required = true
         "teammap"
-            help = "Map of team IDs to team names in JSON format (use get-cbs-teams.jl to create)"
+            help = "Map of team IDs to team names in JSON format (use download-cbs-teams.jl to create)"
             required = true
         "teamseed"
-            help = "Map to team names to seeds in JSON format (must be manually created)"
+            help = "Map to team names to seeds in JSON format (must be manually created with CBS team names as keys and seed numbers as values)"
             required = true
         "--entries", "-n"
             help = "Maximum number of entries in pool (results are paginated in units of 50 entries)"
