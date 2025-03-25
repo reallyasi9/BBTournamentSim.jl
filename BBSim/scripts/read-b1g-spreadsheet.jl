@@ -23,7 +23,7 @@ function parse_arguments(args=ARGS)
     return parse_args(args, s)
 end
 
-function main(args=ARGS)
+function (@main)(args=ARGS)
     options = parse_arguments(args)
 
     pick_objs = Vector{Dict{String,Any}}()
@@ -61,9 +61,6 @@ function main(args=ARGS)
     else
         JSON3.pretty(pick_objs)
     end
-end
 
-if !isinteractive()
-    main(ARGS)
-    # main(split(raw"../tournament_ncaaw_2024_20240318.json ../model_2024.json -s 42 -o ../test.parquet", " "))
-end 
+    return 0
+end

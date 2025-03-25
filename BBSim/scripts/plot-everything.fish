@@ -3,7 +3,7 @@
 set OUTDIR ~/Documents/b1g-bbtournament-sim
 set CURRENT_DATE (date +%Y-%m-%d)
 set LEAGUES "ncaaw" "ncaam"
-set COMPETITIONS "cid" "mpr"
+set COMPETITIONS "cid" "mpr" "b1g"
 
 set fish_trace 1
 
