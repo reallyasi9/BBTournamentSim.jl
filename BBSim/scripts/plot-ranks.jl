@@ -1,6 +1,20 @@
 using CairoMakie
 using ArgParse
-using YAML
+using Parquet2
+using Tables
+
+# input is a table with columns (simulation, owner, points, rank)
+# we need to convert this to a Dict of (picker => [probs]) where [probs] are the probabilities of the picker achieving each rank (first element is rank 1, etc.)
+function rank_table_to_dict(table)
+    owners = unique(Tables.getcolumn(table, :owner))
+    n_pickers = length(owners)
+    n_sims = maximum(Tables.getcolumn(table, :simulation))
+    values = Dict(owner => zeros(n_pickers) for owner in owners)
+    for (owner, rank) in zip(Tables.getcolumn(table, :owner), Tables.getcolumn(table, :rank))
+        values[owner][rank] += 1
+    end
+    return Dict(owner => values[owner] / n_sims for owner in keys(values))
+end
 
 function ordinal_rank(values)
     map(values) do v
@@ -22,8 +36,8 @@ end
 function plot_ranks(ranks)
     n_ranks = length(ranks)
     fig = Figure(;
-        resolution = (54 * n_ranks, 200 * n_ranks),
-        fonts = (regular = "DejaVu Sans"),
+        size = (54 * n_ranks, 200 * n_ranks),
+        fonts = (;regular = "DejaVu Sans"),
     )
     names = sort(collect(keys(ranks)))
 
@@ -58,8 +72,8 @@ end
 function parse_arguments(args)
     s = ArgParseSettings()
     @add_arg_table! s begin
-        "ranks"
-            help = "Ranks histogram information in YAML format"
+        "posteriors"
+            help = "Posterior draws in Parquet format"
             required = true
         "--outfile", "-o"
             help = "Plot output file, format determined by extension (default: write to STDOUT)"
@@ -73,8 +87,9 @@ end
 function main(args=ARGS)
     options = parse_arguments(args)
 
-    ranks = YAML.load_file(options["ranks"])
-    fig = plot_ranks(ranks)
+    ranks = Parquet2.readfile(options["posteriors"])
+    conv_ranks = rank_table_to_dict(ranks)
+    fig = plot_ranks(conv_ranks)
 
     if isnothing(options["outfile"])
         CairoMakie.activate!(; visible=true)

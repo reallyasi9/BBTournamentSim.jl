@@ -1,8 +1,11 @@
 using CairoMakie
 using ArgParse
-using YAML
+using Parquet2
+using JSON3
+using Tables
+using BBSim
 
-# matrix is a Dict of (picker => (game => winner)) => prob
+# matrix is a Dict of picker => [(game => winner) => prob]
 # need to determine all possible winners of a given game
 # return Dict of game => [winner]
 function get_team_pairs(matrix)
@@ -14,6 +17,51 @@ function get_team_pairs(matrix)
         end
     end
     return pairs
+end
+
+# input is a table with columns (owner, game, winner, team_wins, victories, conditional_p_win)
+# excite-o-matic is the probability that owner wins given winner wins game, which is exactly conditional_p_win.
+# convert to a Dict of picker => [(game => winner) => prob] values for processing
+function excite_o_matic_to_matrix(table)
+    out = Dict{String, Dict{Int, Dict{Int, Float64}}}() # picker => game => winner => prob
+    for (owner, game, winner, _, _, conditional_p_win) in Tables.rows(table)
+        owner_dict = get!(out, owner, Dict{Int, Dict{Int, Float64}}())
+        game_dict = get!(owner_dict, game, Dict{Int, Float64}())
+        game_dict[winner] = conditional_p_win
+    end
+    return out
+end
+
+# input is a table with columns (simulation, owner, points, rank)
+# we need to convert this to a Dict of (picker => [probs]) where [probs] are the probabilities of the picker achieving each rank (first element is rank 1, etc.)
+function rank_table_to_dict(table)
+    owners = unique(Tables.getcolumn(table, :owner))
+    n_pickers = length(owners)
+    n_sims = maximum(Tables.getcolumn(table, :simulation))
+    values = Dict(owner => zeros(n_pickers) for owner in owners)
+    for (owner, rank) in zip(Tables.getcolumn(table, :owner), Tables.getcolumn(table, :rank))
+        values[owner][rank] += 1
+    end
+    return Dict(owner => values[owner] / n_sims for owner in keys(values))
+end
+
+# convert the picker => ((game => winner) => prob) matrix to picker => ((game => team) => prob)
+function attach_team_names(tournament, matrix)
+    out = Dict{String, Dict{Int, Dict{String, Float64}}}() # picker => game => team => prob
+    team_names = Dict{Int, String}()
+    for team in unique(filter(!isnothing, tournament.teams))
+        team_names[team.id] = team.name
+    end
+    for picker in keys(matrix)
+        out[picker] = Dict{Int, Dict{String, Float64}}()
+        for game in keys(matrix[picker])
+            out[picker][game] = Dict{String, Float64}()
+            for team in keys(matrix[picker][game])
+                out[picker][game][team_names[team]] = matrix[picker][game][team]
+            end
+        end
+    end
+    return out
 end
 
 percent_format(values) = map(values) do v
@@ -37,8 +85,8 @@ function plot_matrix(matrix, ranks)
     n_games = length(pairs)
 
     fig = Figure(;
-        resolution = (800, 40 * n_games * n_pickers),
-        fonts = (regular = "DejaVu Sans"),
+        size = (800, 40 * n_games * n_pickers),
+        fonts = (;regular = "DejaVu Sans"),
     )
 
     colors = cgrad(:tab10) # simple color scheme
@@ -132,14 +180,17 @@ end
 function parse_arguments(args)
     s = ArgParseSettings()
     @add_arg_table! s begin
-        "ranks"
-            help = "Probability of rank information in YAML format"
+        "tournament"
+            help = "Tournament JSON file"
             required = true
-        "matrix"
-            help = "Probability of win matrix information in YAML format"
+        "posteriors"
+            help = "Posterior outcomes per user in parquet format"
+            required = true
+        "excite"
+            help = "Excite-o-Matic output in parquet format"
             required = true
         "--outfile", "-o"
-            help = "Plot output file, format determined by extension (default: write to STDOUT)"
+            help = "Plot output file, format determined by extension (default: display on screen)"
     end
 
     options = parse_args(args, s)
@@ -147,13 +198,20 @@ function parse_arguments(args)
     return options
 end
 
-function main(args=ARGS)
+function (@main)(args=ARGS)
     options = parse_arguments(args)
 
-    ranks = YAML.load_file(options["ranks"])
-    matrix = YAML.load_file(options["matrix"])
+    tournament = open(options["tournament"], "r") do io
+        JSON3.read(io, BBSim.Tournament)
+    end
+    ranks = Parquet2.readfile(options["posteriors"])
+    matrix = Parquet2.readfile(options["excite"])
 
-    fig = plot_matrix(matrix, ranks)
+    conv_ranks = rank_table_to_dict(ranks)
+    conv_matrix = excite_o_matic_to_matrix(matrix)
+    team_matrix = attach_team_names(tournament, conv_matrix)
+
+    fig = plot_matrix(team_matrix, conv_ranks)
 
     if isnothing(options["outfile"])
         CairoMakie.activate!(; visible=true)
@@ -161,8 +219,6 @@ function main(args=ARGS)
     else
         save(options["outfile"], fig)
     end
-end
 
-if !isinteractive()
-    main()
+    return 0
 end

@@ -13,7 +13,7 @@ function parse_arguments(args=ARGS)
             help = "Tournament JSON file"
             required = true
         "posteriors"
-            help = "Picks JSON file"
+            help = "Posterior probabilities parquet file"
             required = true
         "simulations"
             help = "Simulations parquet file"
