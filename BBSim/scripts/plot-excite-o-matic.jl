@@ -84,8 +84,9 @@ function plot_matrix(matrix, ranks)
     pairs = sort(unordered_pairs) # by index = game number
     n_games = length(pairs)
 
+    height = 40 * n_pickers * max(n_games, 4)
     fig = Figure(;
-        size = (800, 40 * n_games * n_pickers),
+        size = (800, height),
         fonts = (;regular = "DejaVu Sans"),
     )
 

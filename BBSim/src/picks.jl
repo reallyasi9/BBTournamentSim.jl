@@ -9,6 +9,7 @@ StructTypes.StructType(::Type{Picks}) = StructTypes.Struct()
 
 Base.size(p::Picks) = size(p.picks)
 Base.length(p::Picks) = length(p.picks)
+Base.eltype(::Picks) = Union{Team,Nothing}
 tiebreaker(p::Picks) = p.tiebreaker
 owner(p::Picks) = p.owner
 picks(p::Picks) = p.picks

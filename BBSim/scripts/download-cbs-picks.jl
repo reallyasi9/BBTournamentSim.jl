@@ -28,6 +28,10 @@ const default_order_variables = Dict(
 
 const game_instances = Dict("ncaam" => "cbs-ncaab-tournament-manager", "ncaaw" => "cbs-ncaaw-tournament-manager")
 
+const start_game_per_round = [
+    1, 33, 49, 57, 61, 63
+]
+
 function parse_arguments(args)
     s = ArgParseSettings()
     @add_arg_table! s begin
@@ -47,10 +51,6 @@ function parse_arguments(args)
         "teamseed"
             help = "Map to team names to seeds in JSON format (must be manually created with CBS team names as keys and seed numbers as values)"
             required = true
-        "--entries", "-n"
-            help = "Maximum number of entries in pool (results are paginated in units of 50 entries)"
-            arg_type = Int
-            default = 50
         "--outfile", "-o"
             help = "Path to local output JSON file (default: STDOUT)"
     end
@@ -60,7 +60,7 @@ function parse_arguments(args)
     return options
 end
 
-function get_entiries_page(pid, league, pool_id, entries)
+function get_entiries_page(pid, league, pool_id)
     cookies = Dict("pid" => pid)
 
     variables = copy(default_pool_variables)
@@ -73,50 +73,37 @@ function get_entiries_page(pid, league, pool_id, entries)
             "sha256Hash" => entries_query_hash,
         ),
     )
-    
-    # for skip in 0:50:Integer(ceil((entries-1) / 50)*50)
-    # TODO: figure out skip
-    # variables["skip"] = skip
-    variables["first"] = 50 # FIXME
-    query = Dict(
-        "operationName" => entries_operation_name,
-        "variables" => JSON3.write(variables),
-        "extensions" => JSON3.write(extensions),
-    )
 
-    resp = HTTP.request("GET", query_url; query=query, cookies=cookies)
+    variables["first"] = 50
+    d = Dict{String, String}()
 
-    # TODO: append results
-    json = JSON3.read(resp.body)
-    entries = json["data"]["gameInstance"]["pool"]["entries"]["edges"]
-    d = Dict(
-        e["node"]["name"] => e["node"]["id"] for e in entries
-    )
-    # end
+    while true
+
+        query = Dict(
+            "operationName" => entries_operation_name,
+            "variables" => JSON3.write(variables),
+            "extensions" => JSON3.write(extensions),
+        )
+
+        resp = HTTP.request("GET", query_url; query=query, cookies=cookies)
+
+        json = JSON3.read(resp.body)
+        es = json["data"]["gameInstance"]["pool"]["entries"]["edges"]
+        
+        if length(es) < 1
+            break
+        end
+
+        merge!(d, Dict(
+            e["node"]["name"] => e["node"]["id"] for e in es
+        ))
+        
+        start = json["data"]["gameInstance"]["pool"]["entries"]["pageInfo"]["endCursor"]
+        variables["after"] = start
+    end
 
     return d
 end
-
-const matchup_order = vcat(
-    collect(4:11),
-    collect(34:41),
-    collect(19:26),
-    collect(49:56), # round 1
-
-    collect(12:15),
-    collect(42:45),
-    collect(27:30),
-    collect(57:60), # round 2
-
-    collect(16:17),
-    collect(46:47),
-    collect(31:32),
-    collect(61:62), # sweet sixteen
-
-    [18, 48, 33, 63], # elite eight
-    [64, 65], # final four
-    [66], # championship
-)
 
 function get_game_order_page(pid, league, pool_id)
     cookies = Dict("pid" => pid)
@@ -143,7 +130,17 @@ function get_game_order_page(pid, league, pool_id)
     json = JSON3.read(resp.body)
 
     matchups = json["data"]["gameInstance"]["period"]["matchups"]
-    d = Dict(matchups[matchup_order[i]+1]["id"] => i for i in eachindex(matchup_order))
+    # the matchup data tells me the ordinal position of the game
+    ids = map(m -> m["id"], matchups)
+    rounds = map(m -> m["tournamentRound"], matchups)
+    ordinals = map(m -> m["roundOrdinal"], matchups)
+    keepers = findall(rounds .> 1)
+
+    rounds = rounds[keepers]
+    ordinals = ordinals[keepers]
+    game_numbers = ordinals .+ start_game_per_round[rounds .- 1]
+    ids = ids[keepers]
+    d = Dict(ids .=> game_numbers)
     return d
 end
 
@@ -192,7 +189,7 @@ function main(args=ARGS)
         JSON3.read(io)
     end
 
-    entries = get_entiries_page(options["pid"], options["league"], options["poolid"], options["entries"])
+    entries = get_entiries_page(options["pid"], options["league"], options["poolid"])
     order = get_game_order_page(options["pid"], options["league"], options["poolid"])
     
     # new format: vector of objects with "owner" and "picks" keys

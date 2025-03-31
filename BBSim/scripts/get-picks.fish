@@ -7,7 +7,7 @@ set COMPETITIONS "cid" "mpr"
 # by competition, cid first
 set PIDS "L:1:P3UlkdfrP7pM+Zwq85DZNA==:1" "L:1:hqGSrEVSEEfGfMDR/1dM8g==:1"
 # by pool, cid ncaaw first, then mpr ncaaw, then cid ncaam, then mpr ncaam
-set POOL_IDS "kbxw63b2geztimbxguztq===" "kbxw63b2geztmmzqgyytg===" "kbxw63b2geztmmzsgaztc===" "kbxw63b2geztmmzsgaztc==="
+set POOL_IDS "kbxw63b2geztimbxguztq===" "kbxw63b2geztmmzqgyytg===" "kbxw63b2geztcnzwgq4ti===" "kbxw63b2geztmmzsgaztc==="
 
 set ipool 1
 for ileague in (seq 2)

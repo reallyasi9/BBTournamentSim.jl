@@ -26,7 +26,7 @@ function parse_arguments(args=ARGS)
     return parse_args(args, s)
 end
 
-function main(args=ARGS)
+function (@main)(args=ARGS)
     options = parse_arguments(args)
 
     tournament = open(options["tournament"], "r") do io
@@ -76,14 +76,12 @@ function main(args=ARGS)
         println("...")
         print(last(score_df, 30; view=true))
     end
+
+    return 0
 end
 
 function score_sim(picks, owners, winners, values)
     points = vec(sum((picks .== winners) .* values; dims=1))
     ranks = competerank(points; rev=true)
     return (owner=owners, points=points, rank=ranks)
-end
-
-if !isinteractive()
-    main(ARGS)
 end

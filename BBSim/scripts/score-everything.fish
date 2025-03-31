@@ -18,7 +18,7 @@ for league in $LEAGUES
         julia --project=. convert-picks.jl $OUTDIR/$comp/$league/picks/picks-$CURRENT_YEAR.json $OUTDIR/$comp/$league/rpi/rpi-$CURRENT_DATE.json -o $OUTDIR/$comp/$league/picks/picks-merged-$CURRENT_DATE.json
 
         mkdir -p $OUTDIR/$comp/$league/output
-        julia --project=. -t 10 simulate-remaining.jl -n 1000000 $OUTDIR/$comp/$league/tournaments/tournament-$CURRENT_DATE.json $OUTDIR/models/rpi-gaussian.json -o $OUTDIR/$comp/$league/output/simulations-$CURRENT_DATE.parquet
+        julia --project=. -t 10 simulate-remaining.jl -n 10000 $OUTDIR/$comp/$league/tournaments/tournament-$CURRENT_DATE.json $OUTDIR/models/rpi-gaussian.json -o $OUTDIR/$comp/$league/output/simulations-$CURRENT_DATE.parquet
         julia --project=. score-picks.jl $OUTDIR/$comp/$league/tournaments/tournament-$CURRENT_DATE.json $OUTDIR/$comp/$league/picks/picks-merged-$CURRENT_DATE.json $OUTDIR/$comp/$league/output/simulations-$CURRENT_DATE.parquet -r $OUTDIR/$comp/$league/output/rankfile-$CURRENT_DATE.csv -p $OUTDIR/$comp/$league/output/posteriors-$CURRENT_DATE.parquet
         julia --project=. score-simulations.jl $OUTDIR/$comp/$league/tournaments/tournament-$CURRENT_DATE.json $OUTDIR/$comp/$league/output/posteriors-$CURRENT_DATE.parquet $OUTDIR/$comp/$league/output/simulations-$CURRENT_DATE.parquet -e $OUTDIR/$comp/$league/output/expecto-$CURRENT_DATE.csv -x $OUTDIR/$comp/$league/output/exciteo-$CURRENT_DATE.parquet
         
