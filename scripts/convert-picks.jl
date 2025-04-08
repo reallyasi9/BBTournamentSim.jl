@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 
 function parse_arguments(args=ARGS)
@@ -23,7 +23,7 @@ function make_pick(p, team_dict)
     tiebreaker = get(p, "tiebreaker", nothing)
     teams = [get(team_dict, t, nothing) for t in p["picks"]]
 
-    return BBSim.Picks(
+    return BBTournamentSim.Picks(
         owner,
         teams,
         tiebreaker,
@@ -38,10 +38,10 @@ function main(args=ARGS)
     end
 
     teams = open(options["teams"], "r") do io
-        JSON3.read(io, Vector{BBSim.Team})
+        JSON3.read(io, Vector{BBTournamentSim.Team})
     end
 
-    team_dict = Dict(string(BBSim.quadrant(team)) * string(BBSim.seed(team)) => team for team in filter(t -> !isnothing(BBSim.seed(t)), teams))
+    team_dict = Dict(string(BBTournamentSim.quadrant(team)) * string(BBTournamentSim.seed(team)) => team for team in filter(t -> !isnothing(BBTournamentSim.seed(t)), teams))
     complete_picks = make_pick.(picks, Ref(team_dict))
     
     if !isnothing(options["outfile"])

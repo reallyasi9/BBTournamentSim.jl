@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 using CSV
 using Parquet2
@@ -30,11 +30,11 @@ function (@main)(args=ARGS)
     options = parse_arguments(args)
 
     tournament = open(options["tournament"], "r") do io
-        JSON3.read(io, BBSim.Tournament)
+        JSON3.read(io, BBTournamentSim.Tournament)
     end
 
     picks = open(options["picks"], "r") do io
-        JSON3.read(io, Vector{BBSim.Picks})
+        JSON3.read(io, Vector{BBTournamentSim.Picks})
     end
 
     if isnothing(options["simulations"])
@@ -43,10 +43,10 @@ function (@main)(args=ARGS)
         simulations = Parquet2.readfile(options["simulations"])
     end
 
-    scores = BBSim.points.(picks, Ref(tournament))
+    scores = BBTournamentSim.points.(picks, Ref(tournament))
     scores_now = first.(scores)
     scores_best = last.(scores)
-    owners = BBSim.owner.(picks)
+    owners = BBTournamentSim.owner.(picks)
     ranks = competerank(scores_now; rev=true)
 
     if !isnothing(options["rankfile"])
@@ -59,7 +59,7 @@ function (@main)(args=ARGS)
 
     isnothing(simulations) && return
 
-    pick_matrix = stack([BBSim.id.(v) for v in BBSim.picks.(picks)])
+    pick_matrix = stack([BBTournamentSim.id.(v) for v in BBTournamentSim.picks.(picks)])
     df = DataFrame(simulations; copycols=false)
     sort!(df, [:simulation, :game])
     score_df = combine(

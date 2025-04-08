@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 using CSV
 using Parquet2
@@ -31,7 +31,7 @@ function main(args=ARGS)
     options = parse_arguments(args)
 
     tournament = open(options["tournament"], "r") do io
-        JSON3.read(io, BBSim.Tournament)
+        JSON3.read(io, BBTournamentSim.Tournament)
     end
 
     posteriors = DataFrame(Parquet2.readfile(options["posteriors"]))
@@ -43,8 +43,8 @@ function main(args=ARGS)
     # find games in the tournament that do not have winners but do have teams
     next_up = Vector{Int}()
     for game in 1:length(tournament)
-        BBSim.is_done(tournament, game) && continue
-        !BBSim.is_filled(tournament, game) && continue
+        BBTournamentSim.is_done(tournament, game) && continue
+        !BBTournamentSim.is_filled(tournament, game) && continue
         push!(next_up, game)
     end
 

@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 
 struct IntOrRange
@@ -41,14 +41,14 @@ function parse_arguments(args=ARGS)
 end
 
 function make_game(g, team_dict)
-    quadrant = getproperty(BBSim, Symbol(get(g, "quadrant", "None")))
+    quadrant = getproperty(BBTournamentSim, Symbol(get(g, "quadrant", "None")))
     game = g["game"]
     teams = (get(team_dict, g["teams"][1], nothing), get(team_dict, g["teams"][2], nothing))
     winner_id = get(g, "winner", nothing)
     winner_team = get(team_dict, winner_id, nothing)
     value = get(g, "value", 0)
 
-    return BBSim.Game(
+    return BBTournamentSim.Game(
         quadrant,
         game,
         teams,
@@ -65,13 +65,13 @@ function main(args=ARGS)
     end
 
     teams = open(options["teams"], "r") do io
-        JSON3.read(io, Vector{BBSim.Team})
+        JSON3.read(io, Vector{BBTournamentSim.Team})
     end
 
-    team_dict = Dict(string(BBSim.quadrant(team)) * string(BBSim.seed(team)) => team for team in filter(t -> !isnothing(BBSim.seed(t)), teams))
+    team_dict = Dict(string(BBTournamentSim.quadrant(team)) * string(BBTournamentSim.seed(team)) => team for team in filter(t -> !isnothing(BBTournamentSim.seed(t)), teams))
     games = make_game.(filter(g -> isnothing(options["include"]) || g["game"] ∈ options["include"], bracket), Ref(team_dict))
 
-    tournament = BBSim.Tournament(games)
+    tournament = BBTournamentSim.Tournament(games)
     
     if !isnothing(options["outfile"])
         open(options["outfile"], "w") do f

@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 
 const URLS = Dict("ncaaw" => "http://realtimerpi.com/ncaab/college_Women_basketball_power_rankings_Full.html", "ncaam" => "http://realtimerpi.com/ncaab/college_Men_basketball_power_rankings_Full.html")
@@ -27,21 +27,21 @@ function main(args=ARGS)
 
     league = options["league"]
     url = URLS[league]
-    rpi_html = BBSim.get_rpi(url)
-    pairs = BBSim.parse_rpi_html(rpi_html)
+    rpi_html = BBTournamentSim.get_rpi(url)
+    pairs = BBTournamentSim.parse_rpi_html(rpi_html)
     teams = Dict{String, Float32}()
     for (i,pair) in enumerate(pairs)
         teams[pair[1]] = pair[2]
     end
 
     old_teams = open(options["old"], "r") do io
-        JSON3.read(io, Vector{BBSim.Team})
+        JSON3.read(io, Vector{BBTournamentSim.Team})
     end
     for i in eachindex(old_teams)
         old_team = old_teams[i]
-        name = BBSim.name(old_team)
-        rating = get(teams, name, BBSim.rating(old_team))
-        old_teams[i] = BBSim.Team(BBSim.id(old_team), BBSim.name(old_team), BBSim.league(old_team), rating, BBSim.seed(old_team), BBSim.quadrant(old_team))
+        name = BBTournamentSim.name(old_team)
+        rating = get(teams, name, BBTournamentSim.rating(old_team))
+        old_teams[i] = BBTournamentSim.Team(BBTournamentSim.id(old_team), BBTournamentSim.name(old_team), BBTournamentSim.league(old_team), rating, BBTournamentSim.seed(old_team), BBTournamentSim.quadrant(old_team))
     end
     
     if !isnothing(options["outfile"])

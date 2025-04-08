@@ -3,7 +3,7 @@ using ArgParse
 using Parquet2
 using JSON3
 using Tables
-using BBSim
+using BBTournamentSim
 
 # matrix is a Dict of picker => [(game => winner) => prob]
 # need to determine all possible winners of a given game
@@ -204,7 +204,7 @@ function (@main)(args=ARGS)
     options = parse_arguments(args)
 
     tournament = open(options["tournament"], "r") do io
-        JSON3.read(io, BBSim.Tournament)
+        JSON3.read(io, BBTournamentSim.Tournament)
     end
     ranks = Parquet2.readfile(options["posteriors"])
     matrix = Parquet2.readfile(options["excite"])

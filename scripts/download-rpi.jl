@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 
 const URLS = Dict("ncaaw" => "http://realtimerpi.com/ncaab/college_Women_basketball_power_rankings_Full.html", "ncaam" => "http://realtimerpi.com/ncaab/college_Men_basketball_power_rankings_Full.html")
@@ -24,11 +24,11 @@ function main(args=ARGS)
 
     league = options["league"]
     url = URLS[league]
-    rpi_html = BBSim.get_rpi(url)
-    pairs = BBSim.parse_rpi_html(rpi_html)
-    teams = BBSim.Team[]
+    rpi_html = BBTournamentSim.get_rpi(url)
+    pairs = BBTournamentSim.parse_rpi_html(rpi_html)
+    teams = BBTournamentSim.Team[]
     for (i,pair) in enumerate(pairs)
-        push!(teams, BBSim.Team(i, pair[1], league, pair[2], nothing, nothing))
+        push!(teams, BBTournamentSim.Team(i, pair[1], league, pair[2], nothing, nothing))
     end
     
     if !isnothing(options["outfile"])

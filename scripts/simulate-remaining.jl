@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 using Random
 using Parquet2
@@ -33,15 +33,15 @@ function main(args=ARGS)
     rng = isnothing(options["seed"]) ? Random.GLOBAL_RNG : Random.Xoshiro(options["seed"])
 
     tournament = open(options["tournament"], "r") do io
-        JSON3.read(io, BBSim.Tournament)
+        JSON3.read(io, BBTournamentSim.Tournament)
     end
 
     model = open(options["model"], "r") do io
-        JSON3.read(io, BBSim.AbstractModel)
+        JSON3.read(io, BBTournamentSim.AbstractModel)
     end
 
     nsim = options["simulations"]
-    simulated_winners = BBSim.simulate(rng, model, tournament, nsim)
+    simulated_winners = BBTournamentSim.simulate(rng, model, tournament, nsim)
     
     if !isnothing(options["outfile"])
         # stored as nsim (second dim) columns of winners (first dim) in tournament order

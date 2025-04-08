@@ -1,4 +1,4 @@
-module BBSim
+module BBTournamentSim
 
 using AbstractTrees
 using Gumbo
@@ -13,7 +13,6 @@ include("game.jl")
 include("kenpom.jl")
 include("realtimerpi.jl")
 # include("pickem.jl")
-# include("fivethirtyeight.jl")
 include("tournament.jl")
 include("picks.jl")
 include("score.jl")
@@ -22,4 +21,4 @@ include("simulate.jl")
 
 # export PickEmSlateOptions, FiveThirtyEightPredictionOptions
 
-end # module BBSim
+end # module BBTournamentSim

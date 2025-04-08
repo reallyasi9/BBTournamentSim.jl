@@ -1,5 +1,5 @@
 using ArgParse
-using BBSim
+using BBTournamentSim
 using JSON3
 
 
@@ -23,11 +23,11 @@ end
 function main(args=ARGS)
     options = parse_arguments(args)
 
-    kenpom_html = BBSim.get_kenpom(options["url"])
-    pairs = BBSim.parse_kenpom_html(kenpom_html)
-    teams = BBSim.Team[]
+    kenpom_html = BBTournamentSim.get_kenpom(options["url"])
+    pairs = BBTournamentSim.parse_kenpom_html(kenpom_html)
+    teams = BBTournamentSim.Team[]
     for (i, pair) in pairs
-        push!(teams, BBSim.Team(i, pair[1], options["league"], pair[2], nothing, nothing))
+        push!(teams, BBTournamentSim.Team(i, pair[1], options["league"], pair[2], nothing, nothing))
     end
     
     if !isnothing(options["outfile"])
