@@ -35,8 +35,10 @@ end
 """
 function plot_ranks(ranks)
     n_ranks = length(ranks)
+    width = 120 + 48*n_ranks
+    height = 200*n_ranks
     fig = Figure(;
-        size = (54 * n_ranks, 200 * n_ranks),
+        size = (width, height),
         fonts = (;regular = "DejaVu Sans"),
     )
     names = sort(collect(keys(ranks)))
