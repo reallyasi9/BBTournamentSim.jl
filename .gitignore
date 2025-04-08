@@ -3,5 +3,11 @@
 *.yaml
 *.svg
 *.png
+*.json
+*.parquet
+*.csv
+*.log
 
-Manifest.toml
+/Manifest*.toml
+/docs/Manifest*.toml
+/docs/build/
