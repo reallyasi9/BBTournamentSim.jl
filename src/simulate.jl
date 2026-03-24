@@ -7,22 +7,33 @@ simulate(model::AbstractModel, game::Game) = simulate(Random.GLOBAL_RNG, model, 
 
 function simulate(rng::AbstractRNG, model::AbstractModel, tournament::Tournament, n::Integer=1)
     n_games = length(tournament)
-    simulated_winners = zeros(Int, n_games, n)
-    @info "Simulating using threaded RNG" nsims=n Threads.nthreads()
-    rngs = [Random.Xoshiro(rand(rng, UInt)) for _ in 1:Threads.nthreads()]
-    Threads.@threads for sim in 1:n
-        t = deepcopy(tournament)
-        for g in 1:n_games
-            if is_done(t, g)
-                w = winner(t, g)
-            else
-                w = simulate_winner(rngs[Threads.threadid()], model, teams(t, g))
+    tasks_per_thread = 50
+    chunk_size = max(1, n ÷ (tasks_per_thread * Threads.nthreads()))
+    chunks = Iterators.partition(1:n, chunk_size)
+    
+    @info "Simulating using threaded RNG" nsims=n threads=Threads.nthreads()
+    tasks = map(chunks) do chunk
+        Threads.@spawn begin
+            sim_wins = mapreduce(hcat, chunk) do _
+                t = deepcopy(tournament)
+                winners = map(1:n_games) do g
+                    if is_done(t, g)
+                        w = winner(t, g)
+                    else
+                        w = simulate_winner(rng, model, teams(t, g))
+                    end
+                    propagate_winner!(t, g, w)
+                    return id(w)
+                end
+                return winners
             end
-            propagate_winner!(t, g, w) # just in case
-            simulated_winners[g, sim] = id(w)
+            return sim_wins
         end
     end
+
+    simulated_winners = mapreduce(x -> fetch(x)::Matrix{Int}, hcat, tasks)
+
     return simulated_winners
 end
 
-simulate(model::AbstractModel, tournament::Tournament) = simulate(Random.GLOBAL_RNG, model, tournament)
+simulate(model::AbstractModel, tournament::Tournament) = simulate(Random.default_rng(), model, tournament)

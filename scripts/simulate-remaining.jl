@@ -27,7 +27,7 @@ function parse_arguments(args=ARGS)
     return parse_args(args, s)
 end
 
-function main(args=ARGS)
+function (@main)(args)
     options = parse_arguments(args)
 
     rng = isnothing(options["seed"]) ? Random.GLOBAL_RNG : Random.Xoshiro(options["seed"])
@@ -55,11 +55,7 @@ function main(args=ARGS)
             Parquet2.writefile(f, data)
         end
     else
+        @warn "No output defined: throwing away results"
         display(size(simulated_winners))
     end
 end
-
-if !isinteractive()
-    main(ARGS)
-    # main(split(raw"./tournament_ncaam_2024_20240321.json ./model_2024.json -s 42", " "))
-end 
