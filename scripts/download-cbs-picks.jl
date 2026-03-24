@@ -2,22 +2,22 @@ using HTTP
 using JSON3
 using ArgParse
 
+const game_order_urls = Dict(
+    # add the pool ID at the end
+    "ncaam" => "https://picks.cbssports.com/college-basketball/ncaa-tournament/bracket/pools/",
+    "ncaaw" => "https://picks.cbssports.com/college-basketball/ncaaw-tournament/bracket/pools/",
+)
+
 const query_url = "https://picks.cbssports.com/graphql"
-const entries_operation_name = "PoolSeasonStandingsQuery"
-const entry_operation_name = "EntryDetailsQuery"
-const game_order_operation_name = "PoolPeriodQuery"
+const entries_operation_name = "BracketManagerPoolStandings"
+const entry_operation_name = "NCAABracketManagerBracketPage"
 
 const version = 1
-const entries_query_hash = "d4a5f361f30ebb86e3d9171ea21713de96057ad22dc12533d304fea89f8dea57"
-const entry_query_hash = "720253f4494bde0f40858ce0819fcbd70a5beb7b3de55becb9d8bfd5976059be"
-const game_order_query_hash = "bd4dd3122d072d332e7cd9143d0d29dcbde35798a79cea4703319efa42a95e04"
+const entries_query_hash = "5db99329692b412a8873d5f382b376d2c97178d1e12bcfb7ea53faa2113b05cb"
+const entry_query_hash = "212108863b3d694b6b91b433026f02183fd4478545b11ce695149091866f8539"
 
-const default_pool_variables = Dict(
-    "skipAncestorPools" => false,
-    "skipPeriodPoints" => false,
-    "skipCheckForIncompleteEntries" => true,
-    "orderBy" => "OVERALL_RANK",
-    "sortingOrder" => "ASC",
+const default_pool_variables = Dict{String, Any}(
+    "displayingArchivedPool" => false,
 )
 
 const default_order_variables = Dict(
@@ -60,11 +60,10 @@ function parse_arguments(args)
     return options
 end
 
-function get_entiries_page(pid, league, pool_id)
+function get_entries_page(pid, league, pool_id)
     cookies = Dict("pid" => pid)
 
     variables = copy(default_pool_variables)
-    variables["gameInstanceUid"] = game_instances[league]
     variables["poolId"] = pool_id
 
     extensions = Dict(
@@ -74,7 +73,7 @@ function get_entiries_page(pid, league, pool_id)
         ),
     )
 
-    variables["first"] = 50
+    variables["first"] = 100
     d = Dict{String, String}()
 
     while true
@@ -88,7 +87,7 @@ function get_entiries_page(pid, league, pool_id)
         resp = HTTP.request("GET", query_url; query=query, cookies=cookies)
 
         json = JSON3.read(resp.body)
-        es = json["data"]["gameInstance"]["pool"]["entries"]["edges"]
+        es = json["data"]["commonPool"]["standings"]["edges"]
         
         if length(es) < 1
             break
@@ -98,7 +97,11 @@ function get_entiries_page(pid, league, pool_id)
             e["node"]["name"] => e["node"]["id"] for e in es
         ))
         
-        start = json["data"]["gameInstance"]["pool"]["entries"]["pageInfo"]["endCursor"]
+        has_next = json["data"]["commonPool"]["standings"]["pageInfo"]["hasNextPage"]
+        if !has_next
+            break
+        end
+        start = json["data"]["commonPool"]["standings"]["pageInfo"]["endCursor"]
         variables["after"] = start
     end
 
@@ -108,28 +111,25 @@ end
 function get_game_order_page(pid, league, pool_id)
     cookies = Dict("pid" => pid)
 
-    variables = copy(default_order_variables)
-    variables["gameInstanceUid"] = game_instances[league]
-    variables["poolId"] = pool_id
+    query_url = game_order_urls[league] * pool_id
+    resp = HTTP.request("GET", query_url; cookies=cookies)
+    html = String(resp.body)
 
-    extensions = Dict(
-        "persistedQuery" => Dict(
-            "version" => version,
-            "sha256Hash" => game_order_query_hash,
-        ),
-    )
-    
-    query = Dict(
-        "operationName" => game_order_operation_name,
-        "variables" => JSON3.write(variables),
-        "extensions" => JSON3.write(extensions),
-        "entryId" => "ivxhi4tzhiytkobugy3domzx"
-    )
+    # replace undefineds with nulls
+    html = replace(html, "undefined"=>"null")
 
-    resp = HTTP.request("GET", query_url; query=query, cookies=cookies)
-    json = JSON3.read(resp.body)
+    regex = r"window\[Symbol\.for\(\"ApolloSSRDataTransport\"\)\] \?\?= \[\]\)\.push\((\{.*?\})\)<"ms
+    matches = match(regex, html)
+    if isnothing(matches)
+        throw(ErrorException("unable to parse hydration data"))
+    end
+    json_str = matches.captures[1]
+    json = JSON3.read(json_str)
+    rehydrate = json["rehydrate"]
+    # rehydrate element has random keys
+    key = only(filter(k -> "data" ∈ keys(rehydrate[k]) && !isnothing(rehydrate[k]["data"]) && "ncaaBasketballTournamentMatchups" ∈ keys(rehydrate[k]["data"]), keys(rehydrate)))
 
-    matchups = json["data"]["gameInstance"]["period"]["matchups"]
+    matchups = rehydrate[key]["data"]["ncaaBasketballTournamentMatchups"]
     # the matchup data tells me the ordinal position of the game
     ids = map(m -> m["id"], matchups)
     rounds = map(m -> m["tournamentRound"], matchups)
@@ -148,7 +148,7 @@ function get_bracket_page(pid, entry_id, team_map, order)
     cookies = Dict("pid" => pid)
 
     variables = Dict(
-        "periodId" => "current",
+        "productAbbrev" => "bpc", # ?
         "entryId" => entry_id
     )
 
@@ -168,28 +168,48 @@ function get_bracket_page(pid, entry_id, team_map, order)
     resp = HTTP.request("GET", query_url; query=query, cookies=cookies)
 
     json = JSON3.read(resp.body)
-    json_picks = json["data"]["entry"]["picks"]
-    picks = [team_map[p["itemId"]] for p in json_picks]
+    json_picks = json["data"]["commonEntry"]["picks"]
+    picks = String[]
+    permutation = Int[]
+    for (i, p) in enumerate(json_picks)
+        if "team" ∉ keys(p)
+            throw(ErrorException("no team picked for game $i in entry $entry_id"))
+        end
+        team = p["team"]
+        if "cbsTeamId" ∉ keys(team)
+            throw(ErrorException("no cbsTeamId for team picked in game $i in entry $entry_id"))
+        end
+        team_id = string(team["cbsTeamId"])
+        push!(picks, team_map[team_id])
 
-    permutation = [order[p["slotId"]] for p in json_picks]
+        if "slotId" ∉ keys(p)
+            throw(ErrorException("no slotId for game $i in entry $entry_id"))
+        end
+        slot_id = p["slotId"]
+        if slot_id ∉ keys(order)
+            throw(ErrorException("slotId $slot_id not known in tournament order"))
+        end
+        push!(permutation, order[slot_id])
+    end
+
     invpermute!(picks, permutation)
 
     return picks
 
 end
 
-function main(args=ARGS)
+function (@main)(args)
     options = parse_arguments(args)
 
     team_map = open(options["teammap"], "r") do io
-        JSON3.read(io)
+        JSON3.read(io, Dict{String,String})
     end
 
     team_seeds = open(options["teamseed"], "r") do io
-        JSON3.read(io)
+        JSON3.read(io, Dict{String,String})
     end
 
-    entries = get_entiries_page(options["pid"], options["league"], options["poolid"])
+    entries = get_entries_page(options["pid"], options["league"], options["poolid"])
     order = get_game_order_page(options["pid"], options["league"], options["poolid"])
     
     # new format: vector of objects with "owner" and "picks" keys
@@ -208,8 +228,4 @@ function main(args=ARGS)
             JSON3.pretty(f, v)
         end
     end
-end
-
-if !isinteractive()
-    main()
 end
